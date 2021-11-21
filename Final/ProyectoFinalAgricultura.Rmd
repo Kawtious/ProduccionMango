@@ -15,64 +15,112 @@ knitr::opts_chunk$set(echo = TRUE)
 setwd("~/GitHub/ProduccionMango/Final")
 ```
 
-# Paquetes a utilizar
+# Sustentabilidad de la producción de Mango en Sonora, México
+
+## Introdución
+
+Para este caso de estudio analizaremos el fruto del mango, su producción, cosecha, necesidades, basándonos en métodos estadísticos para saber su relación agrícola en el estado de Sonora, viendo lo que este estado puede cosechar y producir a lo largo de los años y veremos si vale la pena usar tantos recursos naturales para mantener la producción sustentable de este fruto y saber si sale rentable.
+
+Veremos si la producción utiliza de buena manera la tierra, si los pasos necesarios se siguen correctamente para que la fruta pueda dar su máxima producción potencial. la tierra idónea y su mantenimiento son necesarias para este fruto, además de que debe tener un cierto clima que no lo dañe, y sobre todo que se mantenga limpio, sin basura, residuos ni desperdicios, una vez visto estos sigue la formación de la tierra para dejarlo en condiciones óptimas para su plantación, además de poner la siembra en lugares estratégicos para tener un máximo de potencial, y obviamente el mantenimiento de la planta, su cuidado constante, y precauciones del clima para poder producirlo de la mejor manera y finalmente enviarlo a comercializar.
+
+## Antecedentes
+
+
+
+## Objetivos del trabajo
+
+## Teoría
+
+## Metodología (métodos estadísticos que usan y también incluir los métodos de los datos)
+
+## Operaciones
+
+### Paquetes a utilizar
 
 ```{r}
 library(pacman)
 p_load(rmdformats, readr, readxl, ggplot2, plotly, DT, xfun, gridExtra, leaflet, GGally, psych, corrplot, cluster)
 ```
 
-## Descarga los datos
-
-* Descargar este documento:
-
-```{r}
-xfun::embed_file("ProyectoFinalAgricultura.Rmd")
-```
-
-* Descarga los datos
-
-```{r}
-xfun::embed_file("TemperaturasPromAnualPorEstado.xlsx")
-```
-
-# Cosecha de trigo y efecto invernadero en México
-
-## Introdución
-
-Para este caso de estudio analizaremos el fruto del mango, su producción, cosecha, necesidades, esto para saber si es rentable o no sembrarlo, ademas de que lo estudiaremos para saber si se puede cosechar este fruto en el estado de Sonora.
-
-* Importando datos
+### **Importando datos**
 
 * Producción de mangos por estado
 
 ```{r}
-prodMango <- read_excel("")
+prodMango <- read_excel("ProduccionMangos.xlsx")
+#View(prodMango)
 ```
 
 * Temperaturas anuales por estado
 
 ```{r}
 temp <- read_excel("TemperaturasPromAnualPorEstado.xlsx")
+#View(temp)
 ```
 
-* Visualizando los datos en tablas
+* **Visualizando los datos en tablas**
+
+* Tabla de producción de mangos
+
+```{r}
+datatable(prodMango)
+```
+
+* Tabla de temperaturas
+
+```{r}
+datatable(temp)
+```
+
+
+Histogramas 
+
+```{r}
+# Marco de datos con el que se trabajará el principio
+papas.lluvias <- data.frame(Entidades,Cierre_agricola$`Superficie Cosechada`[-12],Cierre_agricola$`Producción`[-12],Cierre_agricola$Rendimiento[-12],prod,temp[2:4])
+```
 
 
 
 
-## Teoría
-
-* http://internet.contenidos.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/historicos/380/702825117269/702825117269_6.pdf
-
-* https://www.inforural.com.mx/wp-content/uploads/2020/11/Atlas-Agroalimentario-2020.pdf
-
-* http://ieecc.edomex.gob.mx/sites/ieecc.edomex.gob.mx/files/files/Publicaciones%20Hist%C3%B3ricas/1_Inventario_Emisiones/IEEGEI%202016_%2030%20novi2018.pdf
-
-## 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+## Descarga de datos y código
+
+### Descarga del código
+
+```{r}
+xfun::embed_file("ProyectoFinalAgricultura.Rmd")
+```
+
+### Descarga los datos
+
+```{r}
+#Producción de mango
+xfun::embed_file("ProduccionMangos.xlsx")
+
+#Temperaturas de México
+xfun::embed_file("TemperaturasPromAnualPorEstado.xlsx")
+```
+
+## Bibliografía
+
+http://infosiap.siap.gob.mx/gobmx/datosAbiertos.php
+
+
+https://nube.siap.gob.mx/cierreagricola/
 
 Notas:
 En la metodología poner porque usaremos, que es y las formulas:
@@ -90,8 +138,13 @@ En este caso se trabajarán con estos métodos estadísticos
 
 Valor de producción, trigo, CO2
 
+## Teoría
 
-http://infosiap.siap.gob.mx/gobmx/datosAbiertos.php
+* http://internet.contenidos.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/historicos/380/702825117269/702825117269_6.pdf
+
+* https://www.inforural.com.mx/wp-content/uploads/2020/11/Atlas-Agroalimentario-2020.pdf
+
+* http://ieecc.edomex.gob.mx/sites/ieecc.edomex.gob.mx/files/files/Publicaciones%20Hist%C3%B3ricas/1_Inventario_Emisiones/IEEGEI%202016_%2030%20novi2018.pdf
 
 
-https://nube.siap.gob.mx/cierreagricola/
+
