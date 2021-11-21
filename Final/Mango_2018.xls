@@ -1,309 +1,324 @@
-<HTML LANG="es">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<META http-equiv=Content-Type content="text/html; charset=ISO-8859-1">
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
 
-<style>
-th{
-	vertical-align:middle !important; 
-	text-align:center !important;
-}
-.estiloResult{
-	background-color:#B38E5D !important; 
-	color:#FFF !important;
-}
-</style>
+<head>
+<meta name="Excel Workbook Frameset">
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link rel=File-List href="Mango_2018_archivos/filelist.xml">
+<![if !supportTabStrip]>
+<link id="shLink" href="Mango_2018_archivos/sheet001.htm">
 
-<TITLE></TITLE>
+<link id="shLink">
+
+<script language="JavaScript">
+<!--
+ var c_lTabs=1;
+
+ var c_rgszSh=new Array(c_lTabs);
+ c_rgszSh[0] = "Mango_2018";
+
+
+
+ var c_rgszClr=new Array(8);
+ c_rgszClr[0]="window";
+ c_rgszClr[1]="buttonface";
+ c_rgszClr[2]="windowframe";
+ c_rgszClr[3]="windowtext";
+ c_rgszClr[4]="threedlightshadow";
+ c_rgszClr[5]="threedhighlight";
+ c_rgszClr[6]="threeddarkshadow";
+ c_rgszClr[7]="threedshadow";
+
+ var g_iShCur;
+ var g_rglTabX=new Array(c_lTabs);
+
+function fnGetIEVer()
+{
+ var ua=window.navigator.userAgent
+ var msie=ua.indexOf("MSIE")
+ if (msie>0 && window.navigator.platform=="Win32")
+  return parseInt(ua.substring(msie+5,ua.indexOf(".", msie)));
+ else
+  return 0;
+}
+
+function fnBuildFrameset()
+{
+ var szHTML="<frameset rows=\"*,18\" border=0 width=0 frameborder=no framespacing=0>"+
+  "<frame src=\""+document.all.item("shLink")[0].href+"\" name=\"frSheet\" noresize>"+
+  "<frameset cols=\"54,*\" border=0 width=0 frameborder=no framespacing=0>"+
+  "<frame src=\"\" name=\"frScroll\" marginwidth=0 marginheight=0 scrolling=no>"+
+  "<frame src=\"\" name=\"frTabs\" marginwidth=0 marginheight=0 scrolling=no>"+
+  "</frameset></frameset><plaintext>";
+
+ with (document) {
+  open("text/html","replace");
+  write(szHTML);
+  close();
+ }
+
+ fnBuildTabStrip();
+}
+
+function fnBuildTabStrip()
+{
+ var szHTML=
+  "<html><head><style>.clScroll {font:8pt Courier New;color:"+c_rgszClr[6]+";cursor:default;line-height:10pt;}"+
+  ".clScroll2 {font:10pt Arial;color:"+c_rgszClr[6]+";cursor:default;line-height:11pt;}</style></head>"+
+  "<body onclick=\"event.returnValue=false;\" ondragstart=\"event.returnValue=false;\" onselectstart=\"event.returnValue=false;\" bgcolor="+c_rgszClr[4]+" topmargin=0 leftmargin=0><table cellpadding=0 cellspacing=0 width=100%>"+
+  "<tr><td colspan=6 height=1 bgcolor="+c_rgszClr[2]+"></td></tr>"+
+  "<tr><td style=\"font:1pt\">&nbsp;<td>"+
+  "<td valign=top id=tdScroll class=\"clScroll\" onclick=\"parent.fnFastScrollTabs(0);\" onmouseover=\"parent.fnMouseOverScroll(0);\" onmouseout=\"parent.fnMouseOutScroll(0);\"><a>&#171;</a></td>"+
+  "<td valign=top id=tdScroll class=\"clScroll2\" onclick=\"parent.fnScrollTabs(0);\" ondblclick=\"parent.fnScrollTabs(0);\" onmouseover=\"parent.fnMouseOverScroll(1);\" onmouseout=\"parent.fnMouseOutScroll(1);\"><a>&lt</a></td>"+
+  "<td valign=top id=tdScroll class=\"clScroll2\" onclick=\"parent.fnScrollTabs(1);\" ondblclick=\"parent.fnScrollTabs(1);\" onmouseover=\"parent.fnMouseOverScroll(2);\" onmouseout=\"parent.fnMouseOutScroll(2);\"><a>&gt</a></td>"+
+  "<td valign=top id=tdScroll class=\"clScroll\" onclick=\"parent.fnFastScrollTabs(1);\" onmouseover=\"parent.fnMouseOverScroll(3);\" onmouseout=\"parent.fnMouseOutScroll(3);\"><a>&#187;</a></td>"+
+  "<td style=\"font:1pt\">&nbsp;<td></tr></table></body></html>";
+
+ with (frames['frScroll'].document) {
+  open("text/html","replace");
+  write(szHTML);
+  close();
+ }
+
+ szHTML =
+  "<html><head>"+
+  "<style>A:link,A:visited,A:active {text-decoration:none;"+"color:"+c_rgszClr[3]+";}"+
+  ".clTab {cursor:hand;background:"+c_rgszClr[1]+";font:9pt Arial;padding-left:3px;padding-right:3px;text-align:center;}"+
+  ".clBorder {background:"+c_rgszClr[2]+";font:1pt;}"+
+  "</style></head><body onload=\"parent.fnInit();\" onselectstart=\"event.returnValue=false;\" ondragstart=\"event.returnValue=false;\" bgcolor="+c_rgszClr[4]+
+  " topmargin=0 leftmargin=0><table id=tbTabs cellpadding=0 cellspacing=0>";
+
+ var iCellCount=(c_lTabs+1)*2;
+
+ var i;
+ for (i=0;i<iCellCount;i+=2)
+  szHTML+="<col width=1><col>";
+
+ var iRow;
+ for (iRow=0;iRow<6;iRow++) {
+
+  szHTML+="<tr>";
+
+  if (iRow==5)
+   szHTML+="<td colspan="+iCellCount+"></td>";
+  else {
+   if (iRow==0) {
+    for(i=0;i<iCellCount;i++)
+     szHTML+="<td height=1 class=\"clBorder\"></td>";
+   } else if (iRow==1) {
+    for(i=0;i<c_lTabs;i++) {
+     szHTML+="<td height=1 nowrap class=\"clBorder\">&nbsp;</td>";
+     szHTML+=
+      "<td id=tdTab height=1 nowrap class=\"clTab\" onmouseover=\"parent.fnMouseOverTab("+i+");\" onmouseout=\"parent.fnMouseOutTab("+i+");\">"+
+      "<a href=\""+document.all.item("shLink")[i].href+"\" target=\"frSheet\" id=aTab>&nbsp;"+c_rgszSh[i]+"&nbsp;</a></td>";
+    }
+    szHTML+="<td id=tdTab height=1 nowrap class=\"clBorder\"><a id=aTab>&nbsp;</a></td><td width=100%></td>";
+   } else if (iRow==2) {
+    for (i=0;i<c_lTabs;i++)
+     szHTML+="<td height=1></td><td height=1 class=\"clBorder\"></td>";
+    szHTML+="<td height=1></td><td height=1></td>";
+   } else if (iRow==3) {
+    for (i=0;i<iCellCount;i++)
+     szHTML+="<td height=1></td>";
+   } else if (iRow==4) {
+    for (i=0;i<c_lTabs;i++)
+     szHTML+="<td height=1 width=1></td><td height=1></td>";
+    szHTML+="<td height=1 width=1></td><td></td>";
+   }
+  }
+  szHTML+="</tr>";
+ }
+
+ szHTML+="</table></body></html>";
+ with (frames['frTabs'].document) {
+  open("text/html","replace");
+  charset=document.charset;
+  write(szHTML);
+  close();
+ }
+}
+
+function fnInit()
+{
+ g_rglTabX[0]=0;
+ var i;
+ for (i=1;i<=c_lTabs;i++)
+  with (frames['frTabs'].document.all.tbTabs.rows[1].cells[fnTabToCol(i-1)])
+   g_rglTabX[i]=offsetLeft+offsetWidth-6;
+}
+
+function fnTabToCol(iTab)
+{
+ return 2*iTab+1;
+}
+
+function fnNextTab(fDir)
+{
+ var iNextTab=-1;
+ var i;
+
+ with (frames['frTabs'].document.body) {
+  if (fDir==0) {
+   if (scrollLeft>0) {
+    for (i=0;i<c_lTabs&&g_rglTabX[i]<scrollLeft;i++);
+    if (i<c_lTabs)
+     iNextTab=i-1;
+   }
+  } else {
+   if (g_rglTabX[c_lTabs]+6>offsetWidth+scrollLeft) {
+    for (i=0;i<c_lTabs&&g_rglTabX[i]<=scrollLeft;i++);
+    if (i<c_lTabs)
+     iNextTab=i;
+   }
+  }
+ }
+ return iNextTab;
+}
+
+function fnScrollTabs(fDir)
+{
+ var iNextTab=fnNextTab(fDir);
+
+ if (iNextTab>=0) {
+  frames['frTabs'].scroll(g_rglTabX[iNextTab],0);
+  return true;
+ } else
+  return false;
+}
+
+function fnFastScrollTabs(fDir)
+{
+ if (c_lTabs>16)
+  frames['frTabs'].scroll(g_rglTabX[fDir?c_lTabs-1:0],0);
+ else
+  if (fnScrollTabs(fDir)>0) window.setTimeout("fnFastScrollTabs("+fDir+");",5);
+}
+
+function fnSetTabProps(iTab,fActive)
+{
+ var iCol=fnTabToCol(iTab);
+ var i;
+
+ if (iTab>=0) {
+  with (frames['frTabs'].document.all) {
+   with (tbTabs) {
+    for (i=0;i<=4;i++) {
+     with (rows[i]) {
+      if (i==0)
+       cells[iCol].style.background=c_rgszClr[fActive?0:2];
+      else if (i>0 && i<4) {
+       if (fActive) {
+        cells[iCol-1].style.background=c_rgszClr[2];
+        cells[iCol].style.background=c_rgszClr[0];
+        cells[iCol+1].style.background=c_rgszClr[2];
+       } else {
+        if (i==1) {
+         cells[iCol-1].style.background=c_rgszClr[2];
+         cells[iCol].style.background=c_rgszClr[1];
+         cells[iCol+1].style.background=c_rgszClr[2];
+        } else {
+         cells[iCol-1].style.background=c_rgszClr[4];
+         cells[iCol].style.background=c_rgszClr[(i==2)?2:4];
+         cells[iCol+1].style.background=c_rgszClr[4];
+        }
+       }
+      } else
+       cells[iCol].style.background=c_rgszClr[fActive?2:4];
+     }
+    }
+   }
+   with (aTab[iTab].style) {
+    cursor=(fActive?"default":"hand");
+    color=c_rgszClr[3];
+   }
+  }
+ }
+}
+
+function fnMouseOverScroll(iCtl)
+{
+ frames['frScroll'].document.all.tdScroll[iCtl].style.color=c_rgszClr[7];
+}
+
+function fnMouseOutScroll(iCtl)
+{
+ frames['frScroll'].document.all.tdScroll[iCtl].style.color=c_rgszClr[6];
+}
+
+function fnMouseOverTab(iTab)
+{
+ if (iTab!=g_iShCur) {
+  var iCol=fnTabToCol(iTab);
+  with (frames['frTabs'].document.all) {
+   tdTab[iTab].style.background=c_rgszClr[5];
+  }
+ }
+}
+
+function fnMouseOutTab(iTab)
+{
+ if (iTab>=0) {
+  var elFrom=frames['frTabs'].event.srcElement;
+  var elTo=frames['frTabs'].event.toElement;
+
+  if ((!elTo) ||
+   (elFrom.tagName==elTo.tagName) ||
+   (elTo.tagName=="A" && elTo.parentElement!=elFrom) ||
+   (elFrom.tagName=="A" && elFrom.parentElement!=elTo)) {
+
+   if (iTab!=g_iShCur) {
+    with (frames['frTabs'].document.all) {
+     tdTab[iTab].style.background=c_rgszClr[1];
+    }
+   }
+  }
+ }
+}
+
+function fnSetActiveSheet(iSh)
+{
+ if (iSh!=g_iShCur) {
+  fnSetTabProps(g_iShCur,false);
+  fnSetTabProps(iSh,true);
+  g_iShCur=iSh;
+ }
+}
+
+ window.g_iIEVer=fnGetIEVer();
+ if (window.g_iIEVer>=4)
+  fnBuildFrameset();
+//-->
+</script>
+<![endif]><!--[if gte mso 9]><xml>
+ <x:ExcelWorkbook>
+  <x:ExcelWorksheets>
+   <x:ExcelWorksheet>
+    <x:Name>Mango_2018</x:Name>
+    <x:WorksheetSource HRef="Mango_2018_archivos/sheet001.htm"/>
+   </x:ExcelWorksheet>
+  </x:ExcelWorksheets>
+  <x:Stylesheet HRef="Mango_2018_archivos/stylesheet.css"/>
+  <x:WindowHeight>10050</x:WindowHeight>
+  <x:WindowWidth>24000</x:WindowWidth>
+  <x:WindowTopX>32767</x:WindowTopX>
+  <x:WindowTopY>32767</x:WindowTopY>
+  <x:ProtectStructure>False</x:ProtectStructure>
+  <x:ProtectWindows>False</x:ProtectWindows>
+ </x:ExcelWorkbook>
+</xml><![endif]-->
 </head>
-<body>
 
-		<div class="titulosTabla">
-			<p>
-				<strong>A&ntilde;o:</strong> 2018<br />
-				<strong>Producci&oacute;n Agr&iacute;cola</strong><br />
-				<strong>Ciclo:</strong> Ciclicos - Perennes<br />
-				<strong>Modalidad:</strong> Riego + Temporal<br />
-				<strong>Cultivo:</strong> Mango (ton)     <br />
-			</p>
-		</div>
-		
-		<table id="Resultados-reporte" class="table table-striped table-responsive table-bordered " border="1">
-			<tr class="estiloResult">
-				<th rowspan="2">&nbsp;</th>
-				<th rowspan="2">Entidad</th>
-				
-				<th colspan="3">Superficie<br />(ha)</th>
-				<th rowspan="2">Producci&oacute;n</th><th rowspan="2">Rendimiento<br />(udm/ha)</th><th rowspan="2">PMR<br />($/udm)</th>
-				<th rowspan="2">Valor Producci&oacute;n<br />(miles de Pesos)</th>
-			</tr>
-			<tr class="estiloResult">
-				<th>Sembrada</th>
-				<th>Cosechada</th>
-				<th>Siniestrada</th>
-			</tr>
-			<tr>
-				<td>1</td>
-				<td>Baja California Sur</td>
-				<td class="tdNum">1,557.00</td>
-				<td class="tdNum">1,032.00</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">6,698.00</td><td class="tdNum">6.49</td>
-				<td class="tdNum">5,428.39</td>
-				<td class="tdNum">36,359.36</td>
-			</tr>
-			
-			<tr>
-				<td>2</td>
-				<td>Campeche</td>
-				<td class="tdNum">2,286.20</td>
-				<td class="tdNum">2,223.50</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">31,210.28</td><td class="tdNum">14.04</td>
-				<td class="tdNum">3,756.78</td>
-				<td class="tdNum">117,250.25</td>
-			</tr>
-			
-			<tr>
-				<td>3</td>
-				<td>Colima</td>
-				<td class="tdNum">4,167.90</td>
-				<td class="tdNum">3,841.85</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">58,733.39</td><td class="tdNum">15.29</td>
-				<td class="tdNum">3,676.64</td>
-				<td class="tdNum">215,941.33</td>
-			</tr>
-			
-			<tr>
-				<td>4</td>
-				<td>Chiapas</td>
-				<td class="tdNum">38,655.56</td>
-				<td class="tdNum">35,509.16</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">279,281.03</td><td class="tdNum">7.87</td>
-				<td class="tdNum">5,198.86</td>
-				<td class="tdNum">1,451,941.81</td>
-			</tr>
-			
-			<tr>
-				<td>5</td>
-				<td>Durango</td>
-				<td class="tdNum">399.05</td>
-				<td class="tdNum">383.05</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">1,598.85</td><td class="tdNum">4.17</td>
-				<td class="tdNum">4,576.39</td>
-				<td class="tdNum">7,316.96</td>
-			</tr>
-			
-			<tr>
-				<td>6</td>
-				<td>Guerrero</td>
-				<td class="tdNum">26,393.65</td>
-				<td class="tdNum">24,861.11</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">385,125.02</td><td class="tdNum">15.49</td>
-				<td class="tdNum">5,627.08</td>
-				<td class="tdNum">2,167,128.87</td>
-			</tr>
-			
-			<tr>
-				<td>7</td>
-				<td>Hidalgo</td>
-				<td class="tdNum">79.00</td>
-				<td class="tdNum">79.00</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">521.34</td><td class="tdNum">6.60</td>
-				<td class="tdNum">4,163.40</td>
-				<td class="tdNum">2,170.55</td>
-			</tr>
-			
-			<tr>
-				<td>8</td>
-				<td>Jalisco</td>
-				<td class="tdNum">7,845.84</td>
-				<td class="tdNum">7,772.84</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">114,980.79</td><td class="tdNum">14.79</td>
-				<td class="tdNum">3,186.29</td>
-				<td class="tdNum">366,362.51</td>
-			</tr>
-			
-			<tr>
-				<td>9</td>
-				<td>México</td>
-				<td class="tdNum">364.50</td>
-				<td class="tdNum">361.50</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">2,843.84</td><td class="tdNum">7.87</td>
-				<td class="tdNum">6,034.21</td>
-				<td class="tdNum">17,160.34</td>
-			</tr>
-			
-			<tr>
-				<td>10</td>
-				<td>Michoacán</td>
-				<td class="tdNum">25,337.03</td>
-				<td class="tdNum">22,343.34</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">160,572.68</td><td class="tdNum">7.19</td>
-				<td class="tdNum">5,860.28</td>
-				<td class="tdNum">941,001.39</td>
-			</tr>
-			
-			<tr>
-				<td>11</td>
-				<td>Morelos</td>
-				<td class="tdNum">347.50</td>
-				<td class="tdNum">346.20</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">5,294.69</td><td class="tdNum">15.29</td>
-				<td class="tdNum">3,300.20</td>
-				<td class="tdNum">17,473.52</td>
-			</tr>
-			
-			<tr>
-				<td>12</td>
-				<td>Nayarit</td>
-				<td class="tdNum">27,294.77</td>
-				<td class="tdNum">26,513.65</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">322,387.62</td><td class="tdNum">12.16</td>
-				<td class="tdNum">3,558.93</td>
-				<td class="tdNum">1,147,354.03</td>
-			</tr>
-			
-			<tr>
-				<td>13</td>
-				<td>Oaxaca</td>
-				<td class="tdNum">19,165.75</td>
-				<td class="tdNum">18,082.00</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">188,674.57</td><td class="tdNum">10.43</td>
-				<td class="tdNum">3,615.68</td>
-				<td class="tdNum">682,187.43</td>
-			</tr>
-			
-			<tr>
-				<td>14</td>
-				<td>Puebla</td>
-				<td class="tdNum">54.50</td>
-				<td class="tdNum">54.50</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">542.00</td><td class="tdNum">9.94</td>
-				<td class="tdNum">3,969.93</td>
-				<td class="tdNum">2,151.70</td>
-			</tr>
-			
-			<tr>
-				<td>15</td>
-				<td>Querétaro</td>
-				<td class="tdNum">77.00</td>
-				<td class="tdNum">77.00</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">480.70</td><td class="tdNum">6.24</td>
-				<td class="tdNum">5,000.00</td>
-				<td class="tdNum">2,403.50</td>
-			</tr>
-			
-			<tr>
-				<td>16</td>
-				<td>San Luis Potosí</td>
-				<td class="tdNum">123.00</td>
-				<td class="tdNum">123.00</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">516.60</td><td class="tdNum">4.20</td>
-				<td class="tdNum">5,567.48</td>
-				<td class="tdNum">2,876.16</td>
-			</tr>
-			
-			<tr>
-				<td>17</td>
-				<td>Sinaloa</td>
-				<td class="tdNum">29,506.00</td>
-				<td class="tdNum">25,837.90</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">195,969.11</td><td class="tdNum">7.58</td>
-				<td class="tdNum">4,369.10</td>
-				<td class="tdNum">856,208.03</td>
-			</tr>
-			
-			<tr>
-				<td>18</td>
-				<td>Sonora</td>
-				<td class="tdNum">95.28</td>
-				<td class="tdNum">36.00</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">558.60</td><td class="tdNum">15.52</td>
-				<td class="tdNum">3,761.60</td>
-				<td class="tdNum">2,101.23</td>
-			</tr>
-			
-			<tr>
-				<td>19</td>
-				<td>Tabasco</td>
-				<td class="tdNum">195.00</td>
-				<td class="tdNum">185.00</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">1,206.86</td><td class="tdNum">6.52</td>
-				<td class="tdNum">2,819.27</td>
-				<td class="tdNum">3,402.46</td>
-			</tr>
-			
-			<tr>
-				<td>20</td>
-				<td>Tamaulipas</td>
-				<td class="tdNum">853.26</td>
-				<td class="tdNum">851.26</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">12,654.45</td><td class="tdNum">14.87</td>
-				<td class="tdNum">3,767.91</td>
-				<td class="tdNum">47,680.84</td>
-			</tr>
-			
-			<tr>
-				<td>21</td>
-				<td>Veracruz</td>
-				<td class="tdNum">17,691.00</td>
-				<td class="tdNum">17,630.00</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">95,740.57</td><td class="tdNum">5.43</td>
-				<td class="tdNum">3,762.83</td>
-				<td class="tdNum">360,255.44</td>
-			</tr>
-			
-			<tr>
-				<td>22</td>
-				<td>Yucatán</td>
-				<td class="tdNum">109.21</td>
-				<td class="tdNum">108.21</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">1,473.65</td><td class="tdNum">13.62</td>
-				<td class="tdNum">3,754.90</td>
-				<td class="tdNum">5,533.41</td>
-			</tr>
-			
-			<tr>
-				<td>23</td>
-				<td>Zacatecas</td>
-				<td class="tdNum">33.00</td>
-				<td class="tdNum">33.00</td>
-				<td class="tdNum">0.00</td>
-				<td class="tdNum">233.10</td><td class="tdNum">7.06</td>
-				<td class="tdNum">4,345.04</td>
-				<td class="tdNum">1,012.83</td>
-			</tr>
-			
-			<tr><th colspan="2">Total</th>
-			<th class="tdNum">202,631.00</th>
-			<th class="tdNum">188,285.07</th>
-			<th class="tdNum">0.00</th>
-			<th class="tdNum">1,867,297.74</th><th class="tdNum">9.92</th>
-			<th class="tdNum">4,527.01</th>
-			<th class="tdNum">8,453,273.94</th>
-		</tr>
-		
-		</table><div style="text-align:left"></div>
-</body>
+<frameset rows="*,39" border=0 width=0 frameborder=no framespacing=0>
+ <frame src="Mango_2018_archivos/sheet001.htm" name="frSheet">
+ <frame src="Mango_2018_archivos/tabstrip.htm" name="frTabs" marginwidth=0 marginheight=0>
+ <noframes>
+  <body>
+   <p>Esta página utiliza marcos que su explorador no admite.</p>
+  </body>
+ </noframes>
+</frameset>
 </html>
