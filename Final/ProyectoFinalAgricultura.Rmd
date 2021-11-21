@@ -25,13 +25,28 @@ Veremos si la producción utiliza de buena manera la tierra, si los pasos necesa
 
 ## Antecedentes
 
+Esta fruta es de climas cálidos. En 2019 se cosechó en 23 estados del país con un volumen de producción 11.9% mayor al de 2018. Sinaloa, Guerrero, Nayarit y Chiapas generan dos terceras partes del volumen cosechado a nivel nacional. Los mangos y aguacates exigen mucha agua, y hace tiempo que el agua no sobra. 
+El Servicio de Información Agroalimentaria y Pesquera (SIAP), señala que  este fruto se cosecha en 23 estados de la República Mexicana. Entre los principales productores se ubica Guerrero con un 22%, Nayarit con un 17% y Sinaloa con un 14%, que en conjunto suman el 53% de la producción nacional. El resto se proviene de Campeche, Chiapas, Colima, Jalisco, Michoacán, Oaxaca y Veracruz. Guerrero encabeza la lista gracias a su extensa superficie sembrada, así como al buen rendimiento del cultivo.
 
+Sin embargo en México no se ve que haya una buena cosecha como en los otros estados, teniendo una producción de entre aproximadamente 1000 a 2500 toneladas de mango, lo cual es obviamente muy poco, las semillas de mango normalmente demoran 8 años en producir frutos. Los árboles jóvenes injertados demoran de 3 a 5 años en producir frutos, y es casi seguro que producirán una buena cosecha. Si bien los mangos no necesitan muchos cuidados cuando se los planta, sí necesitarán estar en circunstancias específicas para poder crecer. Los mangos crecen mejor en altas temperaturas y pueden soportar áreas húmedas, pantanosas o áridas.
 
 ## Objetivos del trabajo
 
+A través del desarrollo del análisis, intentaremos responder estas preguntas:
+
+¿Son los estados con climas mas calurosos los que generan mas dinero a raíz de la producción de mango? Podemos caer en la inferencia sobre que los lugares calurosos y con mas luz son mejores para producir mango y generar mas ingresos, pero es necesario analizar con los datos de los mangos y saber si esta condición les conviene a los agricultores de mango.
+
+¿Cómo afecta la temperatura al mango en la agricultura? Es necesario saber si las temperaturas que cambian subitamente afectan a las cosechas y como proteger estas de estos peligros, ademas de saber si es realmente importante la relación de la temperatura con la agricultura, ya que siempre se puede crear un espacio controlado, pero tendremos que valorar si vale la pena el costo
+
+¿Al mango realmente le afecta el clima en Sonora? Debemos saber si Sonora realmente es viable para este cultivo, ya que se podria asignar la tierra utilizada de este, en vista de que es algo baja la cosecha, a tratar de plantar otro tipo de producto que pueda generar mayores ingresos
+
 ## Teoría
 
+
+
 ## Metodología (métodos estadísticos que usan y también incluir los métodos de los datos)
+
+
 
 ## Operaciones
 
@@ -72,12 +87,10 @@ datatable(prodMango)
 datatable(temp)
 ```
 
-
 Histogramas 
 
 ```{r}
-# Marco de datos con el que se trabajará el principio
-papas.lluvias <- data.frame(Entidades,Cierre_agricola$`Superficie Cosechada`[-12],Cierre_agricola$`Producción`[-12],Cierre_agricola$Rendimiento[-12],prod,temp[2:4])
+hist(prodMango$VALORPRODUCCION)
 ```
 
 
@@ -140,11 +153,16 @@ Valor de producción, trigo, CO2
 
 ## Teoría
 
-* http://internet.contenidos.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/historicos/380/702825117269/702825117269_6.pdf
-
 * https://www.inforural.com.mx/wp-content/uploads/2020/11/Atlas-Agroalimentario-2020.pdf
 
-* http://ieecc.edomex.gob.mx/sites/ieecc.edomex.gob.mx/files/files/Publicaciones%20Hist%C3%B3ricas/1_Inventario_Emisiones/IEEGEI%202016_%2030%20novi2018.pdf
+
+
+Datos a tomar en cuenta
+
+Sonora casi no cosecha nada de mango
+El clima en Sonora puede ser bueno para el mango
+hay falta de agua por eso casi no se cosecha
+
 
 
 
