@@ -12,7 +12,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-setwd("~/R/Aplicada")
+setwd("~/GitHub/ProduccionMango/Final")
 ```
 
 # Paquetes a utilizar
@@ -27,26 +27,37 @@ p_load(rmdformats, readr, readxl, ggplot2, plotly, DT, xfun, gridExtra, leaflet,
 * Descargar este documento:
 
 ```{r}
-#xfun::embed_file("ProyectoFinalAgricultura.Rmd")
+xfun::embed_file("ProyectoFinalAgricultura.Rmd")
 ```
 
 * Descarga los datos
 
 ```{r}
-#xfun::embed_file("")
+xfun::embed_file("TemperaturasPromAnualPorEstado.xlsx")
 ```
 
 # Cosecha de trigo y efecto invernadero en México
 
 ## Introdución
 
+Para este caso de estudio analizaremos el fruto del mango, su producción, cosecha, necesidades, esto para saber si es rentable o no sembrarlo, ademas de que lo estudiaremos para saber si se puede cosechar este fruto en el estado de Sonora.
 
+* Importando datos
 
-* Importando datos y paquetes
+* Producción de mangos por estado
 
 ```{r}
-
+prodMango <- read_excel("")
 ```
+
+
+* Temperaturas anuales por estado
+
+```{r}
+temp <- read_excel("TemperaturasPromAnualPorEstado.xlsx")
+```
+
+* Visualizando los datos en tablas
 
 
 
