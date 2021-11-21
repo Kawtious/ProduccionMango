@@ -1,0 +1,104 @@
+---
+title: "Agricultura sustentable basada en datos en el estado de Sonora durante el siglo XXI"
+subtitle: "Rentabilidad de la producción de mango en Sonora"
+author: "Equipo 5: Santana, Cazarez, Osuna, Urias"
+date: "20/11/2021"
+output: 
+ rmdformats::downcute:
+   highlight: zenburn
+   downcute_theme: "chaos"
+   code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+setwd("~/R/Aplicada")
+```
+
+# Paquetes a utilizar
+
+```{r}
+library(pacman)
+p_load(rmdformats, readr, readxl, ggplot2, plotly, DT, xfun, gridExtra, leaflet, GGally, psych, corrplot, cluster)
+```
+
+## Descarga los datos
+
+* Descargar este documento:
+
+```{r}
+#xfun::embed_file("ProyectoFinalAgricultura.Rmd")
+```
+
+* Descarga los datos
+
+```{r}
+#xfun::embed_file("")
+```
+
+# Cosecha de trigo y efecto invernadero en México
+
+## Introdución
+
+
+
+* Importando datos y paquetes
+
+```{r}
+
+```
+
+
+
+
+## Teoría
+
+* http://internet.contenidos.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/historicos/380/702825117269/702825117269_6.pdf
+
+* https://www.inforural.com.mx/wp-content/uploads/2020/11/Atlas-Agroalimentario-2020.pdf
+
+* http://ieecc.edomex.gob.mx/sites/ieecc.edomex.gob.mx/files/files/Publicaciones%20Hist%C3%B3ricas/1_Inventario_Emisiones/IEEGEI%202016_%2030%20novi2018.pdf
+
+## 
+
+
+
+
+
+
+Preguntas:
+¿Qué datos usaremos (papas, uvas, o si serán nuevos)? FOSAT, INEGI
+¿Cuáles métodos usaremos para el caso de estudio? LOS ANALICIS
+¿Con que los relacionaremos? CON ALGUN AMBIENTE
+¿donde agarrar otros datos? FOSAT, INEGI
+
+POSIBLES PREGUNTAS A RESPONDER
+panorama agrícola y buscar como relacionarlo o con que
+Que cultivos son mas productivos?
+Que cultivo contamina mas?
+
+
+Primer avance:
+Utilizando la premisa de la agricultura basada en datos
+
+Notas:
+En la metodología poner porque usaremos, que es y las formulas:
+Metodología:
+En este caso se trabajarán con estos métodos estadísticos
+* Estadística descriptiva
+* Correlación lineal
+* Correlación lineal múltiple
+* Análisis de normalidad de Shapiro-Wilk
+* Correlación de pearson
+* Regresión lineal simple
+* Regresión lineal polinomios
+
+¿Como nuestro caso de estudio influye a decisiones?
+
+Valor de producción, trigo, CO2
+
+
+http://infosiap.siap.gob.mx/gobmx/datosAbiertos.php
+
+
+https://nube.siap.gob.mx/cierreagricola/

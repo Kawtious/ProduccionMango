@@ -1,0 +1,158 @@
+---
+title: "U2A3"
+author: "Equipo 3: Jonathan Alexis Velazquez Corrales, Diana Paola García Torrecillas, Karolina Borbón Acosta, Paloma Dominguez Muñoz y Martha María Castro López "
+date: "05/05/2021"
+output:
+ rmdformats::readthedown:
+    self_contained: true
+    thumbnails: true
+    lightbox: true
+    gallery: true
+    highlight: tango
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Archivo para descargar
+
+```{r}
+xfun::embed_file("U2A3.Rmd")
+xfun::embed_file("datos.xlsx")
+```
+
+
+
+# Introducción
+
+![Papa](/Users/palomadominguez/Desktop/EAMJ1130/pappa.jpeg)
+
+<div style="text-align: justify">
+La agricultura es el conjunto de actividades económicas y técnicas relacionadas con el tratamiento del suelo y el cultivo de la tierra para la producción de alimentos. Comprende todo un conjunto de acciones humanas que transforma el medio ambiente natural. Para México, la agricultura es una de las actividades prioritarias y más importantes, ya que no sólo genera gran cantidad de empleos, sino que también responde a las necesidades alimenticias de millones de personas, preserva los entornos naturales y estimula el progreso al mejorar la calidad de vida. 
+
+En el estado de Sonora la agricultura toma un lugar muy importante, ya que es uno de los principales motores que impulsan a la economía del estado y uno de los principales cultivos que se cosechan es la papa blanca, en el cual Sonora se mantiene como entidad líder a nivel nacional. En este estudio se análiza la regresión lineal múltiple la cual permite generar un modelo lineal en el que el valor de la variable dependiente o respuesta (Y
+) se determina a partir de un conjunto de variables independientes llamadas predictores. 
+
+Nuestro estudio esta enfocado en la agricultura especialmente en la papa blanca, generaremos un modelo que permita predecir: La produccion en toneladas en función de diferentes variables. Se dispone de información sobre: Superficie Sembrada, Superficie Cosecha, Superficie Siniestra, Produccion , Precio medio rural y valor de la producción.
+
+# Antecedentes
+
+# Regresión lineal multiple 
+
+La regresión lineal múltiple permite generar un modelo lineal en el que el valor de la variable dependiente o respuesta (Y
+) se determina a partir de un conjunto de variables independientes llamadas predictores 
+(X1
+, X2
+, X3
+…). Es una extensión de la regresión lineal simple, por lo que es fundamental comprender esta última. Los modelos de regresión múltiple pueden emplearse para predecir el valor de la variable dependiente o para evaluar la influencia que tienen los predictores sobre ella (esto último se debe que analizar con cautela para no malinterpretar causa-efecto).
+
+
+Los modelos lineales múltiples siguen la siguiente ecuación:
+
+
+$$   Y_{i}=(\beta_{0}+\beta_{1}X_{1i}+\beta_{2}X_{2i}+\cdots+\beta_{n}X_{ni})+e_{i}      $$ 
+* β0 es la ordenada en el origen, el valor de la variable dependiente Y
+ cuando todos los predictores son cero.
+ 
+* βi : es el efecto promedio que tiene el incremento en una unidad de la variable predictora Xi
+ sobre la variable dependiente Y
+, manteniéndose constantes el resto de variables. Se conocen como coeficientes parciales de regresión.
+ 
+* ei: es el residuo o error, la diferencia entre el valor observado y el estimado por el modelo.
+ 
+ 
+ 
+Es importante tener en cuenta que la magnitud de cada coeficiente parcial de regresión depende de las unidades en las que se mida la variable predictora a la que corresponde, por lo que su magnitud no está asociada con la importancia de cada predictor. Para poder determinar qué impacto tienen en el modelo cada una de las variables, se emplean los coeficientes parciales estandarizados, que se obtienen al estandarizar (sustraer la media y dividir entre la desviación estándar) las variables predictoras previo ajuste del modelo.
+<div/>
+ 
+ 
+
+# 1. Importar y transformar datos
+
+```{r}
+setwd("~/Desktop/EAMJ1130")
+library(pacman) 
+library(hpackedbubble)
+library(gplots)
+library(psych)
+library(GGally)
+library(car)
+library(gvlma)
+library(strucchange)
+library(xtable)
+library(extrafont)
+library(normtest)
+library(readr)
+library(readxl)
+library(prettydoc) 
+library(DT)
+library(dplyr)
+library(ggplot2)
+library(data.table)
+library(scales)
+library(plotly)
+library(tidyverse)
+library(modelr)
+library(lubridate)
+library(datos)
+library(round)
+```
+
+# 2. Explorar la relacion entre las variables 
+
+```{r}
+agricultura <- read_excel("datos.xlsx")
+view(agricultura)
+```
+# 3. Distribución de los datos 
+```{r}
+Superficie_sembrada <- agricultura$`Superficie_sembrada_(Ha)`
+Superficie_cosechada <- agricultura$`Superficie_cosechada_(Ha)`
+Superficie_siniestrada <- agricultura$`Superficie_siniestrada_(Ha)`
+Produccion <- agricultura$`Produccion_(Ton)`
+Precio_medio_rural <- agricultura$`Precio_medio_rural_($/Ton)`
+Valor_de_la_produccion <- agricultura$`Valor_de_la_produccion_(Millones_de_pesos)`
+datos <- data.table(Superficie_sembrada, Superficie_cosechada, Superficie_siniestrada, Produccion, Precio_medio_rural, Valor_de_la_produccion)
+round( cor( x = datos, method = "pearson"),3)
+```
+
+
+```{r}
+multi.hist(x = datos, dcol = c("blue", "red"), dlty = c("dotted", "solid"),main = "")
+```
+```{r}
+library(GGally)
+ggpairs(datos, lower = list(continuous = "smooth"),
+        diag = list(continuous = "barDiag"), axisLabels = "none")
+        
+```
+
+# 4. Análisis preliminar de los predictores a utilizar
+
+Las variables que tienen una mayor relación lineal con la produccion en toneladas son: valor de la produccion (r= 992), Superficie cosechada (r= 982) y Superficie sembrada (r= 0.95).
+
+Valor de producción y Superficie sembrada están medianamente correlacionados (r = 0.981), tambien ek vakir de produccion y superficie cosechada (r=996) por lo que posiblemente no sea útil introducir esos 3 predictores en el modelo.
+
+
+# 5.Generar el modelo
+
+```{r}
+modelo <- lm(Produccion ~ Superficie_cosechada + Superficie_siniestrada + Produccion + Precio_medio_rural + Valor_de_la_produccion, data = datos )
+
+summary(modelo)
+```
+
+
+
+# Conclusión
+
+El modelo con todas las variables introducidas como predictores tiene un R2 alta (0.9989), es capaz de explicar el 99.89% de la variabilidad observada en la produccion en toneladas. El p-value del modelo es significativo (2.426e-13) por lo que se puede aceptar que el modelo no es por azar, al menos uno de los coeficientes parciales de regresión es distinto de 0. Muchos de ellos no son significativos, lo que es un indicativo de que podrían no contribuir al modelo.
+
+
+# Bibliografía
+
+JULIO CESAR CORONA VALENZUELA.(2016). Programa de Mediano Plazo Agrícola 2016-2021. 2021, de INFOSIAP Sitio web:http://infosiap.siap.gob.mx:8080/agricola_siap_gobmx/ResumenProducto.do
+
+
+

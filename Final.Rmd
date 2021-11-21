@@ -1,0 +1,541 @@
+---
+title: "Agricultura sustentable basada en datos en el estado de Sonora durante el siglo XXI"
+subtitle: "Trabajo final Estadística aplicada ITSON (ISW)"
+author: "Fernando A., Ian S., Julian P., Juan V."
+date: "24/05/2021"
+output:
+  rmdformats::downcute:
+    highlight: tango
+    code_folding: hide
+    fig_caption: TRUE
+    lightbox: TRUE
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Agricultura sustentable basada en datos en el estado de Sonora durante el siglo XXI
+
+## Introducción
+
+![Papas](https://agriculture.basf.com/mx/images/Proteccion%20de%20Cultivos/Cultivos/Papa/MX-cultivo-papa.jpg)
+
+En este documento se llevará a cabo un análisis basado en datos con relación a la agricultura en el estado de Sonora, en donde se tocarán parámetros como el rendimiento anual, 
+el consumo de recursos naturales para producir el cultivo y así analizaremos su sustentabilidad.
+
+
+Cabe resaltar él como se inicia una buena producción agrícola, y el como aprovechar cada instancia de tierra que se usará en el futuro, esto lleva varios pasos que son necesarios para que sé de un buen lugar en donde los cultivos puedan crecer con el mejor potencial. La limpia de la tierra es por donde empezamos ya que se necesita tener solo tierra plana y accesible para empezar a labrar, quitando todos los obstáculos como basura y troncos, después prosigue la prelabranza que su función es empezar a forma la tierra y dejarlo en optimas condiciones para plantar el cultivo, después sigue la siembra que es cuando se deposita la semilla en el lugar clave que se ha creado, prosiguiente es la manutención del cultivo dónde se planta y cuida constantemente para ofrecer las mejores posibilidades y la cosecha que es cuando el producto se toma para elaborarlo y posteriormente comercializarlo (E. 2012, 5 septiembre).
+
+
+## Antecedentes
+
+Según otras investigaciones “La nueva agricultura sonorense: historia reciente de un viejo negocio” ellos encontraron que la superficie sembrada con trigo y maíz 
+habrá de disminuir, para crear un mosaico de otros cultivos como oleaginosas, que consumen menos agua, pero cuyos costos de producción son menos elevados que los hortofrutícolas, que requieren mayor tecnificación de riego. Además, la ventaja de las oleaginosas es que pueden comercializarse en la industria regional.
+
+El aumento en la superficie de estos cultivos en el estado es un indicio de sus oportunidades en innovación de otros sembradíos. (Bracamonte, A. 2007)
+
+Como bien sabemos, todos los cultivos ya sean hortalizas, cereales, leguminosas o frutales, tienen sus propias características a la hora de llevar acabó su plantación y conservación de semillas.
+Las papas son un poco estrictas a la hora de regular su ambiente para que den de los mejores resultados, es bien conocido por los agricultores que para que una semilla crezca a su máximo potencial esta debe de estar a una temperatura entre los 15 y 20 grados para dar la mejor calidad de raíz. Además de este principio valioso para el aprovechamiento de la raíz dependiendo de su temperatura, también existe la actividad de conservar algunos de los cultivos y someterlos a días de enfriamiento en 4 grados, esto ayuda a prolongar la edad fisiológica de la semilla y el cultivo en sí volviéndolo una actividad igual de indispensable para la producción (Yara México,2019,19 febrero).
+
+
+## Objetivos del trabajo
+
+A través del desarrollo del análisis, intentaremos responder estas tres preguntas principales:
+
+* ¿Son los estados que más llueve los que más generan dinero con la agricultura en respecto a la papa?
+
+Esta pregunta es vital a resolver ya que podemos caer en la inferencia sobre que los lugares con mejor humedad y mejor hidratación pueden llegar a producir más en términos de agricultura, pero esto se necesita investigar y probar con variables referentes a la papa y saber si esta condición les conviene a los agricultores que crecen papa como cultivo.
+
+* ¿Cómo afecta la sequía a la papa en la agricultura?
+
+Necesitamos estar familiarizados con los problemas ambientales que suceden entorno a la agricultura y uno de estos es la sequía, por lo que nos enfocaremos en registrar datos cuando este fenómeno sucede para así tener un mejor entendimiento y precauciones de este suceso tan común en Sonora.
+
+* ¿A qué cultivos les afecta menos la sequía?
+
+Debemos ser conscientes de que cada cultivo requiere una cantidad diferente de agua por pie cuadrado, y durante una sequía hay mayores riesgos de degradación de la tierra, que tienden a conducir a niveles de producción más bajos que el promedio de ciertos cultivos.
+
+
+## Teoría
+
+Por experiencia conocemos que no todas las plantas resisten grandes cantidades de agua, por lo que se necesitan un buen sistema de drenaje para no abrumar a los cultivos con más agua de la que necesitan. Al mismo tiempo la papa es una de los cultivos que tienen mejor aprovechamiento del agua por lo que podemos empezar a comprender que si pocas cantidades de agua son suficientes para un cultivo de papas estos son más propensos a estropearse cuando llegan a un punto más grande que el habitual por lo que las lluvias con más de 450mm pueden llegar a afectar en el curso de los cultivos(INEGI, 2010).
+
+* ¿Que ha pasado en la sociedad para que este sea el comportamiento evolutivo en la agricultura?
+
+La posición geográfica de México lo convierte en depositario de grandes cantidades de tierra, sol, viento y agua, razón por la cual, si no se optimizan estos recursos con ayuda de nuevas herramientas tecnológicas, el cambio climático será un factor que influirá de manera negativa en el destino de muchas familias que se dedican principalmente al campo.(Servín, A. 2018)
+
+* ¿Por qué es importante esta investigación?
+
+Por que les brindaremos una herramienta útil que es la ciencia de datos y así quitar un poco la ambigüedad y así sacar más provecho de su trabajo para que ellos puedan tomar decisiones basándonos en datos.
+
+* ¿Que pasará en los próximos 10 años en la agricultura?
+
+Actualmente, el crecimiento y el desarrollo del campo deben ir acompañados del uso de las nuevas tecnologías y la innovación en las mismas, buscando sacar el mejor provecho de los recursos, perseverando la seguridad alimentaria de México y contribuyendo a prever una crisis dentro y fuera del país. (Servín, A. 2018)
+
+* La papa como cultivo sustentable.
+
+La papa como producto alimenticio presento una fuerte expansión a nivel mundial situándose como el cuarto alimento básico en la década de los noventa, después del trigo, el arroz y el maíz. Esta expansión se deriva de la gran capacidad de adaptación a los distintos climas y sistemas de cultivo que presenta este tubérculo, lo cual ha producido el aumento en su producción y consumo.(Liza, S. 2001)
+
+## Metodología (métodos estadísticos que usan y también incluir los métodos de los datos)
+
+En este caso se trabajarán con estos métodos estadísticos
+
+* Estadística descriptiva - La disciplina en cual se recogen, almacenan, ordenan,y se realizar tablas o gráficos para poder calcular parámetros básicos sobre un conjunto de datos.
+
+* Correlación lineal - Un concepto en el que se eligen múltiples procedimientos para determinar el grado de asociación entre dos variables.
+
+* Correlación lineal múltiple
+
+* Correlación de pearson - La covarianza estandarizada de la muestra aplicada.
+
+* Regresión lineal simple - Un modelo de regresión (ecuación de una recta) en cual nos permite explicar la relación lineal que pueda existir entre dos variables.
+
+* Series de tiempo
+
+Como variables a trabajar son, datos de lluvias por estado y en sonora, datos varios de producción de papas por estados y en sonora, datos de sequías en sonora
+
+Todos los datos son de dominio publico y fueron extraídos de:
+
+* [Papas para sonora](https://www.gob.mx/siap/documentos/siacon-ng-161430)
+* [Papas por estado](https://nube.siap.gob.mx/cierreagricola/)
+* [Lluvias por estado](http://dgeiawf.semarnat.gob.mx:8080/ibi_apps/WFServlet?IBIF_ex=D3_AGUA01_01&IBIC_user=dgeia_mce&IBIC_pass=dgeia_mce&NOMBREENTIDAD=*&NOMBREANIO=*)
+* [sequías para sonora](http://galileo.imta.mx/sequías/moseq/graficaGob.html)
+
+
+## Resultados y discusión
+
+Primero que nada es necesario que para trabajar con los métodos estadísticos mencionados anteriormente y manejar propiamente la información, es necesario importar ciertos paquetes que nos ayudaran, Estos paquetes son :
+
+* pacman: Nos facilita descargar e instalar los demás paquetes
+* ggplot2: Paquete para gráficos
+* readr y readxl: Nos permite leer los datos desde el equipo o internet
+* plotly: Paquete para gráficos interactivos
+* xfun: Permite descargar este documento y los datos utilizados.
+* rmdformats: Permite dar estilo al documento
+* tidyverse: Paquete con muchas mas utilerias
+* MASS: Paquete con funciones estadísticas
+* class: Paquete con funciones estadísticas
+* GGally: Paquete gráfico
+* psych: Paquete para correlación lineal multiple
+* lmtest: Paquete de modelo lineal
+* corrplot: Paquete gráfico de correlación
+* car: Paquete con  utilerias
+* viridis: Paquetes de colores
+* gridExtra: Permite juntar gráficas en un cuadro
+* gganimate: Permite crear gráficas animadas y gifs
+* magick: Paquete de apoyo para gganimate, permite generar un gif
+
+### Importación de paquetes
+
+```{r class.source = 'fold-show'}
+library(pacman)
+p_load(ggplot2,readr,readxl,plotly,xfun,rmdformats,dplyr,MASS, class,GGally,psych,lmtest,corrplot,car, viridis, gridExtra,gganimate,magick)
+```
+
+### Importación de datos
+
+En este apartado se importan los datos necesarios para poder trabajar y hacer los análisis
+
+```{r class.source = 'fold-show', message=FALSE}
+# Datos de lluvias para los estados de México
+lluvias <- read_csv("lluvias.csv")
+
+# Datos de papas a lo largo de los años de sonora
+papas <- read_csv("papasV2.csv")
+
+# Datos de sequia para México
+sequia <- read_csv("Datos_eson_000.csv")
+
+# Datos de papas para los diferentes estados de México, estos 
+Cierre_agricola <- read_csv("Cierre agrícola.csv", 
+    locale = locale(encoding = "ISO-8859-1"))
+```
+
+### Filtrado de datos
+
+Los datos se filtran, ya que no todos los datos nos son útiles, debido a esto lo que no se utilizará ignora, y se acomodan los datos para poder manejarlos de una manera mas optima.
+
+```{r class.source = 'fold-show'}
+# Se utilizarán únicamente las ultimas columnas, ya que se manipulo el documento manualmente para sacar promedios
+sequia <- sequia[c(7,8,9,10,11,12)]
+
+sequia <- filter(sequia, Ano %in% seq(2006,2019))
+
+# Vector con nombres de los estados con los que se cuenta datos de cultivos de papas, este vector se utilizará para filtrar los datos de las lluvias 
+Entidades <- c("Baja California Sur","Coahuila","Chihuahua","México","Nuevo León","Puebla","San Luis Potosí","Sonora","Tamaulipas","Tlaxcala","Veracruz","Zacatecas")
+
+# Aplicación del filtro de los estados para los datos de las lluvias
+lluvias.filtradas <- filter(lluvias, `Entidad federativa` %in% Entidades)
+
+# Filtrado de los datos de papas en sonora para los años de 2006,2019
+papas <- papas[17:30,]
+
+```
+
+
+### Creación de marcos de datos
+
+Los marcos de datos son maneras de guardar datos en una variable, estos sirven para manejar los datos de una mejor manera.
+
+```{r class.source = 'fold-show'}
+# Marco de datos con el que se trabajará el principio
+papas.lluvias <- data.frame(Entidades,Cierre_agricola$`Superficie Cosechada`[-12],Cierre_agricola$`Producción`[-12],Cierre_agricola$Rendimiento[-12],Cierre_agricola$`Valor Producción`[-12],lluvias.filtradas[,17])
+
+# Acomodo de los nombre de las columnas del marco de datos
+names(papas.lluvias) <- c("Entidad","superficie_sembrada","Produccion","Rendimiento","valor_produccion","lluvias")
+
+
+# Segundo marco de datos, estos datos son específicamente para sonora
+# Se le agregan los datos de lluvias para sonora
+papas$lluvias <- as.vector(t(lluvias[lluvias$`Entidad federativa`=='Sonora',4:17]))
+
+# Se agregan los datos de sequías en los diferentes niveles para el estado de sonora (Promedios anuales)
+
+# sequías D0
+papas$sequiaD0 <- sequia$`Average D0`
+
+# sequías D1
+papas$sequiaD1 <- sequia$`Average D1`
+
+# sequías D2
+papas$sequiaD2 <- sequia$`Average D2`
+
+# sequías D3
+papas$sequiaD3 <- sequia$`Average D3`
+
+# sequías D4
+papas$sequiaD4 <- sequia$`Average D4`
+```
+
+
+* **El primer marco de datos** es sobre la producción de papa en: Baja California Sur, Coahuila, Chihuahua, México, Nuevo León, Puebla, San Luis Potosí, Sonora, Tamaulipas, Tlaxcala, Veracruz, Zacatecas, estos para el año del 2019
+
+* **El segundo marco de datos** es sobre la producción de papas y posibles variables que podrían afectar su producción en Sonora, para el periodo: 2006-2019
+
+
+
+### Análisis de normaldad para los 2 marcos de datos principales
+
+Primero que nada es necesario conocer el comportamiento de la mayoría de los datos, de esta manera podemos identificar que camino tomar para poder analizar los datos de una manera mas optima.
+
+Para poder conocer esto, se hará un análisis de correlación de pearson con las variables de superficie sembrada, valor de producción, producción y lluvias, todo esto para el año del 2019, de esta manera podremos ver si se relacionan de alguna forma la lluvia con el valor de producción generado de las papas.
+Pero antes de poder empezar se verá si los datos que tenemos son de distribución normal
+
+#### Comprobación de la normalidad de los datos con histogramas de frecuencias para el **primer marco de datos**
+
+##### **Gráfica 1**
+
+```{r}
+multi.hist(x = papas.lluvias[-c(1,4)], dcol = c("blue", "red"), dlty = c("dotted", "solid"), main = "")
+```
+
+Como se puede ver en los histogramas de frecuencia, estos datos casi no son normales, por ende no se pueden tratar como tal, pero por motivos prácticos se utilizarán correlaciones prácticos, lamentablemente, esta paquete la cual es **psych**, no muestra el nombre de la variable que esta mostrando el histograma, pero el nombre de las variables son: Superficie sembrada, Producción, Valor de producción y las lluvias
+
+Ahora que ya sabemos que la mayoría de los datos no son normales, se harán las correlaciones y los análisis para conocer el comportamiento de los datos.
+
+#### Matriz de correlación pearson 
+
+##### **Gráfica 2**
+
+```{r, warning=FALSE, message=FALSE}
+ggpairs(papas.lluvias[-c(1,4)], lower = list(continuous = "smooth"),
+        diag = list(continuous = "barDiag"), axisLabels = "none")
+```
+
+Como se puede ver a simple vista, existe una relación entre superficie sembrada, producción y valor de producción, esto es obvio, ya que el valor de producción depende de que tanto se siembre y se coseche, por otro lado se puede ver que realmente no existe una relación clara entre las lluvias y entre las demás variables, pero cabe recalcar que el indice de correlación de pearson funciona cuando los datos son normales, debido a este resultado de la matriz de correlación, se comprobará la normalidad de los datos y se mostrará, además de mostrar los mismos resultados pero con indices, esto aclarará los resultados obtenidos anteriormente.
+
+#### Indice de correlación de pearson
+
+```{r}
+round(cor(x=papas.lluvias[-c(1,4)], method="pearson"),3)
+```
+Este resultado refuta lo anterior, pero no solo eso, sino que nos da una pista de como podría afectar las lluvias a la producción, ya que podemos ver que en lugar de tener un indice de correlación cercano a 0, tienen un valor que esta por debajo de 0, esto debido a que solo es -17%, realmente no se puede tomar en cuenta.
+
+### Comprobación de la normalidad de los datos con histogramas de frecuencias para el **segundo marco de datos**
+
+##### **Gráfica 3**
+
+```{r}
+multi.hist(x = papas, dcol = c("blue", "red"), dlty = c("dotted", "solid"), main = "")
+```
+
+A simple vista se puede observar que estos datos son un poco mas normales que los anteriores, como este paquete no muestra en nombre de las variables se mostrarán los nombres de las variables por orden: 
+1. Año. 
+2. Superficie sembrada.
+3. superficie cosechada
+4. superficie siniestrada
+5. valor de producción
+6. lluvias
+7. sequías D0
+8. sequías D1
+9. sequías D2
+10. sequías D3
+11. sequías D4
+
+Ahora se procederá con la matriz de correlación de pearson, con esta gráfica podremos ver la correlación que existe entre las diferentes variables
+
+#### Matriz de correlación pearson
+
+##### **Gráfica 4**
+
+```{r, warning=FALSE, message=FALSE}
+ggpairs(papas, lower = list(continuous = "smooth"),
+        diag = list(continuous = "barDiag"), axisLabels = "none")
+```
+
+La cantidad de datos es demasiada y realmente no se alcanza a ver demasiado bien, pero, es posible ver gracias a las gráficas de la izquierda que existes alguna relaciones y posiblemente alguna relación inversa o algún valor que afecte inversamente algún otro, para poder ver esto de una mejor manera se utilizará el indice de correlación de pearson.
+
+
+#### Indice de correlación de pearson
+
+```{r}
+round(cor(x=papas, method="pearson"),3)
+```
+Se pueden ver que las lluvias y las diferentes categorías de sequías afectan al valor de producción y a la superficie cosechada, esto es importante remarcarlo y se retomará mas adelante.
+
+
+### ¿Son los estados que más llueve los que más generan dinero con los cultivos de papas?
+
+Una vez visto la distribución de los datos se puede proceder para contestar la pregunta, para esto se hará una gráfica
+en la cual se mostrarán los con los que se cuentan datos, las lluvias que estos estados tuvieron y la producción que estos generaron en ese año
+
+#### Gráfica de produccion monetaria de la papa
+
+##### **Gráfica 5**
+
+```{r, warning=FALSE, message=FALSE}
+plot_ly(data=papas.lluvias,x=~lluvias,y=~valor_produccion,color=~Entidad, colors=rainbow(12),size=~lluvias,type = 'scatter', mode="markers") %>%
+  layout(
+    xaxis = list(title="Precipitación (milímetros)"), 
+    yaxis = list(title="Miles de Pesos"),
+    showlegend = TRUE
+  )
+```
+
+* Fuentes:
+
+1.    [SEMARNAT](http://dgeiawf.semarnat.gob.mx:8080/ibi_apps/WFServlet?IBIF_ex=D3_AGUA01_01&IBIC_user=dgeia_mce&IBIC_pass=dgeia_mce&NOMBREENTIDAD=*&NOMBREANIO=*)
+2.    [SIAP](https://nube.siap.gob.mx/cierreagricola/)
+
+
+Como se puede ver en la gráfica, podemos ver a simple vista que realmente las lluvias no son un factor que realmente afecte la generación de dinero de la producción de papa, esto podría decir, que entre menos llueva, la producción de dinero proveniente del cultivo de papas es mayor, pero esto no es necesariamente, ya que hay algunos estados donde llueve mas y generan mas que algunos donde llueve menos, esto podría significar que esos estados tiene previsto que llueva mucho o quizá algún sistema. 
+
+Se podría decir que realmente la lluvia no es un factor que afecte demasiado al valor de producción de papa para los diferentes estados, pero si es un factor que podría influir de una manera muy pequeña en el resultado de las cosechas.
+
+
+### ¿Cómo afecta la sequía a los cultivos de papa?
+
+Las sequías son un evento natural en el planeta y se genera en una variedad extensa de lugares, esto ocurre cuando no se generan precipitaciones pluviales en una area definida, y esta se presenta con las siguientes consecuencias: (Gamboa, O. ,2015, 11 mayo)
+* Principalmente el impacto a la agricultura, afectando las cosechas y la vegetación de la zona.
+* Afectación al medio ambiente, modificando los ecosistemas y hábitats de las especies de plantas y animales.
+* La industria alimentaria se ve involucrada de manera directa, ya que una gran parte de la materia prima que se utiliza, proviene de la agricultura.
+* La economía de la región afectada se reduce debido a la baja en la producción agrícola y ganadera, y los costos se incrementan a causa de la importación.
+* Se incrementa la contaminación y el volumen de diversos tipos de residuos en el medio ambiente, debido a la menor disolución y capacidad de depuración de tales materiales.
+* Afectación al ganado; en temporada de sequía muchos animales mueren debido a la fuerte deshidratación que atraviesan.
+* Cortes de agua en el sistema hídrico, para ahorro de agua, lo que ocasiona la afectación a las actividades cotidianas de las personas.
+
+
+La sequía se clasifica principalmente en tres tipos: meteorológica, agrícola e hidrológica:(Esparza, M., 2014, agosto)
+* Estas distintas tipologías de sequía "identifican el principio, el final y el grado de severidad de la misma".4 Todos los tipos de sequía tienen origen en la misma causa: la falta de lluvias, por tanto, cuando "únicamente se toma en cuenta la lluvia",5 estamos hablando de la sequía meteorológica.
+(Contreras, "Sequías", 2005, pp. 118-133.)
+* La sequía agrícola, por su parte, se suscita después de una sequía meteorológica, y ocurre "cuando no existe humedad suficiente en el terreno para el cultivo determinado en un momento particular de tiempo".
+(Esquivel, "Lluvia", 2002, p. 25.)
+* La sequía agrícola afecta principalmente a la agricultura, pues el terreno, por la falta de lluvias, las altas temperaturas y la evaporación, pierde totalmente su humedad normal, impidiendo con ello el desarrollo exitoso de cualquier plantío.
+(Kulik, citado en Marcos, "Sequía", 2001, p. 61.)
+
+
+
+Gracias a los resultados de **la gráfica 4** y su respectivo indice, se sabe que realmente las sequías afectan a los cultivos de papa, pero, ¿en que medida?, eso se responderá a continuación.
+
+#### Generación de modelo para el valor de producción
+
+```{r}
+modelo <- lm(Valor_de_la_Produccion ~ lluvias + sequiaD0 + sequiaD1 + sequiaD2 + sequiaD3 + sequiaD4, data = papas )
+summary(modelo)
+```
+
+Como se puede ver, existen algunos valores que tienen valores negativos, esto podría significar que estos afectan de alguna manera inversa al valor de producción, para esto se escogerán los predicctores que mas afecten a el valor de producción.
+ 
+#### Seleccion de los mejores predictores
+
+```{r}
+step(object=modelo, direction="both", trace=1)
+```
+
+Curiosamente este comando, este comando que muestra las variables que mas afectan a la producción de valor, muestran que todos los valores de los diferentes niveles de sequías y las lluvias también afectan, por ende se puede decir que las sequías y las lluvias afectan al valor de producción proveniente de las papas, al menos en Sonora.
+
+ahora se mostrara un intervalo de confianza, para saber que tan confiable son los datos y poder inferior un poco mas de como afectan las sequías y las lluvias en los cultivos de papa en sonora.
+
+#### Intervalo de confianza para el modelo de regresion lineal
+
+```{r}
+confint(modelo)
+```
+
+Como se puede ver, el resultado del intervalo de confianza esta muy alto, lo cual significa que los datos tienen una probabilidad muy alta de acierto, lo cual significa que los datos son confiables y se pueden trabajar con ellos.
+
+#### Validación de condiciones para la regresión lineal
+
+##### **Gráfica 6**
+
+```{r, warning=FALSE, message=FALSE}
+plot1 <- ggplot(papas, aes(lluvias, modelo$residuals))+
+  geom_point()+ geom_smooth(color="darkblue")+geom_hline(yintercept = 0)+
+  theme_bw()
+plot2 <- ggplot(papas, aes(sequiaD0, modelo$residuals))+
+  geom_point()+ geom_smooth(color="darkgoldenrod1")+geom_hline(yintercept = 0)+
+  theme_bw()
+plot3 <- ggplot(papas, aes(sequiaD1, modelo$residuals))+
+  geom_point()+ geom_smooth(color="darkgoldenrod2")+geom_hline(yintercept = 0)+
+  theme_bw()
+plot4 <- ggplot(papas, aes(sequiaD2, modelo$residuals))+
+  geom_point()+ geom_smooth(color="darkgoldenrod3")+geom_hline(yintercept = 0)+
+  theme_bw()
+plot5 <- ggplot(papas, aes(sequiaD3, modelo$residuals))+
+  geom_point()+ geom_smooth(color="orange")+geom_hline(yintercept = 0)+
+  theme_bw()
+plot6 <- ggplot(papas, aes(sequiaD4, modelo$residuals))+
+  geom_point()+ geom_smooth(color="darkred")+geom_hline(yintercept = 0)+
+  theme_bw()
+grid.arrange(plot1,plot2,plot3,plot4,plot5,plot6)
+```
+
+Se puede apreciar, que la mayoría de los valores estar cerca a la linea de confianza, esto significa que estos datos están muy acercados a la realidad, esto significa que podemos trabajar con estos datos sin ningún miedo a cometer errores o algún **p-hacking** (Alterar los resultados para favorecer la hipótesis)
+
+#### Linea de tiempo sobre el cambio de las sequias con el pasar del tiempo
+
+##### **Gráfica 7**
+
+```{r}
+g1 <- ggplot(data=papas)+
+  geom_line(aes(x=Ano,y=sequiaD0,color="Sequia D0"))+
+  geom_line(aes(x=Ano,y=sequiaD1,color="Sequia D1"))+
+  geom_line(aes(x=Ano,y=sequiaD2,color="Sequia D2"))+
+  geom_line(aes(x=Ano,y=sequiaD3,color="Sequia D3"))+
+  geom_line(aes(x=Ano,y=sequiaD4,color="Sequia D4"))+
+  labs(title="Series de tiempos de las sequias",subtitle="Fuente: Siap",x="Años",y="% de sequia")
+
+g1+
+  transition_reveal(Ano)+
+  theme_bw()
+```
+
+#### Linea de tiempo sobre las lluvias al paso del tiempo
+
+##### **Gráfica 8**
+
+```{r}
+g2 <- ggplot(data=papas)+
+  geom_line(aes(x=Ano,y=lluvias), color="blue")+
+  labs(title="Series de tiempos de las lluvias en sonora",subtitle="Fuente: SEMARNAT",x="Años",y="Precipitación (milímetros)")
+
+g2+
+  transition_reveal(Ano)+
+  theme_bw()
+```
+
+#### Linea de tiempo sobre el cambio del valor de producción durante el paso del tiempo
+
+##### **Gráfica 9**
+
+```{r}
+g3 <- ggplot(data=papas)+
+  geom_line(aes(x=Ano,y=Valor_de_la_Produccion), color="brown")+
+  labs(title="Series de tiempos del valor de producción de papa en sonora",subtitle="Fuente: SIACON",x="Años",y="Producción (Miles de pesos)")
+
+g3+
+  transition_reveal(Ano)+
+  theme_bw()
+```
+
+
+Para una mejor interpretación de las gráficas, se acomodarán las 3 gráficas dentro de un solo cuadro, de esta manera se verá mas claro el significado de estas, y se podrá sacar una conclusión.
+
+
+##### **Gráfica 10**
+
+```{r}
+grid.arrange(g1,g3)
+```
+
+
+En vista de los resultados de las gráfica 10, la cual es una mezcla de la gráfica de sequía y de valor de producción, se puede observar que los valores mas altos son aquellos de D4, por ende se puede decir que este es el tipo de sequía que mas podría afectar la producción de papas, as simple vista se puede ver, que en donde hay picos de subida en la sequía hay bajones, mas sin embargo, no hay picos de bajones en la papa, esto podría significar que cuando hay sequía no afecte al instante, sino que gradualmente, pero si se puede observar que cuando uno sube el otro baja, se puede decir que el crecimiento o aumento de las sequías afecta la producción de papa para el estado de sonora, ahora veremos como se comporta esto pero con las lluvias.
+
+##### **Gráfica 11**
+
+```{r}
+grid.arrange(g2,g3)
+```
+
+Curiosamente se ve, que en las fechas o en las zonas en donde las lluvias se mantienen, la producción de valor baja, esto no necesariamente significa algo, o podría ser que sí, ya que vimos que con la sequía la producción de valor de la papa baja, por ende se podría decir que entre menos llueva, esto afectaría a la generación de valor de la papa, lo cual es lógico, ya que sino hay agua o hay escasez de agua, generaría que sea menos regada la papa, y si se riega menos, se cosecha menos y se vende menos, esto por supuesto bajaría el valor de producción de la papa, incluso podría ser, que en tiempos de escasez de agua, se siembre o se plante una menor cantidad de papa, debido a que saben que no tendrán la suficiente cantidad de agua como para regar.
+
+
+## Conclusión general
+
+En base a nuestro análisis basado en datos agrícolas acerca de la papá y las sequías en Sonora, podemos concluir que la papa es una buena alternativa para poder llevar a cabo la actividad agrícola por que no requiere de tantos cuidados y con una tecnificación en sus riegos se puede ahorrar el agua en gran medida, y en cuanto a rentabilidad también es una buena opción por que hay empresas internacionales como grupo pepsico comprometidos a comprar las papás, e incluso hasta invierten en proyectos de tecnificación en tierras de cultivo en todo América latina para que puedan satisfacer las necesidades de su empresa.
+
+Creemos que la actividad agrícola se está viendo un poco rezagada en cuanto a avances científicos por que la mayoría de los productores agrícolas son de mente cerrada y con miedo al cambio, pero ya es tiempo de aplicar la ciencia en esta tan importante actividad económica del sector primario.
+
+
+## Conclusione individuales
+
+#### Fernando Acosta Fajardo
+
+A mi parecer, la papa es un cultivo muy bueno. ya que este, tiene una buena producción, pero al menos en sonora, las sequías afectan a la producción de la misma, y este estado es uno, que según los datos y las gráficas, estamos siempre en algún tipo de sequía, lo cual dificulta un poco la producción de papa para sonora, pero, sino fuera por este aspecto de las sequías quizá sería un súper cultivo para sonora y con un manejo apropiado del agua, se podría sacar muchas mas ganancias de las que se obtienen actualmente.
+
+
+## Descarga de datos y código
+
+### Descarga del código 
+
+```{r}
+xfun::embed_file("Final.Rmd")
+```
+
+
+```{r secret,include=FALSE}
+write.csv(sequia,"sequiasNuevos.csv")
+write.csv(papas.lluvias,"papasEstados.csv")
+write.csv(papas,"papasSonora.csv")
+# this is an easter egg https://cutt.ly/5b5CWVH
+```
+
+### Descarga de los datos
+
+```{r}
+# Datos de lluvias para México
+xfun::embed_file("lluvias.csv")
+# Datos de papas para Sonora
+xfun::embed_file("papasV2.csv")
+# Datos de papas para México
+xfun::embed_file("Cierre agrícola.csv")
+# Datos de sequías para sonora
+xfun::embed_file("Datos_eson_000.csv")
+# Datos de promedios de sequías para sonora para México
+xfun::embed_file("sequiasNuevos.csv")
+# Datos de lluvias por diferentes estados
+xfun::embed_file("papasEstados.csv")
+# Datos de papas, lluvias y sequías para sonora
+xfun::embed_file("papasSonora.csv")
+
+```
+
+
+## Bibliografía
+
+Alba Servín 28 de abril de 2018, 08:25, Horas, H. M. R. P., Horas, H. C. B. P., Horas, H. G. K. A. P., Horas, H. G. L. P., González, L., Content, B., R., K., Pérez, M., Rosa, A., Fredes, F., & Meza, E. L. E. Y. (2018, 29 abril). El futuro del campo. El Economista. https://www.eleconomista.com.mx/empresas/El-futuro-del-campo-20180428-0002.html
+
+Bracamonte Sierra, Álvaro, Valle Dessens, Norma, & Méndez Barrón, Rosana. (2007).
+
+E. (2012, 5 septiembre). proceso productivo y riesgos de la agricultura. estefaniavila. https://estefaniavila.wordpress.com/2012/09/05/proceso-productivo-y-riesgos-de-la-agricultura/
+
+Esparza, M. (2014, agosto). La sequía y la escasez de agua en México: Situación actual y perspectivas futuras. SciELO. http://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0186-03482014000200008#:%7E:text=La%20sequ%C3%ADa%20agr%C3%ADcola%20afecta%20principalmente,desarrollo%20exitoso%20de%20cualquier%20plant%C3%ADo.
+
+Fao. (s. f.). Manejo proactivo de la sequía | La agricultura climáticamente inteligente | Organización de las Naciones Unidas para la Alimentación y la Agricultura. Recuperado 20 de mayo de 2021, de http://www.fao.org/climate-smart-agriculture/knowledge/practices/drought/es/
+
+Gamboa, O. (2015, 11 mayo). 7 Consecuencias de una sequía. Consejo consultivo del agua. https://www.aguas.org.mx/sitio/blog/notas/item/95-7-consecuencias-de-una-sequia.html
+
+INEGI. (2010). Clima. Sonora. http://cuentame.inegi.org.mx/monografias/informacion/son/territorio/clima.aspx?tema=me&e=26#:%7E:text=La%20precipitaci%C3%B3n%20media%20estatal%20es,meses%20de%20julio%20y%20agosto.
+
+Liza, S. E. C., Muñoz, A. V., & Bendezú, S. G. (2019). Análisis de la sustentabilidad económica de la producción de papa en la región Lima. TAYACAJA, 1(2).
+
+Principios agronómicos en el cultivo de la papa. (2019, 19 febrero). Yara México. https://www.yara.com.mx/nutricion-vegetal/papa/principios-agronomicos-en-el-cultivo-de-la-papa/#:%7E:text=Caracter%C3%ADsticas%20del%20cultivo%20de%20la,llegan%20a%20120cm%20de%20profundidad.
