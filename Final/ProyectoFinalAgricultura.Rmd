@@ -50,7 +50,6 @@ Para este caso de estudio analizaremos el fruto del mango, su producción, cosec
 prodMango <- read_excel("")
 ```
 
-
 * Temperaturas anuales por estado
 
 ```{r}
@@ -74,23 +73,6 @@ temp <- read_excel("TemperaturasPromAnualPorEstado.xlsx")
 
 
 
-
-
-
-Preguntas:
-¿Qué datos usaremos (papas, uvas, o si serán nuevos)? FOSAT, INEGI
-¿Cuáles métodos usaremos para el caso de estudio? LOS ANALICIS
-¿Con que los relacionaremos? CON ALGUN AMBIENTE
-¿donde agarrar otros datos? FOSAT, INEGI
-
-POSIBLES PREGUNTAS A RESPONDER
-panorama agrícola y buscar como relacionarlo o con que
-Que cultivos son mas productivos?
-Que cultivo contamina mas?
-
-
-Primer avance:
-Utilizando la premisa de la agricultura basada en datos
 
 Notas:
 En la metodología poner porque usaremos, que es y las formulas:
