@@ -19,7 +19,7 @@ setwd("~/GitHub/ProduccionMango/Final")
 
 ![Inicio de cosecha de mango](https://www.elimparcial.com/__export/1567698654780/sites/elimparcial/img/2019/09/05/gen-12-mango-v0_1.jpg_554688468.jpg)
 
-## Introdución
+## Introducción
 
 Para este caso de estudio analizaremos el fruto del mango, su producción, cosecha, necesidades, basándonos en métodos estadísticos para saber su relación agrícola en el estado de Sonora, viendo lo que este estado puede cosechar y producir a lo largo de los años y veremos si vale la pena usar tantos recursos naturales para mantener la producción sustentable de este fruto y saber si sale rentable.
 
@@ -28,25 +28,33 @@ Veremos si la producción utiliza de buena manera la tierra, si los pasos necesa
 ## Antecedentes
 
 Esta fruta es de climas cálidos. En 2019 se cosechó en 23 estados del país con un volumen de producción 11.9% mayor al de 2018. Sinaloa, Guerrero, Nayarit y Chiapas generan dos terceras partes del volumen cosechado a nivel nacional. Los mangos y aguacates exigen mucha agua, y hace tiempo que el agua no sobra. 
-El Servicio de Información Agroalimentaria y Pesquera (SIAP), señala que  este fruto se cosecha en 23 estados de la República Mexicana. Entre los principales productores se ubica Guerrero con un 22%, Nayarit con un 17% y Sinaloa con un 14%, que en conjunto suman el 53% de la producción nacional. El resto se proviene de Campeche, Chiapas, Colima, Jalisco, Michoacán, Oaxaca y Veracruz. Guerrero encabeza la lista gracias a su extensa superficie sembrada, así como al buen rendimiento del cultivo.
+El Servicio de Información Agroalimentaria y Pesquera (SIAP), señala que este fruto se cosecha en 23 estados de la República Mexicana. Entre los principales productores se ubica Guerrero con un 22%, Nayarit con un 17% y Sinaloa con un 14%, que en conjunto suman el 53% de la producción nacional. El resto se proviene de Campeche, Chiapas, Colima, Jalisco, Michoacán, Oaxaca y Veracruz. Guerrero encabeza la lista gracias a su extensa superficie sembrada, así como al buen rendimiento del cultivo.
 
 ![Granja de mango](https://static2.diariosur.es/www/multimedia/201709/16/media/cortadas/116384979-U30430882107mTF--624x832@Diario%20Sur-DiarioSur.jpg)
 
-Sin embargo en México no se ve que haya una buena cosecha como en los otros estados, teniendo una producción de entre aproximadamente 1000 a 2500 toneladas de mango, lo cual es obviamente muy poco, las semillas de mango normalmente demoran 8 años en producir frutos. Los árboles jóvenes injertados demoran de 3 a 5 años en producir frutos, y es casi seguro que producirán una buena cosecha. Si bien los mangos no necesitan muchos cuidados cuando se los planta, sí necesitarán estar en circunstancias específicas para poder crecer. Los mangos crecen mejor en altas temperaturas y pueden soportar áreas húmedas, pantanosas o áridas.
+Sin embargo, en México no se ve que haya una buena cosecha como en los otros estados, teniendo una producción de entre aproximadamente 1000 a 2500 toneladas de mango, lo cual es obviamente muy poco, las semillas de mango normalmente demoran 8 años en producir frutos. Los árboles jóvenes injertados demoran de 3 a 5 años en producir frutos, y es casi seguro que producirán una buena cosecha. Si bien los mangos no necesitan muchos cuidados cuando se los planta, sí necesitarán estar en circunstancias específicas para poder crecer. Los mangos crecen mejor en altas temperaturas y pueden soportar áreas húmedas, pantanosas o áridas.
 
 ## Objetivos del trabajo
 
 A través del desarrollo del análisis, intentaremos responder estas preguntas:
 
-¿Son los estados con climas mas calurosos los que generan mas dinero a raíz de la producción de mango? Podemos caer en la inferencia sobre que los lugares calurosos y con mas luz son mejores para producir mango y generar mas ingresos, pero es necesario analizar con los datos de los mangos y saber si esta condición les conviene a los agricultores de mango.
+¿Son los estados con climas más calurosos los que generan más dinero a raíz de la producción de mango? Podemos caer en la inferencia sobre que los lugares calurosos y con más luz son mejores para producir mango y generar más ingresos, pero es necesario analizar con los datos de los mangos y saber si esta condición les conviene a los agricultores de mango.
 
-¿Cómo afecta la temperatura al mango en la agricultura? Es necesario saber si las temperaturas que cambian subitamente afectan a las cosechas y como proteger estas de estos peligros, ademas de saber si es realmente importante la relación de la temperatura con la agricultura, ya que siempre se puede crear un espacio controlado, pero tendremos que valorar si vale la pena el costo
+¿Cómo afecta la temperatura al mango en la agricultura? Es necesario saber si las temperaturas que cambian súbitamente afectan a las cosechas y como proteger estas de estos peligros, además de saber si es realmente importante la relación de la temperatura con la agricultura, ya que siempre se puede crear un espacio controlado, pero tendremos que valorar si vale la pena el costo
 
-¿Al mango realmente le afecta el clima en Sonora? Debemos saber si Sonora realmente es viable para este cultivo, ya que se podria asignar la tierra utilizada de este, en vista de que es algo baja la cosecha, a tratar de plantar otro tipo de producto que pueda generar mayores ingresos
+¿Al mango realmente le afecta el clima en Sonora? Debemos saber si Sonora realmente es viable para este cultivo, ya que se podría asignar la tierra utilizada de este, en vista de que es algo baja la cosecha, a tratar de plantar otro tipo de producto que pueda generar mayores ingresos
 
 ## Teoría
 
+Se sabe por experiencia conocemos que todas las plantas necesitan ciertas cantidades de agua, así que es de suma importancia tener un buen sistema
+de riego y de alimentación, para aprovechar al máximo y eficientizar la necesidad de agua que ocupan las plantas, además de esto ocupan ciertas condiciones climatológicas ya que si sufren daños a causa de esto son más propensos a estropear la planta, encontramos máximas de 40ºC y mínimas de 0ºC. Los efectos de estas altas temperatura podrían empezar a verse a partir de los 35ºC, por ejemplo, con daños en la epidermis en el caso del mango.
 
+México tiene una muy buena y rica posición geográfica para la agricultura teniendo grandes cantidades de sol, tierra, agua y viento para los cultivos, debido a esto es necesario que se optimicen los recursos lo mejor posible, pudiendo usar herramientas tecnológicas para automatizar muchos procesos haciéndolos relativamente más efectivos, además también los granjeros de todos los cultivos tienen que cuidarse del cambio climático ya que puede y va a afectar negativamente a muchos que principalmente basan su economía en cultivos.
+
+Es realmente importante saber como tomar decisiones en base a los datos que tenemos ya que con estos podremos tomar decisiones sobre los procesos mucho mas seguros y así podemos deshacernos de la incertidumbre casi por completo al elegir un proceso en concreto.
+
+En los últimos años, las tasas de crecimiento de la producción agropecuaria mundial y los rendimientos de los cultivos han disminuido. Esto ha suscitado temores de que el mundo no sea capaz de incrementar lo suficiente la producción de alimentos y otros productos para asegurar una alimentación adecuada de la población futura.
+La disminución no se ha producido a causa de la escasez de tierra o agua, sino más bien debido a que la demanda de productos agropecuarios ha disminuido. Las tasas de crecimiento de la población mundial han ido disminuyendo desde finales de los años sesenta y en muchos países se están alcanzando ahora niveles bastante altos de consumo de alimentos per cápita, por encima de los cuales incrementos adicionales serán limitados. Además, una parte persistentemente alta de la población mundial sigue sumida en una pobreza absoluta y carece de los ingresos necesarios para transformar sus necesidades en una demanda efectiva. (FAO.org. 2018)
 
 ## Metodología (métodos estadísticos que usan y también incluir los métodos de los datos)
 
@@ -138,13 +146,21 @@ xfun::embed_file("TemperaturasPromAnualPorEstado.xlsx")
 
 ## Bibliografía
 
-SERVICIO DE INFORMACIÓN AGROALIMENTARIA Y PESQUERA (SIAP). (2020). Panorama Agroalimentario. México: Agricultura Secretaria de agricultura y desarrollo rural.
+SERVICIO DE INFORMACIÓN AGROALIMENTARIA Y PESQUERA (SIAP). (2020). Panorama Agroalimentario. México: Agricultura Secretaria de agricultura y desarrollo rural. Recuperado 21 de noviembre de 2021, de https://www.inforural.com.mx/wp-content/uploads/2020/11/Atlas-Agroalimentario-2020.pdf
+
+Agricultura mundial: hacia los años 2015/2030. (s. f.). FAO.org. Recuperado 21 de noviembre de 2021, de https://www.fao.org/3/y3557s/y3557s03.htm
+
+SAGARPA. (2017). Planeación Agrícola Nacional: Mango Mexicano 2017-2050. México: SAGARMA. https://www.gob.mx/cms/uploads/attachment/file/257078/Potencial-Mango.pdf
 
 * Lugar de donde se sacaron los datos
 
 http://infosiap.siap.gob.mx/gobmx/datosAbiertos.php
 
 https://nube.siap.gob.mx/cierreagricola/
+
+
+
+
 
 Notas:
 En la metodología poner porque usaremos, que es y las formulas:
