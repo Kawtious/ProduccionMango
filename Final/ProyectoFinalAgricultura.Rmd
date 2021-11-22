@@ -102,19 +102,47 @@ datatable(prodMango)
 datatable(temp)
 ```
 
-Histogramas 
+Data frame de los datos 
 
 ```{r}
 mangoFrame <-data.frame(sonoraMango, check.names = F)
 mangoFrame
+
+flitroMango <- mangoFrame[-c(1,4,6,7,8)]
+```
+
+Correlación
+
+```{r}
+ggpairs(flitroMango, lower = list(continuous = "smooth"),
+        diag = list(continuous = "barDiag"), axisLabels = "none")
+```
+
+Indice de correlación de pearson
+
+```{r}
+round(cor(x= flitroMango, method="pearson"),3)
+```
+
+```{r}
+# ARREGLAR HISTORGRAMA
+multi.hist(x = mangoFrame[-c(1,4,6,7,8,9)], dcol = c("blue", "red"), dlty = c("dotted", "solid"), main = "")
 ```
 
 
+```{r}
+round(cor(x= mangoFrame[-c(1)], method= "pearson"),3)
+```
 
 
-
-
-
+```{r, warning= FALSE}
+plot_ly(data= prodMango, x= ~TEMPERATURAANUAL, y= ~VALORPRODUCCION, color= ~ENTIDAD, colors= rainbow(12), size= ~TEMPERATURAANUAL, type = "scatter") %>%
+  layout(
+    xaxis = list(title="Precipitación"), 
+    yaxis = list(title="Pesos"),
+    showlegend = TRUE
+  )
+```
 
 
 
@@ -131,7 +159,7 @@ mangoFrame
 ### Descarga del código
 
 ```{r}
-xfun::embed_file("ProyectoFinalAgricultura.Rmd")
+#xfun::embed_file("ProyectoFinalAgricultura.Rmd")
 ```
 
 ### Descarga los datos
