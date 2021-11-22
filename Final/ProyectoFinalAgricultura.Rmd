@@ -17,6 +17,8 @@ setwd("~/GitHub/ProduccionMango/Final")
 
 # Sustentabilidad de la producción de Mango en Sonora, México
 
+![Inicio de cosecha de mango](https://www.elimparcial.com/__export/1567698654780/sites/elimparcial/img/2019/09/05/gen-12-mango-v0_1.jpg_554688468.jpg)
+
 ## Introdución
 
 Para este caso de estudio analizaremos el fruto del mango, su producción, cosecha, necesidades, basándonos en métodos estadísticos para saber su relación agrícola en el estado de Sonora, viendo lo que este estado puede cosechar y producir a lo largo de los años y veremos si vale la pena usar tantos recursos naturales para mantener la producción sustentable de este fruto y saber si sale rentable.
@@ -27,6 +29,8 @@ Veremos si la producción utiliza de buena manera la tierra, si los pasos necesa
 
 Esta fruta es de climas cálidos. En 2019 se cosechó en 23 estados del país con un volumen de producción 11.9% mayor al de 2018. Sinaloa, Guerrero, Nayarit y Chiapas generan dos terceras partes del volumen cosechado a nivel nacional. Los mangos y aguacates exigen mucha agua, y hace tiempo que el agua no sobra. 
 El Servicio de Información Agroalimentaria y Pesquera (SIAP), señala que  este fruto se cosecha en 23 estados de la República Mexicana. Entre los principales productores se ubica Guerrero con un 22%, Nayarit con un 17% y Sinaloa con un 14%, que en conjunto suman el 53% de la producción nacional. El resto se proviene de Campeche, Chiapas, Colima, Jalisco, Michoacán, Oaxaca y Veracruz. Guerrero encabeza la lista gracias a su extensa superficie sembrada, así como al buen rendimiento del cultivo.
+
+![Granja de mango](https://static2.diariosur.es/www/multimedia/201709/16/media/cortadas/116384979-U30430882107mTF--624x832@Diario%20Sur-DiarioSur.jpg)
 
 Sin embargo en México no se ve que haya una buena cosecha como en los otros estados, teniendo una producción de entre aproximadamente 1000 a 2500 toneladas de mango, lo cual es obviamente muy poco, las semillas de mango normalmente demoran 8 años en producir frutos. Los árboles jóvenes injertados demoran de 3 a 5 años en producir frutos, y es casi seguro que producirán una buena cosecha. Si bien los mangos no necesitan muchos cuidados cuando se los planta, sí necesitarán estar en circunstancias específicas para poder crecer. Los mangos crecen mejor en altas temperaturas y pueden soportar áreas húmedas, pantanosas o áridas.
 
@@ -57,13 +61,16 @@ library(pacman)
 p_load(rmdformats, readr, readxl, ggplot2, plotly, DT, xfun, gridExtra, leaflet, GGally, psych, corrplot, cluster)
 ```
 
-### **Importando datos**
+### Importando datos
 
 * Producción de mangos por estado
 
 ```{r}
 prodMango <- read_excel("ProduccionMangos.xlsx")
 #View(prodMango)
+
+sonoraMango <- read_excel("ProduccionSonoraMango.xlsx")
+#View(sonoraMango)
 ```
 
 * Temperaturas anuales por estado
@@ -73,7 +80,7 @@ temp <- read_excel("TemperaturasPromAnualPorEstado.xlsx")
 #View(temp)
 ```
 
-* **Visualizando los datos en tablas**
+### Visualizando los datos en tablas
 
 * Tabla de producción de mangos
 
@@ -90,7 +97,8 @@ datatable(temp)
 Histogramas 
 
 ```{r}
-hist(prodMango$VALORPRODUCCION)
+mangoFrame <-data.frame(sonoraMango, check.names = F)
+mangoFrame
 ```
 
 
@@ -130,21 +138,33 @@ xfun::embed_file("TemperaturasPromAnualPorEstado.xlsx")
 
 ## Bibliografía
 
-http://infosiap.siap.gob.mx/gobmx/datosAbiertos.php
+SERVICIO DE INFORMACIÓN AGROALIMENTARIA Y PESQUERA (SIAP). (2020). Panorama Agroalimentario. México: Agricultura Secretaria de agricultura y desarrollo rural.
 
+* Lugar de donde se sacaron los datos
+
+http://infosiap.siap.gob.mx/gobmx/datosAbiertos.php
 
 https://nube.siap.gob.mx/cierreagricola/
 
 Notas:
 En la metodología poner porque usaremos, que es y las formulas:
+
 Metodología:
+
 En este caso se trabajarán con estos métodos estadísticos
+
 * Estadística descriptiva
+
 * Correlación lineal
+
 * Correlación lineal múltiple
+
 * Análisis de normalidad de Shapiro-Wilk
+
 * Correlación de pearson
+
 * Regresión lineal simple
+
 * Regresión lineal polinomios
 
 ¿Como nuestro caso de estudio influye a decisiones?
@@ -163,6 +183,6 @@ Sonora casi no cosecha nada de mango
 El clima en Sonora puede ser bueno para el mango
 hay falta de agua por eso casi no se cosecha
 
-
+las fechas en Y en lugar de X
 
 
