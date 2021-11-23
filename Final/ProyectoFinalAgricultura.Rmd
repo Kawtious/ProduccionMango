@@ -90,18 +90,18 @@ sonoraMango <- prodSonoraMango[-c(2:13)]
 #temp <- read_excel("TemperaturasPromAnualPorEstado.xlsx")
 #View(temp)
 
-temp <- data.frame(sonoraMango$YEAR, sonoraMango$ANUAL)
+temp <- data.frame(sonoraMango$YEAR, sonoraMango$TEMPANUAL, sonoraMango$PRECIPITACIONMEDIA)
 ```
 
 ### Visualizando los datos en tablas
 
-* Tabla de producción de mangos
+* Tabla de producción de mangos al año en Sonora
 
 ```{r}
 datatable(sonoraMango)
 ```
 
-* Tabla de temperaturas
+* Tabla de temperaturas y ml´s de lluvia al año en Sonora
 
 ```{r}
 datatable(temp)
@@ -109,38 +109,99 @@ datatable(temp)
 
 # Regresión Logística
 
+Sonora es conocido por ser principalmente un poco caluroso y seco mayor parte del año, es por eso que a una fruta tropical como lo seria el mango le seria muy dificil crecer en este clima, es por eso que analizaremos las condiciones que necesita esta fruta para crecer:
+
+Iniciando por las temperaturas, el rango para que el mango cresca es de un mininmo de 27 a 45 grados celcius aproximadamente, a lo que Sonora no llega, teniendo una media de 21 aproximadamente a travez de todo el año.
+
+Ahora veamos las cantidades de agua que necesita, es conocido que el mango consume mucha agua para que pueda dar frutos, necesitando un aproximado de 665 ml´s necesarios en ciertas candiades a travéz de los meses
+
+$$\begin{array}{l|l|c}
+\text{Mes} & ml´s\\
+\hline
+Septiembre & 50 ml\\
+Octubre & 85 ml\\
+Noviembre & 110 ml\\
+Diciembre & 140 ml\\
+Enero & 140 ml\\
+Febrero & 140 ml\\
+\hline
+\end{array}$$
+
+Sonora llega a tener una media de 420 en sus precipitaciones, lo cual no es favorable para la producción del mango
+
 ```{r}
-datos <- sonoraMango
+datos <- sonoraMango[c(2,3,11,12)]
 datos
 ```
 
-## Tabla de frecuencia
+## Tabla de frecuencia de defectos en la temperatura
 
 ```{r}
-tabla <- table(datos$DEFECTOS)
-tabla
+tablaTemp <- table(datos$DEFECTOSTEMP)
+tablaTemp
 ```
 
-Podemos observar como a travez del año nunca se violan los parametros
+Podemos ver que no hay temperaturas extremas o preocupantes para el cultivo de mango
 
-Representación gráfica
+## Tabla de frecuencia de defectos en la precipitación
+
+```{r}
+tablaPrecip <- table(datos$DEFECTOSPRECIP)
+tablaPrecip
+```
+
+Sin embargo podemos ver como en ningun momento podemos saciar la necesidad de agua para el mango a lo largo del año
+
+Representación gráfica de las temperaturas
 
 ```{r}
 colores <- NULL
-colores[datos$ANUAL >= 45] <- "green"
-colores[datos$ANUAL <= 5] <- "red"
+colores[datos$DEFECTOSTEMP == 0] <- "green"
+colores[datos$DEFECTOSTEMP == 1] <- "red"
 #colores[datos$TEMPERATURAANUAL != ] <- "blue"
 
-plot(datos$YEAR, datos$ANUAL, pch = 21, bg = colores, 
+plot(datos$TEMPANUAL, datos$DEFECTOSTEMP, pch = 21, bg = colores, 
     xlab = "Temperatura", ylab = "Probabilidad de defectos")
 legend("bottomleft", c("No defecto", "Si defecto"), pch = 21, col = c("green", 
     "red"))
 ```
 
+Representación gráfica de las precipitaciones
+
 ```{r}
-regresion <- glm(DEFECTOS ~ ANUAL, data= datos, family = binomial)
-summary(regresion)
+colores <- NULL
+colores[datos$DEFECTOSPRECIP == 0] <- "green"
+colores[datos$DEFECTOSPRECIP == 1] <- "red"
+#colores[datos$TEMPERATURAANUAL != ] <- "blue"
+
+plot(datos$PRECIPITACIONMEDIA, datos$DEFECTOSPRECIP, pch = 21, bg = colores, 
+    xlab = "ml´s de lluvia", ylab = "Probabilidad de defectos")
+legend("bottomleft", c("No defecto", "Si defecto"), pch = 21, col = c("green", 
+    "red"))
 ```
+
+Parece razonable, a la vista de los cultivos, pensar que las temperaturas y lluvias puede influir en la producción de los mangos, ya que si estos no tienen cumplidas sus necesidades, no creceran, no crearan biomasa, y no se centraran en dar frutos sino en sobrevivir. Luego la idea es ajustar por medio de la regresión logistica,un modelo de regresión logística para estudiar la posible relación entre Y=1 dado diferentes valores de temperatura/precipitación: P(Y=1|X). Para ajustar el modelo se usa el comando glm (para modelos lineales generalizados) indicando que la respuesta es binomial mediante el argumento family:
+
+```{r}
+regresionTemp <- glm(DEFECTOSTEMP ~ TEMPANUAL, data= datos, family = binomial)
+summary(regresionTemp)
+```
+
+
+```{r}
+regresionPrecip <- glm(DEFECTOSPRECIP ~ PRECIPITACIONMEDIA, data= datos, family = binomial)
+summary(regresionPrecip)
+```
+
+
+La formula del modelo de regresion logistica es:
+
+$$P(Y=1|X)=\dfrac{e^{15.0429-0.2322x}}{1+e^{15.0429-0.2322x}}$$
+
+
+
+
+
 
 
 
@@ -160,36 +221,37 @@ Data frame de los datos
 
 ```{r}
 mangoFrame <-data.frame(sonoraMango, check.names = F)
-mangoFrame
+#mangoFrame
 
-flitroMango <- mangoFrame[-c(1,4,6,7,8)]
+filtroMango <- mangoFrame[-c(1,6,11,12)]
+filtroMango
 ```
 
 Correlación
 
 ```{r}
-ggpairs(flitroMango, lower = list(continuous = "smooth"),
+ggpairs(filtroMango, lower = list(continuous = "smooth"),
         diag = list(continuous = "barDiag"), axisLabels = "none")
 ```
 
 Indice de correlación de pearson
 
 ```{r}
-round(cor(x= flitroMango, method="pearson"),3)
+round(cor(x= filtroMango, method="pearson"),3)
 ```
 
 ```{r}
 # ARREGLAR HISTORGRAMA
-multi.hist(x = mangoFrame[-c(1,4,6,7,8,9)], dcol = c("blue", "red"), dlty = c("dotted", "solid"), main = "")
+multi.hist(x = filtroMango, dcol = c("blue", "red"), dlty = c("dotted", "solid"), main = "")
 ```
 
 ```{r}
-round(cor(x= mangoFrame[-c(1)], method= "pearson"),3)
+round(cor(x= filtroMango, method= "pearson"),3)
 ```
 
 
 ```{r, warning= FALSE}
-plot_ly(data= prodMango, x= ~TEMPERATURAANUAL, y= ~VALORPRODUCCION, color= ~ENTIDAD, colors= rainbow(12), size= ~TEMPERATURAANUAL, type = "scatter") %>%
+plot_ly(data= sonoraMango, x= ~YEAR, y= ~VALORPRODUCCION, color= ~YEAR, colors= rainbow(12), size= ~YEAR, type = "scatter") %>%
   layout(
     xaxis = list(title="Precipitación"), 
     yaxis = list(title="Pesos"),
@@ -233,12 +295,17 @@ Agricultura mundial: hacia los años 2015/2030. (s. f.). FAO.org. Recuperado 21 
 
 SAGARPA. (2017). Planeación Agrícola Nacional: Mango Mexicano 2017-2050. México: SAGARMA. https://www.gob.mx/cms/uploads/attachment/file/257078/Potencial-Mango.pdf
 
-* Lugar de donde se sacaron los datos
+National Department of Agriculture. (s. f.). mango. Recuperado 23 de noviembre de 2021, de https://www.nda.agric.za/docs/infopaks/mango.htm
+
+Sonora Climate, Weather By Month, Average Temperature (Mexico) - Weather Spark. (s. f.). Weather Spark. Recuperado 23 de noviembre de 2021, de https://weatherspark.com/y/8716/Average-Weather-in-Sonora-Mexico-Year-Round
+
+* Lugar de donde se sacaron datos
 
 http://infosiap.siap.gob.mx/gobmx/datosAbiertos.php
 
 https://nube.siap.gob.mx/cierreagricola/
 
+http://dgeiawf.semarnat.gob.mx:8080/ibi_apps/WFServlet?IBIF_ex=D3_AGUA01_01&IBIC_user=dgeia_mce&IBIC_pass=dgeia_mce&NOMBREENTIDAD=*&NOMBREANIO=*
 
 
 
@@ -279,6 +346,14 @@ Datos a tomar en cuenta
 Sonora casi no cosecha nada de mango
 El clima en Sonora puede ser bueno para el mango
 hay falta de agua por eso casi no se cosecha
+
+Parametros de temperaturas para el mango
+min > 5 grados
+max < 45 grados
+rango perfecto 27>x<45
+
+Media de agua al año para el mango
+665 ml 
 
 las fechas en Y en lugar de X
 
