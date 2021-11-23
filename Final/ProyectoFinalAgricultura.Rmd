@@ -101,7 +101,7 @@ temp <- data.frame(sonoraMango$YEAR, sonoraMango$TEMPANUAL, sonoraMango$PRECIPIT
 datatable(sonoraMango)
 ```
 
-* Tabla de temperaturas y ml´s de lluvia al año en Sonora
+* Tabla de temperaturas y mm´s de lluvia al año en Sonora
 
 ```{r}
 datatable(temp)
@@ -113,17 +113,17 @@ Sonora es conocido por ser principalmente un poco caluroso y seco mayor parte de
 
 Iniciando por las temperaturas, el rango para que el mango cresca es de un mininmo de 27 a 45 grados celcius aproximadamente, a lo que Sonora no llega, teniendo una media de 21 aproximadamente a travez de todo el año.
 
-Ahora veamos las cantidades de agua que necesita, es conocido que el mango consume mucha agua para que pueda dar frutos, necesitando un aproximado de 665 ml´s necesarios en ciertas candiades a travéz de los meses
+Ahora veamos las cantidades de agua que necesita, es conocido que el mango consume mucha agua para que pueda dar frutos, necesitando un aproximado de 665 mm´s necesarios en ciertas candiades a travéz de los meses
 
 $$\begin{array}{l|l|c}
-\text{Mes} & ml´s\\
+\text{Mes} & mm´s\\
 \hline
-Septiembre & 50 ml\\
-Octubre & 85 ml\\
-Noviembre & 110 ml\\
-Diciembre & 140 ml\\
-Enero & 140 ml\\
-Febrero & 140 ml\\
+Septiembre & 50 mm\\
+Octubre & 85 mm\\
+Noviembre & 110 mm\\
+Diciembre & 140 mm\\
+Enero & 140 mm\\
+Febrero & 140 mm\\
 \hline
 \end{array}$$
 
@@ -175,7 +175,7 @@ colores[datos$DEFECTOSPRECIP == 1] <- "red"
 #colores[datos$TEMPERATURAANUAL != ] <- "blue"
 
 plot(datos$PRECIPITACIONMEDIA, datos$DEFECTOSPRECIP, pch = 21, bg = colores, 
-    xlab = "ml´s de lluvia", ylab = "Probabilidad de defectos")
+    xlab = "mm´s de lluvia", ylab = "Probabilidad de defectos")
 legend("bottomleft", c("No defecto", "Si defecto"), pch = 21, col = c("green", 
     "red"))
 ```
@@ -338,8 +338,7 @@ Valor de producción, trigo, CO2
 ## Teoría
 
 * https://www.inforural.com.mx/wp-content/uploads/2020/11/Atlas-Agroalimentario-2020.pdf
-* https://avogoconsulting.com/subtropicales/4-condiciones-ambientales-claves-para-mango/#:~:text=En%20cuanto%20a%20los%20l%C3%ADmites,con%20da%C3%B1os%20en%20la%20epidermis.
-
+* https://avogoconsulting.com/subtropicales/4-condiciones-ambientales-claves-para-mango/=
 
 Datos a tomar en cuenta
 
@@ -353,7 +352,7 @@ max < 45 grados
 rango perfecto 27>x<45
 
 Media de agua al año para el mango
-665 ml 
+665 mm 
 
 las fechas en Y en lugar de X
 
