@@ -58,7 +58,7 @@ La disminución no se ha producido a causa de la escasez de tierra o agua, sino 
 
 ## Metodología (métodos estadísticos que usan y también incluir los métodos de los datos)
 
-
+* Regresión Logistica
 
 ## Operaciones
 
@@ -71,21 +71,26 @@ p_load(rmdformats, readr, readxl, ggplot2, plotly, DT, xfun, gridExtra, leaflet,
 
 ### Importando datos
 
-* Producción de mangos por estado
+* Producción de mangos al año en Sonora
 
 ```{r}
-prodMango <- read_excel("ProduccionMangos.xlsx")
+#prodMango <- read_excel("ProduccionMangos.xlsx")
 #View(prodMango)
 
-sonoraMango <- read_excel("ProduccionSonoraMango.xlsx")
+prodSonoraMango <- read_excel("ProduccionSonoraMango.xlsx")
+
+#Filtrado
+sonoraMango <- prodSonoraMango[-c(2:13)]
 #View(sonoraMango)
 ```
 
-* Temperaturas anuales por estado
+* Temperaturas anuales de Sonora
 
 ```{r}
-temp <- read_excel("TemperaturasPromAnualPorEstado.xlsx")
+#temp <- read_excel("TemperaturasPromAnualPorEstado.xlsx")
 #View(temp)
+
+temp <- data.frame(sonoraMango$YEAR, sonoraMango$ANUAL)
 ```
 
 ### Visualizando los datos en tablas
@@ -93,7 +98,7 @@ temp <- read_excel("TemperaturasPromAnualPorEstado.xlsx")
 * Tabla de producción de mangos
 
 ```{r}
-datatable(prodMango)
+datatable(sonoraMango)
 ```
 
 * Tabla de temperaturas
@@ -101,6 +106,55 @@ datatable(prodMango)
 ```{r}
 datatable(temp)
 ```
+
+# Regresión Logística
+
+```{r}
+datos <- sonoraMango
+datos
+```
+
+## Tabla de frecuencia
+
+```{r}
+tabla <- table(datos$DEFECTOS)
+tabla
+```
+
+Podemos observar como a travez del año nunca se violan los parametros
+
+Representación gráfica
+
+```{r}
+colores <- NULL
+colores[datos$ANUAL >= 45] <- "green"
+colores[datos$ANUAL <= 5] <- "red"
+#colores[datos$TEMPERATURAANUAL != ] <- "blue"
+
+plot(datos$YEAR, datos$ANUAL, pch = 21, bg = colores, 
+    xlab = "Temperatura", ylab = "Probabilidad de defectos")
+legend("bottomleft", c("No defecto", "Si defecto"), pch = 21, col = c("green", 
+    "red"))
+```
+
+```{r}
+regresion <- glm(DEFECTOS ~ ANUAL, data= datos, family = binomial)
+summary(regresion)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Data frame de los datos 
 
@@ -128,7 +182,6 @@ round(cor(x= flitroMango, method="pearson"),3)
 # ARREGLAR HISTORGRAMA
 multi.hist(x = mangoFrame[-c(1,4,6,7,8,9)], dcol = c("blue", "red"), dlty = c("dotted", "solid"), main = "")
 ```
-
 
 ```{r}
 round(cor(x= mangoFrame[-c(1)], method= "pearson"),3)
@@ -218,7 +271,7 @@ Valor de producción, trigo, CO2
 ## Teoría
 
 * https://www.inforural.com.mx/wp-content/uploads/2020/11/Atlas-Agroalimentario-2020.pdf
-
+* https://avogoconsulting.com/subtropicales/4-condiciones-ambientales-claves-para-mango/#:~:text=En%20cuanto%20a%20los%20l%C3%ADmites,con%20da%C3%B1os%20en%20la%20epidermis.
 
 
 Datos a tomar en cuenta
