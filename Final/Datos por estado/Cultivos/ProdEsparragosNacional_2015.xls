@@ -1,0 +1,174 @@
+<HTML LANG="es">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<META http-equiv=Content-Type content="text/html; charset=ISO-8859-1">
+
+<style>
+th{
+	vertical-align:middle !important; 
+	text-align:center !important;
+}
+.estiloResult{
+	background-color:#B38E5D !important; 
+	color:#FFF !important;
+}
+</style>
+
+<TITLE></TITLE>
+</head>
+<body>
+
+		<div class="titulosTabla">
+			<p>
+				<strong>A&ntilde;o:</strong> 2015<br />
+				<strong>Producci&oacute;n Agr&iacute;cola</strong><br />
+				<strong>Ciclo:</strong> Ciclicos - Perennes<br />
+				<strong>Modalidad:</strong> Riego + Temporal<br />
+				<strong>Cultivo:</strong> Espárrago (ton)     <br />
+			</p>
+		</div>
+		
+		<table id="Resultados-reporte" class="table table-striped table-responsive table-bordered " border="1">
+			<tr class="estiloResult">
+				<th rowspan="2">&nbsp;</th>
+				<th rowspan="2">Entidad</th>
+				
+				<th colspan="3">Superficie<br />(ha)</th>
+				<th rowspan="2">Producci&oacute;n</th><th rowspan="2">Rendimiento<br />(udm/ha)</th><th rowspan="2">PMR<br />($/udm)</th>
+				<th rowspan="2">Valor Producci&oacute;n<br />(miles de Pesos)</th>
+			</tr>
+			<tr class="estiloResult">
+				<th>Sembrada</th>
+				<th>Cosechada</th>
+				<th>Siniestrada</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>Baja California</td>
+				<td class="tdNum">3,262.00</td>
+				<td class="tdNum">2,934.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">21,422.65</td><td class="tdNum">7.30</td>
+				<td class="tdNum">35,527.00</td>
+				<td class="tdNum">761,082.47</td>
+			</tr>
+			
+			<tr>
+				<td>2</td>
+				<td>Baja California Sur</td>
+				<td class="tdNum">3,009.00</td>
+				<td class="tdNum">2,719.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">21,633.25</td><td class="tdNum">7.96</td>
+				<td class="tdNum">37,709.29</td>
+				<td class="tdNum">815,774.44</td>
+			</tr>
+			
+			<tr>
+				<td>3</td>
+				<td>Coahuila</td>
+				<td class="tdNum">14.00</td>
+				<td class="tdNum">14.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">130.20</td><td class="tdNum">9.30</td>
+				<td class="tdNum">60,000.00</td>
+				<td class="tdNum">7,812.00</td>
+			</tr>
+			
+			<tr>
+				<td>4</td>
+				<td>Guanajuato</td>
+				<td class="tdNum">3,215.50</td>
+				<td class="tdNum">3,198.50</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">27,979.04</td><td class="tdNum">8.75</td>
+				<td class="tdNum">17,828.92</td>
+				<td class="tdNum">498,835.95</td>
+			</tr>
+			
+			<tr>
+				<td>5</td>
+				<td>Michoacán</td>
+				<td class="tdNum">170.00</td>
+				<td class="tdNum">107.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">562.00</td><td class="tdNum">5.25</td>
+				<td class="tdNum">32,390.53</td>
+				<td class="tdNum">18,203.48</td>
+			</tr>
+			
+			<tr>
+				<td>6</td>
+				<td>Nuevo León</td>
+				<td class="tdNum">4.00</td>
+				<td class="tdNum">4.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">20.00</td><td class="tdNum">5.00</td>
+				<td class="tdNum">33,000.00</td>
+				<td class="tdNum">660.00</td>
+			</tr>
+			
+			<tr>
+				<td>7</td>
+				<td>Querétaro</td>
+				<td class="tdNum">795.00</td>
+				<td class="tdNum">772.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">3,219.20</td><td class="tdNum">4.17</td>
+				<td class="tdNum">33,681.93</td>
+				<td class="tdNum">108,428.88</td>
+			</tr>
+			
+			<tr>
+				<td>8</td>
+				<td>San Luis Potosí</td>
+				<td class="tdNum">80.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">0.00</td><td class="tdNum">0</td><td class="tdNum">0</td>
+				<td class="tdNum">0.00</td>
+			</tr>
+			
+			<tr>
+				<td>9</td>
+				<td>Sinaloa</td>
+				<td class="tdNum">59.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">0.00</td><td class="tdNum">0</td><td class="tdNum">0</td>
+				<td class="tdNum">0.00</td>
+			</tr>
+			
+			<tr>
+				<td>10</td>
+				<td>Sonora</td>
+				<td class="tdNum">13,187.00</td>
+				<td class="tdNum">12,483.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">123,108.70</td><td class="tdNum">9.86</td>
+				<td class="tdNum">34,717.92</td>
+				<td class="tdNum">4,274,077.51</td>
+			</tr>
+			
+			<tr>
+				<td>11</td>
+				<td>Tlaxcala</td>
+				<td class="tdNum">44.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">0.00</td><td class="tdNum">0</td><td class="tdNum">0</td>
+				<td class="tdNum">0.00</td>
+			</tr>
+			
+			<tr><th colspan="2">Total</th>
+			<th class="tdNum">23,839.50</th>
+			<th class="tdNum">22,231.50</th>
+			<th class="tdNum">0.00</th>
+			<th class="tdNum">198,075.04</th><th class="tdNum">8.91</th>
+			<th class="tdNum">32,739.48</th>
+			<th class="tdNum">6,484,874.74</th>
+		</tr>
+		
+		</table><div style="text-align:left"></div>
+</body>
+</html>

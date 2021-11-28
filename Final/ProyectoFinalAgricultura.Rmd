@@ -21,22 +21,27 @@ setwd("~/GitHub/ProduccionMango/Final")
 
 ## Introducción
 
-Para este caso de estudio analizaremos el fruto del mango, su producción, cosecha, necesidades, basándonos en métodos estadísticos para saber su relación agrícola en el estado de Sonora, viendo lo que este estado puede cosechar y producir a lo largo de los años y veremos si vale la pena usar tantos recursos naturales para mantener la producción sustentable de este fruto y saber si sale rentable.
+Para este caso de estudio analizaremos el cultivo que se planta en Sonora, su producción, cosecha, necesidades, basándonos en métodos estadísticos para saber su relación agrícola en el estado de Sonora, viendo lo que este estado puede cosechar y producir a lo largo de los años y veremos si vale la pena usar tantos recursos naturales para mantener la producción sustentable de estos cultivos y saber si sale rentable.
 
-Veremos si la producción utiliza de buena manera la tierra, si los pasos necesarios se siguen correctamente para que la fruta pueda dar su máxima producción potencial. la tierra idónea y su mantenimiento son necesarias para este fruto, además de que debe tener un cierto clima que no lo dañe, y sobre todo que se mantenga limpio, sin basura, residuos ni desperdicios, una vez visto estos sigue la formación de la tierra para dejarlo en condiciones óptimas para su plantación, además de poner la siembra en lugares estratégicos para tener un máximo de potencial, y obviamente el mantenimiento de la planta, su cuidado constante, y precauciones del clima para poder producirlo de la mejor manera y finalmente enviarlo a comercializar.
+Veremos si la producción utiliza de buena manera la tierra, si los pasos necesarios se siguen correctamente para que los cultivos puedan dar su máxima producción potencial. la tierra idónea y su mantenimiento son necesarias para varios cultivos, además de que debe tener un cierto clima que no lo dañe, y sobre todo que se mantenga limpio, sin basura, residuos ni desperdicios, una vez visto estos sigue la formación de la tierra para dejarlo en condiciones óptimas para su plantación, además de poner la siembra en lugares estratégicos para tener un máximo de potencial, y obviamente el mantenimiento de la planta, su cuidado constante, y precauciones del clima para poder producirlo de la mejor manera y finalmente enviarlo a comercializar.
 
 ## Antecedentes
 
-Esta fruta es de climas cálidos. En 2019 se cosechó en 23 estados del país con un volumen de producción 11.9% mayor al de 2018. Sinaloa, Guerrero, Nayarit y Chiapas generan dos terceras partes del volumen cosechado a nivel nacional. Los mangos y aguacates exigen mucha agua, y hace tiempo que el agua no sobra. 
-El Servicio de Información Agroalimentaria y Pesquera (SIAP), señala que este fruto se cosecha en 23 estados de la República Mexicana. Entre los principales productores se ubica Guerrero con un 22%, Nayarit con un 17% y Sinaloa con un 14%, que en conjunto suman el 53% de la producción nacional. El resto se proviene de Campeche, Chiapas, Colima, Jalisco, Michoacán, Oaxaca y Veracruz. Guerrero encabeza la lista gracias a su extensa superficie sembrada, así como al buen rendimiento del cultivo.
+En el estado de Sonora se cultivan varias frutas que necesitan de climas cálidos y humedos, para lo cual Sonora no es de las mejores opciones. En 2019 se cosechó en 23 estados del país con un volumen de producción 11.9% mayor al de 2018. Sinaloa, Guerrero, Nayarit y Chiapas generan dos terceras partes del volumen cosechado a nivel nacional. Los mangos y aguacates exigen mucha agua, y hace tiempo que el agua no sobra. 
+El Servicio de Información Agroalimentaria y Pesquera (SIAP), señala que este fruto se cosecha en 23 estados de la República Mexicana. Entre los principales productores se ubica Guerrero con un 22%, Nayarit con un 17% y Sinaloa con un 14%, que en conjunto suman el 53% de la producción nacional. El resto se proviene de Campeche, Chiapas, Colima, Jalisco, Michoacán, Oaxaca y Veracruz. Guerrero encabeza la lista gracias a su extensa superficie sembrada, así como al buen rendimiento del cultivo. Y esto solo hablando en terminos de el fruto del mango.
 
 ![Granja de mango](https://static2.diariosur.es/www/multimedia/201709/16/media/cortadas/116384979-U30430882107mTF--624x832@Diario%20Sur-DiarioSur.jpg)
 
-Sin embargo, en México no se ve que haya una buena cosecha como en los otros estados, teniendo una producción de entre aproximadamente 1000 a 2500 toneladas de mango, lo cual es obviamente muy poco, las semillas de mango normalmente demoran 8 años en producir frutos. Los árboles jóvenes injertados demoran de 3 a 5 años en producir frutos, y es casi seguro que producirán una buena cosecha. Si bien los mangos no necesitan muchos cuidados cuando se los planta, sí necesitarán estar en circunstancias específicas para poder crecer. Los mangos crecen mejor en altas temperaturas y pueden soportar áreas húmedas, pantanosas o áridas.
+Sin embargo, en Sonora no se ve que haya una buena cosecha como en los otros estados, teniendo una producción de entre aproximadamente 1000 a 2500 toneladas de mango, lo cual es obviamente muy poco, las semillas de mango normalmente demoran 8 años en producir frutos. Los árboles jóvenes injertados demoran de 3 a 5 años en producir frutos, y es casi seguro que producirán una buena cosecha. Si bien los mangos no necesitan muchos cuidados cuando se los planta, sí necesitarán estar en circunstancias específicas para poder crecer. Los mangos crecen mejor en altas temperaturas y pueden soportar áreas húmedas, pantanosas o áridas.
 
 ## Objetivos del trabajo
 
 A través del desarrollo del análisis, intentaremos responder estas preguntas:
+
+* ¿Cuáles son los cultivos más productivos en Sonora? 
+* ¿Qué pasaría si en vez de sembrar Maíz y trigo como se hace tanto se sembrara tanto de uva o de espárrago ?
+* ¿Qué tanto se desperdicia? 
+* ¿Como la lluvia y la temperatura afectan la producción?
 
 ¿Son los estados con climas más calurosos los que generan más dinero a raíz de la producción de mango? Podemos caer en la inferencia sobre que los lugares calurosos y con más luz son mejores para producir mango y generar más ingresos, pero es necesario analizar con los datos de los mangos y saber si esta condición les conviene a los agricultores de mango.
 
@@ -46,19 +51,23 @@ A través del desarrollo del análisis, intentaremos responder estas preguntas:
 
 ## Teoría
 
+Es por este ejemplo en particular que **veremos si en Sonora se pueden cultivar alimentos de este tipo**, ya que al ser un lugar con clima caliente y seco no todas las plantas podrán crecer y dar frutos ya que al no tener las condiciones apropiadas para crecer, no se centraran en producir frutos o alimento, ya que la falta de sus condiciones ya sean de clima, agua, tierra, etc. las lleva a intentar sobrevivir en donde las estén cultivando dificultando que estas puedan formar biomasa, ergo no darán frutos. veamos un ejemplo:
+
 Se sabe por experiencia conocemos que todas las plantas necesitan ciertas cantidades de agua, así que es de suma importancia tener un buen sistema
 de riego y de alimentación, para aprovechar al máximo y eficientizar la necesidad de agua que ocupan las plantas, además de esto ocupan ciertas condiciones climatológicas ya que si sufren daños a causa de esto son más propensos a estropear la planta, encontramos máximas de 40ºC y mínimas de 0ºC. Los efectos de estas altas temperatura podrían empezar a verse a partir de los 35ºC, por ejemplo, con daños en la epidermis en el caso del mango.
 
 México tiene una muy buena y rica posición geográfica para la agricultura teniendo grandes cantidades de sol, tierra, agua y viento para los cultivos, debido a esto es necesario que se optimicen los recursos lo mejor posible, pudiendo usar herramientas tecnológicas para automatizar muchos procesos haciéndolos relativamente más efectivos, además también los granjeros de todos los cultivos tienen que cuidarse del cambio climático ya que puede y va a afectar negativamente a muchos que principalmente basan su economía en cultivos.
 
-Es realmente importante saber como tomar decisiones en base a los datos que tenemos ya que con estos podremos tomar decisiones sobre los procesos mucho mas seguros y así podemos deshacernos de la incertidumbre casi por completo al elegir un proceso en concreto.
+Es realmente importante saber cómo tomar decisiones en base a los datos que tenemos ya que con estos podremos tomar decisiones sobre los procesos mucho más seguros y así podemos deshacernos de la incertidumbre casi por completo al elegir un proceso en concreto.
 
 En los últimos años, las tasas de crecimiento de la producción agropecuaria mundial y los rendimientos de los cultivos han disminuido. Esto ha suscitado temores de que el mundo no sea capaz de incrementar lo suficiente la producción de alimentos y otros productos para asegurar una alimentación adecuada de la población futura.
 La disminución no se ha producido a causa de la escasez de tierra o agua, sino más bien debido a que la demanda de productos agropecuarios ha disminuido. Las tasas de crecimiento de la población mundial han ido disminuyendo desde finales de los años sesenta y en muchos países se están alcanzando ahora niveles bastante altos de consumo de alimentos per cápita, por encima de los cuales incrementos adicionales serán limitados. Además, una parte persistentemente alta de la población mundial sigue sumida en una pobreza absoluta y carece de los ingresos necesarios para transformar sus necesidades en una demanda efectiva. (FAO.org. 2018)
 
 ## Metodología (métodos estadísticos que usan y también incluir los métodos de los datos)
 
-* Regresión Logistica
+* Estadistica descriptiva: Para mostrar los datos de las cosechas que se están desperdiciando
+
+* Regresión Logistica: Para saber el rango de condiciones (temperatura y agua) que necesita el cultivo
 
 ## Operaciones
 
@@ -76,8 +85,8 @@ p_load(rmdformats, readr, readxl, ggplot2, plotly, DT, xfun, gridExtra, leaflet,
 ```{r}
 #prodMango <- read_excel("ProduccionMangos.xlsx")
 #View(prodMango)
-
 prodSonoraMango <- read_excel("ProduccionSonoraMango.xlsx")
+
 
 #Filtrado
 sonoraMango <- prodSonoraMango[-c(2:13)]
@@ -101,36 +110,62 @@ temp <- data.frame(sonoraMango$YEAR, sonoraMango$TEMPANUAL, sonoraMango$PRECIPIT
 datatable(sonoraMango)
 ```
 
-* Tabla de temperaturas y ml´s de lluvia al año en Sonora
+* Tabla de temperaturas y mm´s de lluvia al año en Sonora
 
 ```{r}
 datatable(temp)
 ```
 
-# Regresión Logística
+### Mostrando datos
+
+```{r}
+prodTotNacional <- read_xlsx("~/GitHub/ProduccionMango/Final/Datos por estado/Cultivos/ProduccionTotalNacional_2015-2020.xlsx")
+prodTotSon <- dplyr::filter(prodTotNacional, ENTIDAD == "Sonora")
+#prodTotSon <- data.frame(prodTotSon)
+prodTotSon
+
+prodSonoraMango <- dplyr::filter(prodTotSon, CULTIVO == "Mango")
+sonoraMango <- prodSonoraMango[-c(1)]
+sonoraMango
+```
+
+```{r}
+multi.hist(x = sonoraMango[-c(1,2,5,7,8,10,11)], dcol = c("blue", "red"), dlty = c("dotted", "solid"), main = "")
+```
+
+Explicación
+
+```{r}
+ggpairs(sonoraMango[-c(1)], lower = list(continuous = "smooth"),
+        diag = list(continuous = "barDiag"), axisLabels = "none")
+```
+
+Explicación
+
+### Regresión Logística
 
 Sonora es conocido por ser principalmente un poco caluroso y seco mayor parte del año, es por eso que a una fruta tropical como lo seria el mango le seria muy dificil crecer en este clima, es por eso que analizaremos las condiciones que necesita esta fruta para crecer:
 
 Iniciando por las temperaturas, el rango para que el mango cresca es de un mininmo de 27 a 45 grados celcius aproximadamente, a lo que Sonora no llega, teniendo una media de 21 aproximadamente a travez de todo el año.
 
-Ahora veamos las cantidades de agua que necesita, es conocido que el mango consume mucha agua para que pueda dar frutos, necesitando un aproximado de 665 ml´s necesarios en ciertas candiades a travéz de los meses
+Ahora veamos las cantidades de agua que necesita, es conocido que el mango consume mucha agua para que pueda dar frutos, necesitando un aproximado de 665 mm´s necesarios en ciertas candiades a travéz de los meses
 
 $$\begin{array}{l|l|c}
-\text{Mes} & ml´s\\
+\text{Mes} & mm´s\\
 \hline
-Septiembre & 50 ml\\
-Octubre & 85 ml\\
-Noviembre & 110 ml\\
-Diciembre & 140 ml\\
-Enero & 140 ml\\
-Febrero & 140 ml\\
+Septiembre & 50 mm\\
+Octubre & 85 mm\\
+Noviembre & 110 mm\\
+Diciembre & 140 mm\\
+Enero & 140 mm\\
+Febrero & 140 mm\\
 \hline
 \end{array}$$
 
 Sonora llega a tener una media de 420 en sus precipitaciones, lo cual no es favorable para la producción del mango
 
 ```{r}
-datos <- sonoraMango[c(2,3,11,12)]
+datos <- read_excel("ProduccionSonoraMango.xlsx") #sonoraMango[c(2,3,11,12)]
 datos
 ```
 
@@ -150,7 +185,7 @@ tablaPrecip <- table(datos$DEFECTOSPRECIP)
 tablaPrecip
 ```
 
-Sin embargo podemos ver como en ningun momento podemos saciar la necesidad de agua para el mango a lo largo del año
+Sin embargo podemos ver como en ningún momento podemos saciar la necesidad de agua para el mango a lo largo del año
 
 Representación gráfica de las temperaturas
 
@@ -175,7 +210,7 @@ colores[datos$DEFECTOSPRECIP == 1] <- "red"
 #colores[datos$TEMPERATURAANUAL != ] <- "blue"
 
 plot(datos$PRECIPITACIONMEDIA, datos$DEFECTOSPRECIP, pch = 21, bg = colores, 
-    xlab = "ml´s de lluvia", ylab = "Probabilidad de defectos")
+    xlab = "mm´s de lluvia", ylab = "Probabilidad de defectos")
 legend("bottomleft", c("No defecto", "Si defecto"), pch = 21, col = c("green", 
     "red"))
 ```
@@ -280,6 +315,12 @@ plot_ly(data= sonoraMango, x= ~YEAR, y= ~VALORPRODUCCION, color= ~YEAR, colors= 
 ### Descarga los datos
 
 ```{r}
+#Producción de varios cultivos en México
+xfun::embed_file("~/GitHub/ProduccionMango/Final/Datos por estado/Cultivos/ProduccionTotalNacional_2015-2020.xlsx")
+
+#Producción de mangos en Sonora
+xfun::embed_file("ProduccionSonoraMango.xlsx")
+
 #Producción de mango
 xfun::embed_file("ProduccionMangos.xlsx")
 
@@ -353,8 +394,29 @@ max < 45 grados
 rango perfecto 27>x<45
 
 Media de agua al año para el mango
-665 ml 
+665 mm 
 
 las fechas en Y en lugar de X
+
+LA REGRESIÓN LOGISTICA NO NOS SIRVE YA QUE NO PODEMOS UTILIZAR UNA LOGICA BINOMIAL
+
+porque se cultivan mas cosas que no dan tanto dinero?
+
+PREGUNTAS FUNDAMENTALES
+
+que cuesta mas producir?
+poner mas cultivos
+años mas calietnes hay menos producción? viceversa
+años con mas lluvia mas producción?, viceversa
+
+PRINCIPAL
+¿Qué en realidad se tendría que sembrar en Sonora?
+
+
+caja bigote, serie temporal
+
+Mirar para evitar atorarse
+https://es.r4ds.hadley.nz/explorar-introduccion.html
+
 
 
