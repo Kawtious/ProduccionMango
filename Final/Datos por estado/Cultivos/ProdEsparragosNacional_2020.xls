@@ -1,0 +1,221 @@
+<HTML LANG="es">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<META http-equiv=Content-Type content="text/html; charset=ISO-8859-1">
+
+<style>
+th{
+	vertical-align:middle !important; 
+	text-align:center !important;
+}
+.estiloResult{
+	background-color:#B38E5D !important; 
+	color:#FFF !important;
+}
+</style>
+
+<TITLE></TITLE>
+</head>
+<body>
+
+		<div class="titulosTabla">
+			<p>
+				<strong>A&ntilde;o:</strong> 2020<br />
+				<strong>Producci&oacute;n Agr&iacute;cola</strong><br />
+				<strong>Ciclo:</strong> Ciclicos - Perennes<br />
+				<strong>Modalidad:</strong> Riego + Temporal<br />
+				<strong>Cultivo:</strong> Espárrago (ton)     <br />
+			</p>
+		</div>
+		
+		<table id="Resultados-reporte" class="table table-striped table-responsive table-bordered " border="1">
+			<tr class="estiloResult">
+				<th rowspan="2">&nbsp;</th>
+				<th rowspan="2">Entidad</th>
+				
+				<th colspan="3">Superficie<br />(ha)</th>
+				<th rowspan="2">Producci&oacute;n</th><th rowspan="2">Rendimiento<br />(udm/ha)</th><th rowspan="2">PMR<br />($/udm)</th>
+				<th rowspan="2">Valor Producci&oacute;n<br />(miles de Pesos)</th>
+			</tr>
+			<tr class="estiloResult">
+				<th>Sembrada</th>
+				<th>Cosechada</th>
+				<th>Siniestrada</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>Aguascalientes</td>
+				<td class="tdNum">172.10</td>
+				<td class="tdNum">172.10</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">910.34</td><td class="tdNum">5.29</td>
+				<td class="tdNum">44,355.67</td>
+				<td class="tdNum">40,378.74</td>
+			</tr>
+			
+			<tr>
+				<td>2</td>
+				<td>Baja California</td>
+				<td class="tdNum">3,952.00</td>
+				<td class="tdNum">3,527.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">27,061.81</td><td class="tdNum">7.67</td>
+				<td class="tdNum">40,056.04</td>
+				<td class="tdNum">1,083,989.08</td>
+			</tr>
+			
+			<tr>
+				<td>3</td>
+				<td>Baja California Sur</td>
+				<td class="tdNum">6,988.50</td>
+				<td class="tdNum">3,577.00</td>
+				<td class="tdNum">5.00</td>
+				<td class="tdNum">28,012.06</td><td class="tdNum">7.83</td>
+				<td class="tdNum">55,576.25</td>
+				<td class="tdNum">1,556,805.27</td>
+			</tr>
+			
+			<tr>
+				<td>4</td>
+				<td>Coahuila</td>
+				<td class="tdNum">155.00</td>
+				<td class="tdNum">155.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">1,286.50</td><td class="tdNum">8.30</td>
+				<td class="tdNum">63,000.00</td>
+				<td class="tdNum">81,049.50</td>
+			</tr>
+			
+			<tr>
+				<td>5</td>
+				<td>Durango</td>
+				<td class="tdNum">185.00</td>
+				<td class="tdNum">122.00</td>
+				<td class="tdNum">56.00</td>
+				<td class="tdNum">887.64</td><td class="tdNum">7.28</td>
+				<td class="tdNum">26,143.41</td>
+				<td class="tdNum">23,205.94</td>
+			</tr>
+			
+			<tr>
+				<td>6</td>
+				<td>Guanajuato</td>
+				<td class="tdNum">4,206.70</td>
+				<td class="tdNum">4,069.50</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">37,614.86</td><td class="tdNum">9.24</td>
+				<td class="tdNum">36,234.44</td>
+				<td class="tdNum">1,362,953.25</td>
+			</tr>
+			
+			<tr>
+				<td>7</td>
+				<td>Hidalgo</td>
+				<td class="tdNum">4.00</td>
+				<td class="tdNum">4.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">22.00</td><td class="tdNum">5.50</td>
+				<td class="tdNum">22,400.00</td>
+				<td class="tdNum">492.80</td>
+			</tr>
+			
+			<tr>
+				<td>8</td>
+				<td>Jalisco</td>
+				<td class="tdNum">36.50</td>
+				<td class="tdNum">36.50</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">240.78</td><td class="tdNum">6.60</td>
+				<td class="tdNum">39,900.73</td>
+				<td class="tdNum">9,607.30</td>
+			</tr>
+			
+			<tr>
+				<td>9</td>
+				<td>México</td>
+				<td class="tdNum">20.00</td>
+				<td class="tdNum">20.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">126.20</td><td class="tdNum">6.31</td>
+				<td class="tdNum">37,977.79</td>
+				<td class="tdNum">4,792.80</td>
+			</tr>
+			
+			<tr>
+				<td>10</td>
+				<td>Michoacán</td>
+				<td class="tdNum">456.00</td>
+				<td class="tdNum">446.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">3,296.45</td><td class="tdNum">7.39</td>
+				<td class="tdNum">31,539.56</td>
+				<td class="tdNum">103,968.59</td>
+			</tr>
+			
+			<tr>
+				<td>11</td>
+				<td>Querétaro</td>
+				<td class="tdNum">1,269.00</td>
+				<td class="tdNum">1,112.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">5,214.56</td><td class="tdNum">4.69</td>
+				<td class="tdNum">45,050.08</td>
+				<td class="tdNum">234,916.33</td>
+			</tr>
+			
+			<tr>
+				<td>12</td>
+				<td>San Luis Potosí</td>
+				<td class="tdNum">60.00</td>
+				<td class="tdNum">60.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">240.00</td><td class="tdNum">4.00</td>
+				<td class="tdNum">35,000.00</td>
+				<td class="tdNum">8,400.00</td>
+			</tr>
+			
+			<tr>
+				<td>13</td>
+				<td>Sinaloa</td>
+				<td class="tdNum">447.00</td>
+				<td class="tdNum">228.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">1,255.80</td><td class="tdNum">5.51</td>
+				<td class="tdNum">30,972.12</td>
+				<td class="tdNum">38,894.78</td>
+			</tr>
+			
+			<tr>
+				<td>14</td>
+				<td>Sonora</td>
+				<td class="tdNum">18,892.80</td>
+				<td class="tdNum">18,369.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">194,223.00</td><td class="tdNum">10.57</td>
+				<td class="tdNum">38,018.08</td>
+				<td class="tdNum">7,383,984.68</td>
+			</tr>
+			
+			<tr>
+				<td>15</td>
+				<td>Tlaxcala</td>
+				<td class="tdNum">42.00</td>
+				<td class="tdNum">42.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">183.12</td><td class="tdNum">4.36</td>
+				<td class="tdNum">35,022.33</td>
+				<td class="tdNum">6,413.29</td>
+			</tr>
+			
+			<tr><th colspan="2">Total</th>
+			<th class="tdNum">36,886.60</th>
+			<th class="tdNum">31,940.10</th>
+			<th class="tdNum">61.00</th>
+			<th class="tdNum">300,575.12</th><th class="tdNum">9.41</th>
+			<th class="tdNum">39,723.36</th>
+			<th class="tdNum">11,939,852.34</th>
+		</tr>
+		
+		</table><div style="text-align:left"></div>
+</body>
+</html>

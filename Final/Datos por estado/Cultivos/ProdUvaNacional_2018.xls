@@ -1,0 +1,210 @@
+<HTML LANG="es">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<META http-equiv=Content-Type content="text/html; charset=ISO-8859-1">
+
+<style>
+th{
+	vertical-align:middle !important; 
+	text-align:center !important;
+}
+.estiloResult{
+	background-color:#B38E5D !important; 
+	color:#FFF !important;
+}
+</style>
+
+<TITLE></TITLE>
+</head>
+<body>
+
+		<div class="titulosTabla">
+			<p>
+				<strong>A&ntilde;o:</strong> 2018<br />
+				<strong>Producci&oacute;n Agr&iacute;cola</strong><br />
+				<strong>Ciclo:</strong> Ciclicos - Perennes<br />
+				<strong>Modalidad:</strong> Riego + Temporal<br />
+				<strong>Cultivo:</strong> Uva (ton)     <br />
+			</p>
+		</div>
+		
+		<table id="Resultados-reporte" class="table table-striped table-responsive table-bordered " border="1">
+			<tr class="estiloResult">
+				<th rowspan="2">&nbsp;</th>
+				<th rowspan="2">Entidad</th>
+				
+				<th colspan="3">Superficie<br />(ha)</th>
+				<th rowspan="2">Producci&oacute;n</th><th rowspan="2">Rendimiento<br />(udm/ha)</th><th rowspan="2">PMR<br />($/udm)</th>
+				<th rowspan="2">Valor Producci&oacute;n<br />(miles de Pesos)</th>
+			</tr>
+			<tr class="estiloResult">
+				<th>Sembrada</th>
+				<th>Cosechada</th>
+				<th>Siniestrada</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>Aguascalientes</td>
+				<td class="tdNum">913.81</td>
+				<td class="tdNum">797.33</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">9,958.38</td><td class="tdNum">12.49</td>
+				<td class="tdNum">11,788.48</td>
+				<td class="tdNum">117,394.18</td>
+			</tr>
+			
+			<tr>
+				<td>2</td>
+				<td>Baja California</td>
+				<td class="tdNum">4,617.46</td>
+				<td class="tdNum">4,432.66</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">19,941.63</td><td class="tdNum">4.50</td>
+				<td class="tdNum">21,456.31</td>
+				<td class="tdNum">427,873.77</td>
+			</tr>
+			
+			<tr>
+				<td>3</td>
+				<td>Baja California Sur</td>
+				<td class="tdNum">5.50</td>
+				<td class="tdNum">5.50</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">23.00</td><td class="tdNum">4.18</td>
+				<td class="tdNum">5,122.00</td>
+				<td class="tdNum">117.81</td>
+			</tr>
+			
+			<tr>
+				<td>4</td>
+				<td>Coahuila</td>
+				<td class="tdNum">636.30</td>
+				<td class="tdNum">591.80</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">4,804.80</td><td class="tdNum">8.12</td>
+				<td class="tdNum">13,716.84</td>
+				<td class="tdNum">65,906.69</td>
+			</tr>
+			
+			<tr>
+				<td>5</td>
+				<td>Chihuahua</td>
+				<td class="tdNum">161.00</td>
+				<td class="tdNum">127.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">889.06</td><td class="tdNum">7.00</td>
+				<td class="tdNum">8,804.15</td>
+				<td class="tdNum">7,827.42</td>
+			</tr>
+			
+			<tr>
+				<td>6</td>
+				<td>Durango</td>
+				<td class="tdNum">6.00</td>
+				<td class="tdNum">6.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">49.03</td><td class="tdNum">8.17</td>
+				<td class="tdNum">11,250.46</td>
+				<td class="tdNum">551.61</td>
+			</tr>
+			
+			<tr>
+				<td>7</td>
+				<td>Guanajuato</td>
+				<td class="tdNum">155.00</td>
+				<td class="tdNum">130.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">1,317.00</td><td class="tdNum">10.13</td>
+				<td class="tdNum">13,224.72</td>
+				<td class="tdNum">17,416.96</td>
+			</tr>
+			
+			<tr>
+				<td>8</td>
+				<td>Jalisco</td>
+				<td class="tdNum">50.00</td>
+				<td class="tdNum">30.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">450.00</td><td class="tdNum">15.00</td>
+				<td class="tdNum">18,975.00</td>
+				<td class="tdNum">8,538.75</td>
+			</tr>
+			
+			<tr>
+				<td>9</td>
+				<td>Nuevo León</td>
+				<td class="tdNum">6.00</td>
+				<td class="tdNum">6.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">13.20</td><td class="tdNum">2.20</td>
+				<td class="tdNum">18,177.27</td>
+				<td class="tdNum">239.94</td>
+			</tr>
+			
+			<tr>
+				<td>10</td>
+				<td>Puebla</td>
+				<td class="tdNum">19.45</td>
+				<td class="tdNum">1.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">4.50</td><td class="tdNum">4.50</td>
+				<td class="tdNum">17,050.00</td>
+				<td class="tdNum">76.73</td>
+			</tr>
+			
+			<tr>
+				<td>11</td>
+				<td>Querétaro</td>
+				<td class="tdNum">392.13</td>
+				<td class="tdNum">246.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">2,090.39</td><td class="tdNum">8.50</td>
+				<td class="tdNum">11,728.52</td>
+				<td class="tdNum">24,517.17</td>
+			</tr>
+			
+			<tr>
+				<td>12</td>
+				<td>San Luis Potosí</td>
+				<td class="tdNum">126.00</td>
+				<td class="tdNum">91.00</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">649.33</td><td class="tdNum">7.14</td>
+				<td class="tdNum">10,800.92</td>
+				<td class="tdNum">7,013.36</td>
+			</tr>
+			
+			<tr>
+				<td>13</td>
+				<td>Sonora</td>
+				<td class="tdNum">23,540.61</td>
+				<td class="tdNum">22,520.61</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">338,266.73</td><td class="tdNum">15.02</td>
+				<td class="tdNum">23,387.05</td>
+				<td class="tdNum">7,911,059.33</td>
+			</tr>
+			
+			<tr>
+				<td>14</td>
+				<td>Zacatecas</td>
+				<td class="tdNum">6,025.50</td>
+				<td class="tdNum">5,395.50</td>
+				<td class="tdNum">0.00</td>
+				<td class="tdNum">65,989.82</td><td class="tdNum">12.23</td>
+				<td class="tdNum">8,333.52</td>
+				<td class="tdNum">549,927.51</td>
+			</tr>
+			
+			<tr><th colspan="2">Total</th>
+			<th class="tdNum">36,654.76</th>
+			<th class="tdNum">34,380.40</th>
+			<th class="tdNum">0.00</th>
+			<th class="tdNum">444,446.87</th><th class="tdNum">12.93</th>
+			<th class="tdNum">20,561.43</th>
+			<th class="tdNum">9,138,461.21</th>
+		</tr>
+		
+		</table><div style="text-align:left"></div>
+</body>
+</html>
