@@ -38,14 +38,15 @@ Sin embargo, en Sonora no se ve que haya una buena cosecha como en los otros est
 
 A través del desarrollo del análisis, intentaremos responder estas preguntas:
 
-* ¿Cuáles son los cultivos más productivos en Sonora? 
-* ¿Qué pasaría si en vez de sembrar Maíz y trigo como se hace tanto se sembrara tanto de uva o de espárrago ?
+* ¿Cuáles son los cultivos más productivos en Sonora? Los mas productivos en cuestión de valor de producción, son la Uva con un total de 35332692.04 miles de pesos, la Sandía con un total de 177125329.3, y el esparrago con un total de 28277113.75, miles de pesos promedio en los últimos 5 años, a lo cual asumimos que estos 3 cultivos son un gran ingreso para el estado de Sonora
+
+* ¿Qué pasaría si en vez de sembrar Maíz y trigo como se hace tanto se sembrara tanto de uva o de espárrago? En términos económicos seria mucho mas rentable dado que la siembra de maíz y trigo no da tanto dinero como la de las uvas, sacando un valor un poco menor para el trigo , contra la de la uva, aunque solamente en el año del 2015-2016 el trigo en grano se vio con un valor de producción un poco mayor al de la uva, que se fue plantando lo mismo pero se fue aumentando su valor de producción a comparación del trigo, y tomando en cuenta que en los demás años la Uva sigue siendo la que mas genera valor de producción los valores serian prácticamente iguales con la uva siendo la que mas ingresos aporta. (Esto se fundamenta con la gráfica 1)
+
 * ¿Qué tanto se desperdicia? 
+
 * ¿Como la lluvia y la temperatura afectan la producción?
 
 ¿Son los estados con climas más calurosos los que generan más dinero a raíz de la producción de mango? Podemos caer en la inferencia sobre que los lugares calurosos y con más luz son mejores para producir mango y generar más ingresos, pero es necesario analizar con los datos de los mangos y saber si esta condición les conviene a los agricultores de mango.
-
-¿Cómo afecta la temperatura al mango en la agricultura? Es necesario saber si las temperaturas que cambian súbitamente afectan a las cosechas y como proteger estas de estos peligros, además de saber si es realmente importante la relación de la temperatura con la agricultura, ya que siempre se puede crear un espacio controlado, pero tendremos que valorar si vale la pena el costo
 
 ¿Al mango realmente le afecta el clima en Sonora? Debemos saber si Sonora realmente es viable para este cultivo, ya que se podría asignar la tierra utilizada de este, en vista de que es algo baja la cosecha, a tratar de plantar otro tipo de producto que pueda generar mayores ingresos
 
@@ -75,22 +76,25 @@ La disminución no se ha producido a causa de la escasez de tierra o agua, sino 
 
 ```{r}
 library(pacman)
-p_load(rmdformats, readr, readxl, ggplot2, plotly, DT, xfun, gridExtra, leaflet, GGally, psych, corrplot, cluster)
+p_load(rmdformats, readr, readxl, ggplot2, plotly, DT, xfun, gridExtra, leaflet, GGally, psych, corrplot, cluster, plotly, gapminder)
 ```
 
 ### Importando datos
 
-* Producción de mangos al año en Sonora
+* Producción de cultivos al año en Sonora
 
 ```{r}
 #prodMango <- read_excel("ProduccionMangos.xlsx")
 #View(prodMango)
-prodSonoraMango <- read_excel("ProduccionSonoraMango.xlsx")
-
-
+#prodSonoraMango <- read_excel("ProduccionSonoraMango.xlsx")
 #Filtrado
-sonoraMango <- prodSonoraMango[-c(2:13)]
+#sonoraMango <- prodSonoraMango[-c(2:13)]
 #View(sonoraMango)
+
+prodTotNacional <- read_xlsx("ProduccionTotalNacional_2015-2020.xlsx")
+prodTotSon <- dplyr::filter(prodTotNacional, ENTIDAD == "Sonora")
+prodTotSon <- data.frame(prodTotSon)
+prodTotSon
 ```
 
 * Temperaturas anuales de Sonora
@@ -99,15 +103,15 @@ sonoraMango <- prodSonoraMango[-c(2:13)]
 #temp <- read_excel("TemperaturasPromAnualPorEstado.xlsx")
 #View(temp)
 
-temp <- data.frame(sonoraMango$YEAR, sonoraMango$TEMPANUAL, sonoraMango$PRECIPITACIONMEDIA)
+temp <- data.frame(prodTotSon$YEAR, prodTotSon$TemperaturaAnual, prodTotSon$PrecipitacionMedia)
 ```
 
 ### Visualizando los datos en tablas
 
-* Tabla de producción de mangos al año en Sonora
+* Tabla de producción de cultivos al año en Sonora
 
 ```{r}
-datatable(sonoraMango)
+datatable(prodTotSon)
 ```
 
 * Tabla de temperaturas y mm´s de lluvia al año en Sonora
@@ -119,25 +123,89 @@ datatable(temp)
 ### Mostrando datos
 
 ```{r}
-prodTotNacional <- read_xlsx("~/GitHub/ProduccionMango/Final/Datos por estado/Cultivos/ProduccionTotalNacional_2015-2020.xlsx")
+prodTotNacional <- read_xlsx("ProduccionTotalNacional_2015-2020.xlsx")
 prodTotSon <- dplyr::filter(prodTotNacional, ENTIDAD == "Sonora")
-#prodTotSon <- data.frame(prodTotSon)
+prodTotSon <- data.frame(prodTotSon)
 prodTotSon
 
-prodSonoraMango <- dplyr::filter(prodTotSon, CULTIVO == "Mango")
-sonoraMango <- prodSonoraMango[-c(1)]
-sonoraMango
+#prodSonoraMango <- dplyr::filter(prodTotSon, CULTIVO == "Mango")
+#sonoraMango <- prodSonoraMango#[-c(1)] 
+#sonoraMango
 ```
 
+* Gráfica de cultivos en Sonrora (gráfica 1)
+
 ```{r}
-multi.hist(x = sonoraMango[-c(1,2,5,7,8,10,11)], dcol = c("blue", "red"), dlty = c("dotted", "solid"), main = "")
+df <- prodTotSon
+
+fig <- df %>%
+  plot_ly(
+    x = ~COSECHADA, 
+    y = ~VALORPRODUCCION, 
+    size = ~VALORPRODUCCION, 
+    color = ~CULTIVO,
+    colors= rainbow(5),
+    frame = ~YEAR, 
+    text = ~CULTIVO, 
+    hoverinfo = "text",
+    type = 'scatter',
+    mode = 'markers'
+  )
+fig <- fig %>% layout(
+    xaxis = list(
+      type = "log"
+    )
+  )
+
+fig
 ```
 
 Explicación
 
 ```{r}
-ggpairs(sonoraMango[-c(1)], lower = list(continuous = "smooth"),
+multi.hist(x = prodTotSon[-c(1:3,5:6,8:9,13)], dcol = c("blue", "red"), dlty = c("dotted", "solid"), main = "")
+```
+
+Como podemos observar los datos que en orden son 1.Cosechada, 2.Producción, 3.Valor de producción, 4.Temperaturas y 5.LLuvias, no parecen ser normales del todo.
+
+```{r}
+#ggpairs(prodTotSon[-c(1:3,6:9)], lower = list(continuous = "smooth"),
+#        diag = list(continuous = "barDiag"), axisLabels = "none")
+
+#ggpairs(prodTotSon,                 # Data frame
+#        columns = c(2,4,5,10,11,12),        # Columnas
+#        aes(color = CULTIVO,  # Color por grupo (var. categórica)
+#            alpha = 0.5))     # Transparencia
+
+ggpairs(prodTotSon[c(7, 11, 12)], lower = list(continuous = "smooth"),
         diag = list(continuous = "barDiag"), axisLabels = "none")
+```
+
+Explicación
+
+```{r}
+filtroSon <- prodTotSon[-c(1:3,6:9)]
+
+round(cor(x= filtroSon, method="pearson"),3)
+```
+
+Explicación
+
+```{r, warning= FALSE}
+
+prodTotNacional <- read_xlsx("ProduccionTotalNacional_2015-2020.xlsx")
+prodTotNacional <- dplyr::filter(prodTotNacional, YEAR == 2020)#, CULTIVO == c("Mango"), YEAR == c(2019,2020))#, ENTIDAD == c("Sonora", ""))
+prodTotNacional <- data.frame(prodTotNacional)
+
+filtroNacional <- prodTotNacional
+
+
+plot_ly(data= filtroNacional, x= ~TemperaturaAnual, y= ~VALORPRODUCCION, color= ~ENTIDAD, colors= rainbow(30), size= ~COSECHADA, type = "scatter") %>%
+  layout(
+    xaxis = list(title="X"), 
+    yaxis = list(title="Miles de pesos"),
+    showlegend = TRUE
+  )
 ```
 
 Explicación
@@ -255,43 +323,43 @@ $$P(Y=1|X)=\dfrac{e^{15.0429-0.2322x}}{1+e^{15.0429-0.2322x}}$$
 Data frame de los datos 
 
 ```{r}
-mangoFrame <-data.frame(sonoraMango, check.names = F)
+#mangoFrame <-data.frame(sonoraMango, check.names = F)
 #mangoFrame
 
-filtroMango <- mangoFrame[-c(1,6,11,12)]
-filtroMango
+#filtroMango <- mangoFrame[-c(1,6,11,12)]
+#filtroMango
 ```
 
 Correlación
 
 ```{r}
-ggpairs(filtroMango, lower = list(continuous = "smooth"),
-        diag = list(continuous = "barDiag"), axisLabels = "none")
+#ggpairs(filtroMango, lower = list(continuous = "smooth"),
+#        diag = list(continuous = "barDiag"), axisLabels = "none")
 ```
 
 Indice de correlación de pearson
 
 ```{r}
-round(cor(x= filtroMango, method="pearson"),3)
+#round(cor(x= filtroMango, method="pearson"),3)
 ```
 
 ```{r}
 # ARREGLAR HISTORGRAMA
-multi.hist(x = filtroMango, dcol = c("blue", "red"), dlty = c("dotted", "solid"), main = "")
+#multi.hist(x = filtroMango, dcol = c("blue", "red"), dlty = c("dotted", "solid"), main = "")
 ```
 
 ```{r}
-round(cor(x= filtroMango, method= "pearson"),3)
+#round(cor(x= filtroMango, method= "pearson"),3)
 ```
 
 
 ```{r, warning= FALSE}
-plot_ly(data= sonoraMango, x= ~YEAR, y= ~VALORPRODUCCION, color= ~YEAR, colors= rainbow(12), size= ~YEAR, type = "scatter") %>%
-  layout(
-    xaxis = list(title="Precipitación"), 
-    yaxis = list(title="Pesos"),
-    showlegend = TRUE
-  )
+#plot_ly(data= sonoraMango, x= ~YEAR, y= ~VALORPRODUCCION, color= ~YEAR, colors= rainbow(12), size= ~YEAR, type = "scatter") %>%
+#  layout(
+#    xaxis = list(title="Precipitación"), 
+#    yaxis = list(title="Pesos"),
+#    showlegend = TRUE
+#  )
 ```
 
 
@@ -309,7 +377,7 @@ plot_ly(data= sonoraMango, x= ~YEAR, y= ~VALORPRODUCCION, color= ~YEAR, colors= 
 ### Descarga del código
 
 ```{r}
-#xfun::embed_file("ProyectoFinalAgricultura.Rmd")
+xfun::embed_file("ProyectoFinalAgricultura.Rmd")
 ```
 
 ### Descarga los datos
@@ -419,4 +487,4 @@ Mirar para evitar atorarse
 https://es.r4ds.hadley.nz/explorar-introduccion.html
 
 
-
+SE ENTREGA: miercoles 8-viernes 10
