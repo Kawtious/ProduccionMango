@@ -180,6 +180,8 @@ Como podemos observar los datos que en orden son:
 
 No parecen ser normales del todo; ya que lo único que muestra algo de normalidad es la 3ra y en la parte económica de los cultivos.
 
+Con esto podemos decir que el valor de produccion del Mango, Esparrago, Uva, Maiz y Trigo nos regresa una ganancia similar a traves de los años 2015 al 2020, esto genera la pregunta ¿Se refleja cuanto se cosechó, la temperatura, o si llovio en la produccion, y sobre todo en el valor de dicha produccion? Esto nos ayudaria a visualizar la importancia del cambio climatico en los cultivos especificados y si realmente afecta en el mercado. Para responder esta pregunta necesitamos ver que tanta relacion tienen entre si  utilizando la Correlacion de Pearson la cual nos muestra una variedad de graficos comparando cada dato entre si.
+
 
 Ahora veamos una correlación de Pearson
 
