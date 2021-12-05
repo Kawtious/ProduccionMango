@@ -182,16 +182,15 @@ No parecen ser normales del todo; ya que lo único que muestra algo de normalida
 
 Con esto podemos decir que el valor de produccion del Mango, Esparrago, Uva, Maiz y Trigo nos regresa una ganancia similar a traves de los años 2015 al 2020, esto genera la pregunta ¿Se refleja cuanto se cosechó, la temperatura, o si llovio en la produccion, y sobre todo en el valor de dicha produccion? Esto nos ayudaria a visualizar la importancia del cambio climatico en los cultivos especificados y si realmente afecta en el mercado. Para responder esta pregunta necesitamos ver que tanta relacion tienen entre si  utilizando la Correlacion de Pearson la cual nos muestra una variedad de graficos comparando cada dato entre si.
 
-
-Ahora veamos una correlación de Pearson
-
 ### **Gráfica 2**
 
 ```{r, graphic-2-pearson}
 filtroSon <- produccionTotalSonora[-c(1:3,6,8:9)]
 
-ggpairs(filtroSon, lower = list(continuous = "smooth"),
-        diag = list(continuous = "barDiag"), axisLabels = "none")
+ggpairs(filtroSon,
+        lower = list(continuous = "smooth"),
+        diag = list(continuous = "barDiag"),
+        axisLabels = "none")
 ```
 
 Podemos observar como la producción esta algo relacionada con lo que puede ser la temperatura y las lluvias, esto porque tanto una y otra ayudan o perjudican a los cultivos ya que necesitan de ciertos climas y cierta cantidad de agua.
@@ -248,7 +247,7 @@ produccionTotalSonoraTrigo <- produccionTotalSonora[19:24, 2:13]
 produccionTotalSonoraMaiz <- produccionTotalSonora[7:12, 2:13]
 produccionTotalSonoraMango <- produccionTotalSonora[13:18, 2:13]
 
-g1 <- ggplot(data = produccionTotalSonoraUva)+
+g1 <- ggplot(data = produccionTotalSonoraUva) +
   geom_line(aes(x = YEAR, y = VALORPRODUCCION), color = "Purple") +
   labs(title = "TS de uvas", x = "Años", y = "Val. Producción")
 
@@ -290,7 +289,7 @@ produccionTotalNacional <- data.frame(produccionTotalNacional)
 
 filtroNacional <- produccionTotalNacional
 
-plot_ly(data = filtroNacional, x = ~TemperaturaAnual, y = ~VALORPRODUCCION, color = ~ENTIDAD, colors = rainbow(30), size = ~COSECHADA, type = "scatter") %>%
+plot_ly(data = filtroNacional, x = ~TemperaturaAnual, y = ~VALORPRODUCCION, color = ~ENTIDAD, colors = rainbow(30), size = ~COSECHADA, type = "scatter", mode = "markers") %>%
   layout(
     xaxis = list(title = "X"), 
     yaxis = list(title = "Miles de pesos"),
