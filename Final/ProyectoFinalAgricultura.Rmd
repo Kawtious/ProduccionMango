@@ -443,11 +443,40 @@ $$P(Y=1|X)=\dfrac{e^{15.0429-0.2322x}}{1+e^{15.0429-0.2322x}}$$
 
 ***
 
-# **Conclusión**
+## **Conclusión** {.tabset}
+
+### **Conclusión General**
 
 Sonora como todos los estados tiene sus partes en la agricultura que cumplen con las condiciones perfectas para la siembra, cosecha y venta de muchos cultivos, sin embargo, como en todos los estados este siembra u obliga a sembrar cultivos que no son capaces de dar frutos en este ambiente ya que no se dedican a eso, a dar frutos, sino que se dedican a sobrevivir, ergo no crean biomasa y no generan ninguna ganancia para los agricultores que se enfocan en este tipo de cultivos, además de que podemos dejar en claro que las lluvias y temperaturas si tienen su efecto en los cultivos apropiados pero que si por alguna casualidad cambian de niveles pueden hasta provocar que las cosechas se arruinen y que los ciclos que llevan se estropeen dificultando la siguiente cosecha.
 
 Suponemos que en el ambiente agrícola se está teniendo un poco de des estimación o menosprecio en cuanto a avances científicos ya que mayoría de los agricultores son muy obstinado o simplemente se rehúsan a un cambio además de los propietarios/inversionistas que se aferran a lo que quieren, aunque no les dé una ganancia real, pero ya es tiempo de aplicar la ciencia en esta área ya que es un gran recurso económico del país.
+
+### **Conclusión individual**
+
+***
+
+**Santana Celaya Alec Demian**
+
+En lo que a mi respecta Sonora y México en general es muy bueno para el área agrícola sin embargo no veo ni siento que se usen de la forma correcta, ya que muchos climas de diferentes estados afectan a la producción de varios cultivos lo que dificulta el fruto de estos ademas de como sus cuidados afectan al ambiente en distintos niveles ya sea por sus contaminantes en el excesivo uso de pesticida (en el caso del cultivo del trigo) y si tomamos mas en cuenta los datos de las necesidades de los cultivos y con un manejo apropiado, se podría sacar muchas mas ganancias de las que se obtienen actualmente.
+
+
+***
+
+**Cazarez Cabrera José Luis**
+
+CONCLUSIÓN
+
+***
+
+**Apodaca Urias Jesus David**
+
+En general Sonora y el resto del pais es buen lugar para cultivar pero hay algunos estados en mexico que cultivan cosas que no se les dan tan bien por clima, sueles o X factor. Es por eso que en este caso de estudio se vio cual debe ser el cultivo mas optimo o que mejor se le puede dar a un estado en este caso el esatado de sonora produce cultivos de maiz y trigo en su mayoria, el problema es que estos dos no se dan tan bien es por ello que seria mejor que cultivaran uva y esparrago por lo antes visto y asi obtener mejores ganancias con la agricultura en el estado de Sonora.
+
+***
+
+**Osuna Alcala Anthony**
+
+Conclusión
 
 ***
 
