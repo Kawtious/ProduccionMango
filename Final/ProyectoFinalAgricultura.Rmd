@@ -7,51 +7,66 @@ output:
  rmdformats::downcute:
    highlight: zenburn
    downcute_theme: "chaos"
-   code_folding: hide
+   code_folding: show
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-setwd("~/GitHub/ProduccionMango/Final")
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = TRUE, collapse = TRUE)
 ```
 
 # Sustentabilidad de la producción de Mango en Sonora, México 
 
-![Inicio de cosecha de mango](https://www.elimparcial.com/__export/1567698654780/sites/elimparcial/img/2019/09/05/gen-12-mango-v0_1.jpg_554688468.jpg)
+```{r, title-image, fig.align='center', fig.cap='Inicio de cosecha de mango'}
+knitr::include_graphics('gen-12-mango-v0_1.jpg')
+```
 
-## Introducción
+## **Introducción**
 
 Para este caso de estudio analizaremos el cultivo que se planta en Sonora, su producción, cosecha, necesidades, basándonos en métodos estadísticos para saber su relación agrícola en el estado de Sonora, viendo lo que este estado puede cosechar y producir a lo largo de los años y veremos si vale la pena usar tantos recursos naturales para mantener la producción sustentable de estos cultivos y saber si sale rentable.
 
 Veremos si la producción utiliza de buena manera la tierra, si los pasos necesarios se siguen correctamente para que los cultivos puedan dar su máxima producción potencial. la tierra idónea y su mantenimiento son necesarias para varios cultivos, además de que debe tener un cierto clima que no lo dañe, y sobre todo que se mantenga limpio, sin basura, residuos ni desperdicios, una vez visto estos sigue la formación de la tierra para dejarlo en condiciones óptimas para su plantación, además de poner la siembra en lugares estratégicos para tener un máximo de potencial, y obviamente el mantenimiento de la planta, su cuidado constante, y precauciones del clima para poder producirlo de la mejor manera y finalmente enviarlo a comercializar.
 
-## Antecedentes
+## **Antecedentes**
 
-En el estado de Sonora se cultivan varias frutas que necesitan de climas cálidos y húmedos, para lo cual Sonora no es de las mejores opciones. En 2019 se cosechó en 23 estados del país con un volumen de producción 11.9% mayor al de 2018. Sinaloa, Guerrero, Nayarit y Chiapas generan dos terceras partes del volumen cosechado a nivel nacional. Los mangos y aguacates exigen mucha agua, y hace tiempo que el agua no sobra. 
+En el estado de Sonora se cultivan varias frutas que necesitan de climas cálidos y húmedos, para lo cual Sonora no es de las mejores opciones. En 2019 se cosechó en 23 estados del país con un volumen de producción 11.9% mayor al de 2018. Sinaloa, Guerrero, Nayarit y Chiapas generan dos terceras partes del volumen cosechado a nivel nacional. Los mangos y aguacates exigen mucha agua, y hace tiempo que el agua no sobra.
+
 El Servicio de Información Agroalimentaria y Pesquera (SIAP), señala que este fruto se cosecha en 23 estados de la República Mexicana. Entre los principales productores se ubica Guerrero con un 22%, Nayarit con un 17% y Sinaloa con un 14%, que en conjunto suman el 53% de la producción nacional. El resto se proviene de Campeche, Chiapas, Colima, Jalisco, Michoacán, Oaxaca y Veracruz. Guerrero encabeza la lista gracias a su extensa superficie sembrada, así como al buen rendimiento del cultivo. Y esto solo hablando en términos del fruto del mango.
 
-![Granja de mango](https://static2.diariosur.es/www/multimedia/201709/16/media/cortadas/116384979-U30430882107mTF--624x832@Diario%20Sur-DiarioSur.jpg)
+```{r, backgrounds-image, fig.align='center', fig.cap='Granja de mango'}
+knitr::include_graphics('MangoDiarioSur.jpg')
+```
 
-Sin embargo, en Sonora no se ve que haya una buena cosecha como en los otros estados, teniendo una producción de entre aproximadamente 1000 a 2500 toneladas de mango, lo cual es obviamente muy poco, las semillas de mango normalmente demoran 8 años en producir frutos. Los árboles jóvenes injertados demoran de 3 a 5 años en producir frutos, y es casi seguro que producirán una buena cosecha. Si bien los mangos no necesitan muchos cuidados cuando se los planta, sí necesitarán estar en circunstancias específicas para poder crecer. Los mangos crecen mejor en altas temperaturas y pueden soportar áreas húmedas, pantanosas o áridas.
+Sin embargo, en Sonora no se ve que haya una buena cosecha como en los otros estados; teniendo una producción de entre aproximadamente 1000 a 2500 toneladas de mango, lo cual es obviamente muy poco, las semillas de mango normalmente demoran 8 años en producir frutos. Los árboles jóvenes injertados demoran de 3 a 5 años en producir frutos; y es casi seguro que producirán una buena cosecha. Si bien los mangos no necesitan muchos cuidados cuando se los planta, sí necesitarán estar en circunstancias específicas para poder crecer. Los mangos crecen mejor en altas temperaturas y pueden soportar áreas húmedas, pantanosas o áridas.
 
-## Objetivos del trabajo
+## **Objetivos del trabajo**
 
-A través del desarrollo del análisis, intentaremos responder estas preguntas:
+A través del desarrollo del análisis, intentaremos responder estas preguntas ---
 
-* ¿Cuáles son los cultivos más productivos en Sonora? Los más productivos en cuestión de valor de producción, son la Uva con un total de 35332692.04 miles de pesos, la Sandía con un total de 177125329.3, y el esparrago con un total de 28277113.75, miles de pesos promedio en los últimos 5 años, a lo cual asumimos que estos 3 cultivos son un gran ingreso para el estado de Sonora
+### **¿Cuáles son los cultivos más productivos en Sonora?**
 
-* ¿Qué pasaría si en vez de sembrar Maíz y trigo como se hace tanto se sembrará tanto de uva o de espárrago? En términos económicos sería mucho más rentable dado que la siembra de maíz y trigo no da tanto dinero como la de las uvas, sacando un valor un poco menor para el trigo , contra la de la uva, aunque solamente en el año del 2015-2016 el trigo en grano se vio con un valor de producción un poco mayor al de la uva, que se fue plantando lo mismo pero se fue aumentando su valor de producción a comparación del trigo, y tomando en cuenta que en los demás años la Uva sigue siendo la que más genera valor de producción los valores serian prácticamente iguales con la uva siendo la que más ingresos aporta. (Esto se fundamenta con la gráfica 3)
+Los más productivos en cuestión de valor de producción, son la Uva con un total de 35332692.04 miles de pesos, la Sandía con un total de 177125329.3, y el esparrago con un total de 28277113.75, miles de pesos promedio en los últimos 5 años, a lo cual asumimos que estos 3 cultivos son un gran ingreso para el estado de Sonora
 
-* ¿Qué tanto se desperdicia? Si bien no es una cosa o variable que se pueda calcular fácilmente, lo que sí sabemos es que los agricultores aun teniendo cultivos buenos pero con diferentes tonos a lo que se cataloga como normales, no son entregados/vendidos a los proveedores ya que saben que estos no se venderán en el mercado y terminaran caducando, es por eso que aunque no se tenga una variable real como serian siniestrados si se sabe que en promedio se desechan muchas cantidades de cultivo que se regalan a familiares, amigos, etc. ya que en el mercado convencional no se venderían.
+### **¿Qué pasaría si en vez de sembrar Maíz y trigo como se hace tanto se sembrará tanto de uva o de espárrago?**
 
-* ¿Como la lluvia y la temperatura afectan la producción? Un aumento en la temperatura acelerará el crecimiento. En el caso de un cultivo anual, el período entre la siembra y la cosecha se acortará (por ejemplo, el tiempo antes de la cosecha del maíz podría acortarse entre una y cuatro semanas). Esta situación podría afectar negativamente a la productividad debido a que la senescencia (dejarían de crecer y centrarse en el fruto, ergo nomas se centrarían en sobrevivir y no en producir) sucedería más temprano.
+En términos económicos sería mucho más rentable dado que la siembra de maíz y trigo no da tanto dinero como la de las uvas, sacando un valor un poco menor para el trigo , contra la de la uva, aunque solamente en el año del 2015-2016 el trigo en grano se vio con un valor de producción un poco mayor al de la uva, que se fue plantando lo mismo pero se fue aumentando su valor de producción a comparación del trigo, y tomando en cuenta que en los demás años la Uva sigue siendo la que más genera valor de producción los valores serian prácticamente iguales con la uva siendo la que más ingresos aporta. (Esto se fundamenta con la gráfica 3)
 
+### **¿Qué tanto se desperdicia?**
 
-## Teoría
+Si bien no es una cosa o variable que se pueda calcular fácilmente, lo que sí sabemos es que los agricultores aun teniendo cultivos buenos pero con diferentes tonos a lo que se cataloga como normales, no son entregados/vendidos a los proveedores ya que saben que estos no se venderán en el mercado y terminaran caducando, es por eso que aunque no se tenga una variable real como serian siniestrados si se sabe que en promedio se desechan muchas cantidades de cultivo que se regalan a familiares, amigos, etc. ya que en el mercado convencional no se venderían.
 
-Es por este ejemplo en particular que **veremos si en Sonora se pueden cultivar alimentos de este tipo**, ya que al ser un lugar con clima caliente y seco no todas las plantas podrán crecer y dar frutos ya que al no tener las condiciones apropiadas para crecer, no se centraran en producir frutos o alimento, ya que la falta de sus condiciones ya sean de clima, agua, tierra, etc. las lleva a intentar sobrevivir en donde las estén cultivando dificultando que estas puedan formar biomasa, ergo no darán frutos. veamos un ejemplo:
+### **¿Como la lluvia y la temperatura afectan la producción?**
 
-Se sabe por experiencia conocemos que todas las plantas necesitan ciertas cantidades de agua, así que es de suma importancia tener un buen sistema
+Un aumento en la temperatura acelerará el crecimiento. En el caso de un cultivo anual, el período entre la siembra y la cosecha se acortará (por ejemplo, el tiempo antes de la cosecha del maíz podría acortarse entre una y cuatro semanas). Esta situación podría afectar negativamente a la productividad debido a que la senescencia (dejarían de crecer y centrarse en el fruto, ergo nomas se centrarían en sobrevivir y no en producir) sucedería más temprano.
+
+***
+
+<!-- Teoría -->
+
+Es por este ejemplo en particular que **veremos si en Sonora se pueden cultivar alimentos de este tipo**; ya que al ser un lugar con clima caliente y seco no todas las plantas podrán crecer y dar frutos. Al no tener las condiciones apropiadas para crecer, los agricultores no se centran en producir frutos o alimento, ya que la falta de sus condiciones (ya sean de clima, agua, tierra, etc.) provocan dificultades de supervivencia en su area de cultivo, dificultando que estas puedan formar biomasa, no dando frutos como resultado.
+
+**Veamos un ejemplo ---**
+
+Conocemos que todas las plantas necesitan ciertas cantidades de agua, así que es de suma importancia tener un buen sistema
 de riego y de alimentación, para aprovechar al máximo y eficientizar la necesidad de agua que ocupan las plantas, además de esto ocupan ciertas condiciones climatológicas ya que si sufren daños a causa de esto son más propensos a estropear la planta, encontramos máximas de 40ºC y mínimas de 0ºC. Los efectos de estas altas temperatura podrían empezar a verse a partir de los 35ºC, por ejemplo, con daños en la epidermis en el caso del mango.
 
 México tiene una muy buena y rica posición geográfica para la agricultura teniendo grandes cantidades de sol, tierra, agua y viento para los cultivos, debido a esto es necesario que se optimicen los recursos lo mejor posible, pudiendo usar herramientas tecnológicas para automatizar muchos procesos haciéndolos relativamente más efectivos, además también los granjeros de todos los cultivos tienen que cuidarse del cambio climático ya que puede y va a afectar negativamente a muchos que principalmente basan su economía en cultivos.
@@ -59,9 +74,16 @@ México tiene una muy buena y rica posición geográfica para la agricultura ten
 Es realmente importante saber cómo tomar decisiones en base a los datos que tenemos ya que con estos podremos tomar decisiones sobre los procesos mucho más seguros y así podemos deshacernos de la incertidumbre casi por completo al elegir un proceso en concreto.
 
 En los últimos años, las tasas de crecimiento de la producción agropecuaria mundial y los rendimientos de los cultivos han disminuido. Esto ha suscitado temores de que el mundo no sea capaz de incrementar lo suficiente la producción de alimentos y otros productos para asegurar una alimentación adecuada de la población futura.
+
 La disminución no se ha producido a causa de la escasez de tierra o agua, sino más bien debido a que la demanda de productos agropecuarios ha disminuido. Las tasas de crecimiento de la población mundial han ido disminuyendo desde finales de los años sesenta y en muchos países se están alcanzando ahora niveles bastante altos de consumo de alimentos per cápita, por encima de los cuales incrementos adicionales serán limitados. Además, una parte persistentemente alta de la población mundial sigue sumida en una pobreza absoluta y carece de los ingresos necesarios para transformar sus necesidades en una demanda efectiva. (FAO.org. 2018)
 
-## Metodología (métodos estadísticos que usan y también incluir los métodos de los datos)
+***
+
+## **Estudio** {.tabset}
+
+### **Metodología**
+
+Métodos estadísticos que se utilizaran, junto a los métodos de los datos
 
 * Estadística descriptiva: Para mostrar los datos de las cosechas que se están desperdiciando
 
@@ -69,116 +91,128 @@ La disminución no se ha producido a causa de la escasez de tierra o agua, sino 
 
 * Correlación de Pearson: para la covarianza estandarizada de la muestra aplicada.
 
-## Operaciones
+***
+
+### **Operaciones**
+
+Hipotesis
 
 * H0: Las variables son independientes por lo que una variable no varía entre los distintos niveles de la otra variable.
 * H1: Las variables son dependientes, una variable varía entre los distintos niveles de la otra variable.
 
-### Paquetes a utilizar
+***
 
+# **Datos**
 
-```{r}
+### **Paquetes a utilizar**
+
+```{r, set-packages}
 library(pacman)
 p_load(rmdformats, readr, readxl, ggplot2, plotly, DT, xfun, gridExtra, leaflet, GGally, psych, corrplot, cluster, plotly, gapminder)
 ```
 
-### Importando datos
+***
 
-* Producción de cultivos al año en Sonora
+### **Producción de cultivos al año en Sonora**
 
-```{r}
-#prodMango <- read_excel("ProduccionMangos.xlsx")
-#View(prodMango)
-#prodSonoraMango <- read_excel("ProduccionSonoraMango.xlsx")
-#Filtrado
-#sonoraMango <- prodSonoraMango[-c(2:13)]
-#View(sonoraMango)
-
-prodTotNacional <- read_xlsx("ProduccionTotalNacional_2015-2020.xlsx")
-prodTotSon <- dplyr::filter(prodTotNacional, ENTIDAD == "Sonora")
-prodTotSon <- data.frame(prodTotSon)
-prodTotSon
+```{r, yearly-crop-production-sonora}
+produccionTotalNacional <- read_xlsx("ProduccionTotalNacional_2015-2020.xlsx")
+produccionTotalSonora <- dplyr::filter(produccionTotalNacional, ENTIDAD == "Sonora")
+produccionTotalSonora <- data.frame(produccionTotalSonora)
+produccionTotalSonora
 ```
 
-* Temperaturas anuales de Sonora
+***
 
-```{r}
-#temp <- read_excel("TemperaturasPromAnualPorEstado.xlsx")
-#View(temp)
+### **Temperaturas anuales de Sonora**
 
-temp <- data.frame(prodTotSon$YEAR, prodTotSon$TemperaturaAnual, prodTotSon$PrecipitacionMedia)
+```{r, yearly-temperature-sonora}
+temp <- data.frame(produccionTotalSonora$YEAR, produccionTotalSonora$TemperaturaAnual, produccionTotalSonora$PrecipitacionMedia)
+temp
 ```
 
-### Visualizando los datos en tablas
+***
 
-* Tabla de producción de cultivos al año en Sonora
+## **Visualizacion de datos**
 
-```{r}
-datatable(prodTotSon)
+### **Tabla de producción de cultivos al año en Sonora**
+
+```{r, datatable-total-sonora}
+datatable(produccionTotalSonora)
 ```
 
-* Tabla de temperaturas y mm´s de lluvia al año en Sonora
+***
 
-```{r}
+### **Tabla de temperaturas y mm´s de lluvia al año en Sonora**
+
+```{r, datatable-temperature-sonora}
 datatable(temp)
 ```
 
-### Mostrando datos
+***
 
-```{r}
-prodTotNacional <- read_xlsx("ProduccionTotalNacional_2015-2020.xlsx")
-prodTotSon <- dplyr::filter(prodTotNacional, ENTIDAD == "Sonora")
-prodTotSon <- data.frame(prodTotSon)
-prodTotSon
+### **Mostrando datos**
 
-#prodSonoraMango <- dplyr::filter(prodTotSon, CULTIVO == "Mango")
-#sonoraMango <- prodSonoraMango#[-c(1)] 
-#sonoraMango
+```{r, show-data}
+produccionTotalNacional <- read_xlsx("ProduccionTotalNacional_2015-2020.xlsx")
+produccionTotalSonora <- dplyr::filter(produccionTotalNacional, ENTIDAD == "Sonora")
+produccionTotalSonora <- data.frame(produccionTotalSonora)
+produccionTotalSonora
 ```
 
-* Correlación Pearson
+***
 
-**Gráfica 1**
+## **Correlación Pearson**
 
-```{r}
-multi.hist(x = prodTotSon[-c(1:3,5:6,8:9,13)], dcol = c("blue", "red"), dlty = c("dotted", "solid"), main = "")
+### **Gráfica 1**
+
+```{r, graphic-1-pearson}
+multi.hist(x = produccionTotalSonora[-c(1:3,5:6,8:9,13)], dcol = c("blue", "red"), dlty = c("dotted", "solid"), main = "")
 ```
 
-Como podemos observar los datos que en orden son 1.Cosechada, 2.Producción, 3.Valor de producción, 4.Temperaturas y 5.LLuvias, no parecen ser normales del todo  ya que lo único que muestra algo de normalidad es la 3ra y en la parte económica de los cultivos.
+Como podemos observar los datos que en orden son:
 
-Ahora veamos una correlación de Pearson
-**Gráfica 2**
+1. Cosechada
+2. Producción
+3. Valor de producción
+4. Temperaturas
+5. Lluvias
 
-```{r}
-#ggpairs(prodTotSon[-c(1:3,6:9)], lower = list(continuous = "smooth"),
-#        diag = list(continuous = "barDiag"), axisLabels = "none")
+No parecen ser normales del todo; ya que lo único que muestra algo de normalidad es la 3ra y en la parte económica de los cultivos.
 
-#ggpairs(prodTotSon,                 # Data frame
-#        columns = c(2,4,5,10,11,12),        # Columnas
-#        aes(color = CULTIVO,  # Color por grupo (var. categórica)
-#            alpha = 0.5))     # Transparencia
-filtroSon <- prodTotSon[-c(1:3,6,8:9)]
+Con esto podemos decir que el valor de produccion del Mango, Esparrago, Uva, Maiz y Trigo nos regresa una ganancia similar a traves de los años 2015 al 2020, esto genera la pregunta ¿Se refleja cuanto se cosechó, la temperatura, o si llovio en la produccion, y sobre todo en el valor de dicha produccion? Esto nos ayudaria a visualizar la importancia del cambio climatico en los cultivos especificados y si realmente afecta en el mercado. Para responder esta pregunta necesitamos ver que tanta relacion tienen entre si  utilizando la Correlacion de Pearson la cual nos muestra una variedad de graficos comparando cada dato entre si.
 
-ggpairs(filtroSon, lower = list(continuous = "smooth"),
-        diag = list(continuous = "barDiag"), axisLabels = "none")
+### **Gráfica 2**
+
+```{r, graphic-2-pearson}
+filtroSon <- produccionTotalSonora[-c(1:3,6,8:9)]
+
+ggpairs(filtroSon,
+        lower = list(continuous = "smooth"),
+        diag = list(continuous = "barDiag"),
+        axisLabels = "none")
 ```
 
 Podemos observar como la producción esta algo relacionada con lo que puede ser la temperatura y las lluvias, esto porque tanto una y otra ayudan o perjudican a los cultivos ya que necesitan de ciertos climas y cierta cantidad de agua.
 
-```{r}
-filtroSon <- prodTotSon[-c(1:3,6,8:9)]
+***
 
-round(cor(x= filtroSon, method="pearson"),3)
+```{r, filter-pearson}
+filtroSon <- produccionTotalSonora[-c(1:3,6,8:9)]
+
+round(cor(x = filtroSon, method = "pearson"),3)
 ```
 
 Podemos ver que la parte de producción y en general la siembra y cosecha tiene una relación inversamente proporcional lo cual no afecta realmente porque el que plantemos más cultivos o no quiere decir que llueva más o menos, en el caso de la temperatura sí que podría afectar por todos los tratamientos tanto químicos como de mantenimiento que necesita el cultivo.
 
-* Análisis de series de tiempo para los cultivos
+***
 
-**Gráfica 3**
+## **Análisis de series de tiempo para los cultivos**
 
-```{r}
-df <- prodTotSon
+### **Gráfica 3**
+
+```{r, tsa-crops}
+df <- produccionTotalSonora
 
 fig <- df %>%
   plot_ly(
@@ -204,76 +238,70 @@ fig
 
 En el gráfico anterior se observa como en 2015 el trigo en sonora se producía de una buena manera con un valor de producción de más de 6 millones de pesos, para el 2016 el trigo se veía que va que por buen camino ya que aumento su valor de producción unos cientos de miles, para el 2017 este se quedó donde mismo mientras que la uva y el esparrago dieron un gran paso en su producción y su valor de producción, de 5 a más de 6 millones y de un poco más de 4 millones a casi 6 millones respectivamente. Para el 2018 el precio de producción de uva y de esparrago seguía creciendo mientras que el del trigo tenía una caída, para el 2019 y el 2020 el trigo y el esparrago subieron muy poco en su valor de producción la uva se ha mantenido en el tope y su valor de producción solamente a crecido bastante en los últimos 5 años.
 
-```{r}
-prodTotSonUva <- prodTotSon[25:30, 2:13]
-prodTotSonEsparr <- prodTotSon[1:6, 2:13]
-prodTotSonTrigo <- prodTotSon[19:24, 2:13]
-prodTotSonMaiz <- prodTotSon[7:12, 2:13]
-prodTotSonMango <- prodTotSon[13:18, 2:13]
+***
 
-g1 <- ggplot(data= prodTotSonUva)+
-  geom_line(aes(x= YEAR, y= VALORPRODUCCION), color="Purple")+
-  labs(title="TS de uvas", x="Años", y="Val. Producción")
+```{r, graphics-crops}
+produccionTotalSonoraUva <- produccionTotalSonora[25:30, 2:13]
+produccionTotalSonoraEsparr <- produccionTotalSonora[1:6, 2:13]
+produccionTotalSonoraTrigo <- produccionTotalSonora[19:24, 2:13]
+produccionTotalSonoraMaiz <- produccionTotalSonora[7:12, 2:13]
+produccionTotalSonoraMango <- produccionTotalSonora[13:18, 2:13]
 
-g2 <- ggplot(data= prodTotSonEsparr)+
-  geom_line(aes(x= YEAR, y= VALORPRODUCCION), color="Dark Green")+
-  labs(title="TS de esparragos", x="Años", y="Val. Producción")
+g1 <- ggplot(data = produccionTotalSonoraUva) +
+  geom_line(aes(x = YEAR, y = VALORPRODUCCION), color = "Purple") +
+  labs(title = "TS de uvas", x = "Años", y = "Val. Producción")
 
-g3 <- ggplot(data= prodTotSonTrigo)+
-  geom_line(aes(x= YEAR, y= VALORPRODUCCION), color="brown")+
-  labs(title="TS de trigo", x="Años", y="Val. Producción")
+g2 <- ggplot(data = produccionTotalSonoraEsparr)+
+  geom_line(aes(x = YEAR, y = VALORPRODUCCION), color = "Dark Green") +
+  labs(title = "TS de esparragos", x = "Años", y = "Val. Producción")
 
-g4 <- ggplot(data= prodTotSonMaiz)+
-  geom_line(aes(x= YEAR, y= VALORPRODUCCION), color="Yellow")+
-  labs(title="TS de maiz", x="Años", y="Val. Producción")
+g3 <- ggplot(data = produccionTotalSonoraTrigo) +
+  geom_line(aes(x = YEAR, y = VALORPRODUCCION), color="brown") +
+  labs(title = "TS de trigo", x = "Años", y = "Val. Producción")
 
-g5 <- ggplot(data= prodTotSonMango)+
-  geom_line(aes(x= YEAR, y= VALORPRODUCCION), color="Orange")+
-  labs(title="TS de mangos", x="Años", y="Val. Producción")
+g4 <- ggplot(data = produccionTotalSonoraMaiz) +
+  geom_line(aes(x = YEAR, y = VALORPRODUCCION), color = "Yellow") +
+  labs(title = "TS de maiz", x = "Años", y = "Val. Producción")
 
-g6 <- ggplot(data= prodTotSon)+
-  geom_line(aes(x= YEAR, y= PrecipitacionMedia), color="dark blue")+
-  labs(title="TS de lluvias", x="Años", y="Precipitación (milímetros)")
+g5 <- ggplot(data = produccionTotalSonoraMango) +
+  geom_line(aes(x = YEAR, y = VALORPRODUCCION), color = "Orange") +
+  labs(title = "TS de mangos", x = "Años", y = "Val. Producción")
 
-g7 <- ggplot(data= prodTotSon)+
-  geom_line(aes(x= YEAR, y= TemperaturaAnual), color="dark red")+
-  labs(title="TS de Temperaturas", x="Años", y="Celcius")
+g6 <- ggplot(data = produccionTotalSonora) +
+  geom_line(aes(x = YEAR, y = PrecipitacionMedia), color = "dark blue") +
+  labs(title = "TS de lluvias", x = "Años", y = "Precipitación (milímetros)")
+
+g7 <- ggplot(data = produccionTotalSonora) +
+  geom_line(aes(x = YEAR, y = TemperaturaAnual), color="dark red") +
+  labs(title = "TS de Temperaturas", x = "Años", y = "Celcius")
 
 grid.arrange(g1,g2,g3,g4,g5,g6,g7)
 ```
 
 Se puede ver, que en las fechas o en las zonas en donde las lluvias se mantienen, la producción de valor parece aumentar, aunque no quiere decir que estén estrechamente relacionadas del todo, ya que vimos que con las temperaturas la producción de valor de los cultivos como la uva, mangos, maíz parecen tener un paro y algunos decaen, por ende se podría decir que en efecto se da el caso de la senescencia, esto afecta a la generación de valor de los cultivos, lo cual es lógico, ya que sino hay una temperatura adecuada y/o agua necesaria, provocaría que la planta no enfocara sus fuerzas en dar frutos sino en sobrevivir los climas y en general el ambiente en el que esta, haciendo que se coseche menos y por ende se venda menos, esto por supuesto bajaría el valor de producción de los cultivos, incluso se podría sembrar menos porque no se contaran con los parámetros adecuados para los cultivos.
 
-Conclusión general
-En conclusión Sonora como todos los estados tiene sus partes en la agricultura que cumplen con las condiciones perfectas para la siembra, cosecha y venta de muchos cultivos, sin embargo, como en todos los estados este siembra u obliga a sembrar cultivos que no son capaces de dar frutos en este ambiente ya que no se dedican a eso, a dar frutos, sino que se dedican a sobrevivir, ergo no crean biomasa y no generan ninguna ganancia para los agricultores que se enfocan en este tipo de cultivos, además de que podemos dejar en claro que las lluvias y temperaturas si tienen su efecto en los cultivos apropiados pero que si por alguna casualidad cambian de niveles pueden hasta provocar que las cosechas se arruinen y que los ciclos que llevan se estropeen dificultando la siguiente cosecha.
+***
 
-suponemos que en el ambiente agrícola se está teniendo un poco de des estimación o menosprecio en cuanto a avances científicos ya que mayoría de los agricultores son muy obstinado o simplemente se rehúsan a un cambio además de los propietarios/inversionistas que se aferran a lo que quieren, aunque no les dé una ganancia real, pero ya es tiempo de aplicar la ciencia en esta área ya que es un gran recurso económico del país.
+```{r, scatter-production, warning = FALSE}
+produccionTotalNacional <- read_xlsx("ProduccionTotalNacional_2015-2020.xlsx")
+produccionTotalNacional <- dplyr::filter(produccionTotalNacional, YEAR == 2020)
+produccionTotalNacional <- data.frame(produccionTotalNacional)
 
+filtroNacional <- produccionTotalNacional
 
-Conclusión individual
-Santana Celaya Alec Demian
-
-
-```{r, warning= FALSE}
-
-prodTotNacional <- read_xlsx("ProduccionTotalNacional_2015-2020.xlsx")
-prodTotNacional <- dplyr::filter(prodTotNacional, YEAR == 2020)#, CULTIVO == c("Mango"), YEAR == c(2019,2020))#, ENTIDAD == c("Sonora", ""))
-prodTotNacional <- data.frame(prodTotNacional)
-
-filtroNacional <- prodTotNacional
-
-
-plot_ly(data= filtroNacional, x= ~TemperaturaAnual, y= ~VALORPRODUCCION, color= ~ENTIDAD, colors= rainbow(30), size= ~COSECHADA, type = "scatter") %>%
+plot_ly(data = filtroNacional, x = ~TemperaturaAnual, y = ~VALORPRODUCCION, color = ~ENTIDAD, colors = rainbow(30), size = ~COSECHADA, type = "scatter", mode = "markers") %>%
   layout(
-    xaxis = list(title="X"), 
-    yaxis = list(title="Miles de pesos"),
+    xaxis = list(title = "X"), 
+    yaxis = list(title = "Miles de pesos"),
     showlegend = TRUE
   )
 ```
 
 Explicación
 
-### Regresión Logística
+***
+
+## **Regresión Logística**
 
 Sonora es conocido por ser principalmente un poco caluroso y seco mayor parte del año, es por eso que a una fruta tropical como lo seria el mango le seria muy dificil crecer en este clima, es por eso que analizaremos las condiciones que necesita esta fruta para crecer:
 
@@ -281,50 +309,52 @@ Iniciando por las temperaturas, el rango para que el mango cresca es de un minin
 
 Ahora veamos las cantidades de agua que necesita, es conocido que el mango consume mucha agua para que pueda dar frutos, necesitando un aproximado de 665 mm´s necesarios en ciertas candiades a travéz de los meses
 
-$$\begin{array}{l|l|c}
-\text{Mes} & mm´s\\
-\hline
-Septiembre & 50 mm\\
-Octubre & 85 mm\\
-Noviembre & 110 mm\\
-Diciembre & 140 mm\\
-Enero & 140 mm\\
-Febrero & 140 mm\\
-\hline
-\end{array}$$
+Mes           | mm's
+------------- | -------------
+Septiembre    | 50 mm
+Octubre       | 85 mm
+Noviembre     | 110 mm
+Diciembre     | 140 mm
+Enero         | 140 mm
+Febrero       | 140 mm
 
-Sonora llega a tener una media de 420 en sus precipitaciones, lo cual no es favorable para la producción del mango
+Sonora llega a tener una media de 420 en sus precipitaciones, lo cual no es favorable para la producción del mango.
 
-```{r}
-datos <- read_excel("ProduccionSonoraMango.xlsx") #sonoraMango[c(2,3,11,12)]
+```{r, read-mango-data-sonora}
+datos <- read_excel("ProduccionSonoraMango.xlsx")
 datos
 ```
 
-## Tabla de frecuencia de defectos en la temperatura
+***
 
-```{r}
+## **Frecuencia de defectos en la temperatura**
+
+```{r, table-defects-temperature}
 tablaTemp <- table(datos$DEFECTOSTEMP)
 tablaTemp
 ```
 
 Podemos ver que no hay temperaturas extremas o preocupantes para el cultivo de mango
 
-## Tabla de frecuencia de defectos en la precipitación
+***
 
-```{r}
+## **Frecuencia de defectos en la precipitación**
+
+```{r, table-defects-rainfall}
 tablaPrecip <- table(datos$DEFECTOSPRECIP)
 tablaPrecip
 ```
 
-Sin embargo podemos ver como en ningún momento podemos saciar la necesidad de agua para el mango a lo largo del año
+Sin embargo podemos ver como en ningún momento podemos saciar la necesidad de agua para el mango a lo largo del año.
 
-Representación gráfica de las temperaturas
+***
 
-```{r}
+## **Gráfica de temperaturas**
+
+```{r, temperature-graphic}
 colores <- NULL
 colores[datos$DEFECTOSTEMP == 0] <- "green"
 colores[datos$DEFECTOSTEMP == 1] <- "red"
-#colores[datos$TEMPERATURAANUAL != ] <- "blue"
 
 plot(datos$TEMPANUAL, datos$DEFECTOSTEMP, pch = 21, bg = colores, 
     xlab = "Temperatura", ylab = "Probabilidad de defectos")
@@ -332,13 +362,14 @@ legend("bottomleft", c("No defecto", "Si defecto"), pch = 21, col = c("green",
     "red"))
 ```
 
-Representación gráfica de las precipitaciones
+***
 
-```{r}
+## **Gráfica de precipitaciones**
+
+```{r, rainfall-graphic}
 colores <- NULL
 colores[datos$DEFECTOSPRECIP == 0] <- "green"
 colores[datos$DEFECTOSPRECIP == 1] <- "red"
-#colores[datos$TEMPERATURAANUAL != ] <- "blue"
 
 plot(datos$PRECIPITACIONMEDIA, datos$DEFECTOSPRECIP, pch = 21, bg = colores, 
     xlab = "mm´s de lluvia", ylab = "Probabilidad de defectos")
@@ -348,14 +379,13 @@ legend("bottomleft", c("No defecto", "Si defecto"), pch = 21, col = c("green",
 
 Parece razonable, a la vista de los cultivos, pensar que las temperaturas y lluvias puede influir en la producción de los mangos, ya que si estos no tienen cumplidas sus necesidades, no creceran, no crearan biomasa, y no se centraran en dar frutos sino en sobrevivir. Luego la idea es ajustar por medio de la regresión logistica,un modelo de regresión logística para estudiar la posible relación entre Y=1 dado diferentes valores de temperatura/precipitación: P(Y=1|X). Para ajustar el modelo se usa el comando glm (para modelos lineales generalizados) indicando que la respuesta es binomial mediante el argumento family:
 
-```{r}
-regresionTemp <- glm(DEFECTOSTEMP ~ TEMPANUAL, data= datos, family = binomial)
+```{r, summary-temperature-regression}
+regresionTemp <- glm(DEFECTOSTEMP ~ TEMPANUAL, data = datos, family = binomial)
 summary(regresionTemp)
 ```
 
-
-```{r}
-regresionPrecip <- glm(DEFECTOSPRECIP ~ PRECIPITACIONMEDIA, data= datos, family = binomial)
+```{r, summary-rainfall-regression}
+regresionPrecip <- glm(DEFECTOSPRECIP ~ PRECIPITACIONMEDIA, data = datos, family = binomial)
 summary(regresionPrecip)
 ```
 
@@ -363,60 +393,40 @@ La formula del modelo de regresion logistica es:
 
 $$P(Y=1|X)=\dfrac{e^{15.0429-0.2322x}}{1+e^{15.0429-0.2322x}}$$
 
+***
 
+## **Data frame de los datos** {.tabset}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Data frame de los datos 
-
-```{r}
-#mangoFrame <-data.frame(sonoraMango, check.names = F)
+```{r, unused-mango-dataframe}
+#mangoFrame <- data.frame(sonoraMango, check.names = F)
 #mangoFrame
 
 #filtroMango <- mangoFrame[-c(1,6,11,12)]
 #filtroMango
 ```
 
-Correlación
+### **Correlación**
 
-```{r}
+```{r, unused-mango-correlation}
 #ggpairs(filtroMango, lower = list(continuous = "smooth"),
 #        diag = list(continuous = "barDiag"), axisLabels = "none")
 ```
 
-Indice de correlación de pearson
+***
 
-```{r}
-#round(cor(x= filtroMango, method="pearson"),3)
+### **Indice de correlación de pearson**
+
+```{r, unused-mango-filter}
+#round(cor(x = filtroMango, method="pearson"),3)
 ```
 
-```{r}
+```{r, unused-mango-histogram}
 # ARREGLAR HISTORGRAMA
 #multi.hist(x = filtroMango, dcol = c("blue", "red"), dlty = c("dotted", "solid"), main = "")
 ```
 
-```{r}
-#round(cor(x= filtroMango, method= "pearson"),3)
-```
-
-
-```{r, warning= FALSE}
-#plot_ly(data= sonoraMango, x= ~YEAR, y= ~VALORPRODUCCION, color= ~YEAR, colors= rainbow(12), size= ~YEAR, type = "scatter") %>%
+```{r, unused-mango-plotly, warning= FALSE}
+#plot_ly(data = sonoraMango, x = ~YEAR, y = ~VALORPRODUCCION, color = ~YEAR, colors = rainbow(12), size = ~YEAR, type = "scatter") %>%
 #  layout(
 #    xaxis = list(title="Precipitación"), 
 #    yaxis = list(title="Pesos"),
@@ -424,27 +434,29 @@ Indice de correlación de pearson
 #  )
 ```
 
+***
 
+# **Conclusión**
 
+Sonora como todos los estados tiene sus partes en la agricultura que cumplen con las condiciones perfectas para la siembra, cosecha y venta de muchos cultivos, sin embargo, como en todos los estados este siembra u obliga a sembrar cultivos que no son capaces de dar frutos en este ambiente ya que no se dedican a eso, a dar frutos, sino que se dedican a sobrevivir, ergo no crean biomasa y no generan ninguna ganancia para los agricultores que se enfocan en este tipo de cultivos, además de que podemos dejar en claro que las lluvias y temperaturas si tienen su efecto en los cultivos apropiados pero que si por alguna casualidad cambian de niveles pueden hasta provocar que las cosechas se arruinen y que los ciclos que llevan se estropeen dificultando la siguiente cosecha.
 
+Suponemos que en el ambiente agrícola se está teniendo un poco de des estimación o menosprecio en cuanto a avances científicos ya que mayoría de los agricultores son muy obstinado o simplemente se rehúsan a un cambio además de los propietarios/inversionistas que se aferran a lo que quieren, aunque no les dé una ganancia real, pero ya es tiempo de aplicar la ciencia en esta área ya que es un gran recurso económico del país.
 
+***
 
+## **Descarga de datos y código** {.tabset}
 
+### **Codigo**
 
-
-
-
-## Descarga de datos y código
-
-### Descarga del código
-
-```{r}
+```{r, download-code}
 xfun::embed_file("ProyectoFinalAgricultura.Rmd")
 ```
 
-### Descarga los datos
+***
 
-```{r}
+### **Datos**
+
+```{r, download-data}
 #Producción de varios cultivos en México
 xfun::embed_file("~/GitHub/ProduccionMango/Final/Datos por estado/Cultivos/ProduccionTotalNacional_2015-2020.xlsx")
 
@@ -458,7 +470,9 @@ xfun::embed_file("ProduccionMangos.xlsx")
 xfun::embed_file("TemperaturasPromAnualPorEstado.xlsx")
 ```
 
-## Bibliografía
+***
+
+## **Bibliografía**
 
 SERVICIO DE INFORMACIÓN AGROALIMENTARIA Y PESQUERA (SIAP). (2020). Panorama Agroalimentario. México: Agricultura Secretaria de agricultura y desarrollo rural. Recuperado 21 de noviembre de 2021, de https://www.inforural.com.mx/wp-content/uploads/2020/11/Atlas-Agroalimentario-2020.pdf
 
@@ -470,18 +484,23 @@ National Department of Agriculture. (s. f.). mango. Recuperado 23 de noviembre d
 
 Sonora Climate, Weather By Month, Average Temperature (Mexico) - Weather Spark. (s. f.). Weather Spark. Recuperado 23 de noviembre de 2021, de https://weatherspark.com/y/8716/Average-Weather-in-Sonora-Mexico-Year-Round
 
-* Lugar de donde se sacaron datos
+Luis Israel Chávez Guzmán. (Septiembre 2016). REINGENIERÍA DE PROCESOS EN EL USO DE MANO DE OBRA EN LA PRODUCCIÓN DE UVA DE MESA. Hermosillo Sonora: COORDINACIÓN DE DESARROLLO REGIONAL. Recuperado 23 de noviembre de 2021, de https://ciad.repositorioinstitucional.mx/jspui/bitstream/1006/782/1/Ch%C3%A1vez-Guzm%C3%A1n%20L%20I_MDR_2016.pdf
 
-http://infosiap.siap.gob.mx/gobmx/datosAbiertos.php
+* Fuente de datos
 
-https://nube.siap.gob.mx/cierreagricola/
+  + http://infosiap.siap.gob.mx/gobmx/datosAbiertos.php
 
-http://dgeiawf.semarnat.gob.mx:8080/ibi_apps/WFServlet?IBIF_ex=D3_AGUA01_01&IBIC_user=dgeia_mce&IBIC_pass=dgeia_mce&NOMBREENTIDAD=*&NOMBREANIO=*
+  + https://nube.siap.gob.mx/cierreagricola/
 
+  + http://dgeiawf.semarnat.gob.mx:8080/ibi_apps/WFServlet?IBIF_ex=D3_AGUA01_01&IBIC_user=dgeia_mce&IBIC_pass=dgeia_mce&NOMBREENTIDAD=*&NOMBREANIO=*
 
+## **Teoría**
 
+* https://www.inforural.com.mx/wp-content/uploads/2020/11/Atlas-Agroalimentario-2020.pdf
+* https://avogoconsulting.com/subtropicales/4-condiciones-ambientales-claves-para-mango/
 
-Notas:
+```{r, notes, include=FALSE, eval=FALSE, echo=FALSE}
+"Notas:
 En la metodología poner porque usaremos, que es y las formulas:
 
 Metodología:
@@ -505,11 +524,6 @@ En este caso se trabajarán con estos métodos estadísticos
 ¿Como nuestro caso de estudio influye a decisiones?
 
 Valor de producción, trigo, CO2
-
-## Teoría
-
-* https://www.inforural.com.mx/wp-content/uploads/2020/11/Atlas-Agroalimentario-2020.pdf
-* https://avogoconsulting.com/subtropicales/4-condiciones-ambientales-claves-para-mango/#:~:text=En%20cuanto%20a%20los%20l%C3%ADmites,con%20da%C3%B1os%20en%20la%20epidermis.
 
 
 Datos a tomar en cuenta
@@ -549,4 +563,5 @@ Mirar para evitar atorarse
 https://es.r4ds.hadley.nz/explorar-introduccion.html
 
 
-SE ENTREGA: miercoles 8-viernes 10
+SE ENTREGA: miercoles 8-viernes 10"
+```
