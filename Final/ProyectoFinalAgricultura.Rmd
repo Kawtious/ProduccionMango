@@ -52,7 +52,7 @@ En términos económicos sería mucho más rentable dado que la siembra de maíz
 
 ### **¿Qué tanto se desperdicia?**
 
-Si bien no es una cosa o variable que se pueda calcular fácilmente, lo que sí sabemos es que los agricultores aun teniendo cultivos buenos pero con diferentes tonos a lo que se cataloga como normales, no son entregados/vendidos a los proveedores ya que saben que estos no se venderán en el mercado y terminaran caducando, es por eso que aunque no se tenga una variable real como serian siniestrados si se sabe que en promedio se desechan muchas cantidades de cultivo que se regalan a familiares, amigos, etc. ya que en el mercado convencional no se venderían.
+Segun los datos obtenidos entre el muestreo de los 5 cultivos que hemos elegido, se tiene un indice de porcentaje de desperdicio de los cultivos de %0.25 para todos. Hemos visto que los cultivos que mas se desperdician o resultan siniestrados son el maiz y el trigo; esto podria deberse a varias razones, entre las plagas, que se echan a perder en el mercado al no ser comprados porque pasan mucho tiempo sin que se vendan, etc. Obviamente todo esto es especulacion, por lo que tendria que abrirse otro caso de estudio.
 
 ### **¿Como la lluvia y la temperatura afectan la producción?**
 
@@ -69,7 +69,7 @@ Es por este ejemplo en particular que **veremos si en Sonora se pueden cultivar 
 Conocemos que todas las plantas necesitan ciertas cantidades de agua, así que es de suma importancia tener un buen sistema
 de riego y de alimentación, para aprovechar al máximo y eficientizar la necesidad de agua que ocupan las plantas, además de esto ocupan ciertas condiciones climatológicas ya que si sufren daños a causa de esto son más propensos a estropear la planta.
 
-La agricultura en México es más que un sector productivo importante. Más allá de su participación en el PIB  nacional, que es de  apenas cerca del   3.7%, las múltiples funciones de la agricultura en el desarrollo económico, social y ambiental determinan que su incidencia en el desarrollo sea mucho mayor de lo que ese indicador implicaría. La agricultura es un sector relativamente pequeño en México, y sigue a la baja con respecto  a la  economía total  con  cerca del  3.7% del  PIB según  cifras preliminares del INEGI del 2014. (Corona Ramírez, 2016)
+La agricultura en México es más que un sector productivo importante. Más allá de su participación en el PIB nacional, que es de apenas cerca del 3.7%, las múltiples funciones de la agricultura en el desarrollo económico, social y ambiental determinan que su incidencia en el desarrollo sea mucho mayor de lo que ese indicador implicaría. La agricultura es un sector relativamente pequeño en México, y sigue a la baja con respecto a la economía total con cerca del 3.7% del PIB según cifras preliminares del INEGI del 2014. (Corona Ramírez, 2016)
 
 En Sonora la producción de uva de mesa es llevada a cabo por alrededor de 39 empresas productoras las cuales cultivan este fruto en una superficie aproximada de 19,015 hectáreas, ubicadas principalmente en Hermosillo, Caborca y en la localidad de Pesqueira perteneciente al municipio de San Miguel de Horcasitas. La producción de uva de mesa en el estado de Sonora asciende a aproximadamente 238,478 toneladas; esta producción corresponde a alrededor del 92% de la producción de uva de mesa a nivel nacional. (SIAP, 2013)
 
@@ -89,11 +89,23 @@ La disminución no se ha producido a causa de la escasez de tierra o agua, sino 
 
 Métodos estadísticos que se utilizaran, junto a los métodos de los datos
 
-* Estadística descriptiva: Para mostrar los datos de las cosechas que se están desperdiciando
+* Estadística descriptiva: Se encarga de recoger, almacenar, ordenar, realizar tablas o gráficos y calcular parámetros básicos sobre el conjunto de datos. (Jose Lopez, 2021)
 
-* Análisis de series de tiempo (TSA): para saber cómo evoluciona la economía agrícola en Sonora, una serie temporal se define como una colección de observaciones de una variable recogidas secuencialmente en el tiempo.
+La estadistica descritiva se uso para ordenar todos los datos para realizar tablas y con ellas realizar graficos, para que en vez de mostrales solo numeros, Muestran de una manera mas digerible los datos codelados en graficos.
 
-* Correlación de Pearson: para la covarianza estandarizada de la muestra aplicada.
+* Análisis de series de tiempo (TSA): Es una secuencia de datos u observaciones, medidos en determinados momentos y ordenados cronológicamente. Visualmente, es una curva que evoluciona en el tiempo. (Pricing, 2016)
+
+Se uso para saber como evolucionavan todas las variables para observar como se comportaban atraves del tiempo de manera individual y dar una explicacion sobre su comportamiento y poder sacar conclusiones de la economia agricola en el esatdo de Sonora.
+
+* Correlación de Pearson: Es una prueba que mide la relación estadística entre dos variables continuas, el coeficiente de correlación de Pearson indica que tan asociadas se encuentran dos variables entre sí por lo que:
+
+ + Si la correlación es menor a cero, significa que es negativa, es decir, que las variables se relacionan inversamente.
+
+ + Si la correlación es igual a +1 significa que es positiva perfecta. En este caso significa que la correlación es positiva, es decir, que las variables se correlacionan directamente.
+
+ + Cuando la correlación es igual a cero significa que no es posible determinar algún sentido de covariación. Sin embargo, no significa que no exista una relación no lineal entre las variables.
+
+La correlacion de Pearson fue usada en el grafico 1 para ver como se comportaban las variables y que tan asociadas estan entre si, y observar que tanta relacion hay entre ellas y asi deducir cual variable es la que tiene mayor impacto para los cultivos.
 
 ***
 
@@ -164,9 +176,27 @@ produccionTotalSonora <- data.frame(produccionTotalSonora)
 produccionTotalSonora
 ```
 
+#### Indice de desperdicio de cultivos
+
+```{r, index-waste-total}
+x <- (sum(produccionTotalSonora$COSECHADA))
+y <- (sum(produccionTotalSonora$SINIESTRADA))
+porcentaje <- (y * 100 / x)
+porcentaje
+```
+
+```{r, index-waste-corn-wheat}
+dataMaizSonora <- dplyr::filter(produccionTotalNacional, ENTIDAD == "Sonora", CULTIVO == c("Maiz", "Trigo"))
+
+xMaizTrigo <- (sum(dataMaizSonora$COSECHADA))
+yMaizTrigo <- (sum(dataMaizSonora$SINIESTRADA))
+porcentajeMaiz <- (yMaizTrigo * 100 / xMaizTrigo)
+porcentajeMaiz
+```
+
 ***
 
-## **Correlación Pearson**
+## **Correlación de Pearson**
 
 ### **Gráfica 1**
 
@@ -184,10 +214,7 @@ Como podemos observar los datos que en orden son:
 
 No parecen ser normales del todo; ya que lo único que muestra algo de normalidad es la 3ra y en la parte económica de los cultivos.
 
-Con esto podemos decir que el valor de produccion del Mango, Esparrago, Uva, Maiz y Trigo nos regresa una ganancia similar a traves de los años 2015 al 2020, esto genera la pregunta ¿Se refleja cuanto se cosechó, la temperatura, o si llovio en la produccion, y sobre todo en el valor de dicha produccion? Esto nos ayudaria a visualizar la importancia del cambio climatico en los cultivos especificados y si realmente afecta en el mercado. Para responder esta pregunta necesitamos ver que tanta relacion tienen entre si  utilizando la Correlacion de Pearson la cual nos muestra una variedad de graficos comparando cada dato entre si.
-
-
-Ahora veamos una correlación de Pearson
+Con esto podemos decir que el valor de produccion del Mango, Esparrago, Uva, Maiz y Trigo nos regresa una ganancia similar a traves de los años 2015 al 2020, esto genera la pregunta ¿Se refleja cuanto se cosechó, la temperatura, o si llovio en la produccion, y sobre todo en el valor de dicha produccion? Esto nos ayudaria a visualizar la importancia del cambio climatico en los cultivos especificados y si realmente afecta en el mercado. Para responder esta pregunta necesitamos ver que tanta relacion tienen entre si utilizando la Correlacion de Pearson la cual nos muestra una variedad de graficos comparando cada dato entre si.
 
 ### **Gráfica 2**
 
@@ -241,7 +268,11 @@ fig <- fig %>% layout(
 fig
 ```
 
-En el gráfico anterior se observa como en 2015 el trigo en sonora se producía de una buena manera con un valor de producción de más de 6 millones de pesos, para el 2016 el trigo se veía que va que por buen camino ya que aumento su valor de producción unos cientos de miles, para el 2017 este se quedó donde mismo mientras que la uva y el esparrago dieron un gran paso en su producción y su valor de producción, de 5 a más de 6 millones y de un poco más de 4 millones a casi 6 millones respectivamente. Para el 2018 el precio de producción de uva y de esparrago seguía creciendo mientras que el del trigo tenía una caída, para el 2019 y el 2020 el trigo y el esparrago subieron muy poco en su valor de producción la uva se ha mantenido en el tope y su valor de producción solamente a crecido bastante en los últimos 5 años.
+En el gráfico anterior se observa como aumenta o disminuye el valor de producción de los últimos 5 años donde se puede observar que en 2015 el trigo en sonora se producía de una buena manera con un valor de producción de más de 6 millones de pesos, para el 2016 el trigo se veía que iba  por buen camino ya que aumento su valor de producción unos cientos de miles en ese año, para el 2017 este se quedó donde mismo mientras que la uva y el esparrago dieron un gran paso en su producción y su valor de producción, de 5 millones del año anterior a más de 6 millones y de un poco más de 4 millones del año anterior a casi 6 millones respectivamente. 
+
+Para el 2018 el precio de producción de uva y de esparrago seguía creciendo mientras que el del trigo tenía una caída en su valor de producción lo cual le puede pasar a cualquier fruto en el mercado debido a la oferta y demanda, para el 2019 y el 2020 el trigo y el esparrago subieron muy poco en su valor de producción mientras que la uva se ha mantenido en el tope y su valor de producción solamente ha crecido bastante en los últimos 5 años. También se puede observar que para el año pasado ósea 2020 mas de 100 mil toneladas fueron cosechadas de trigo esto fue porque se cultivo bastante de este grano en dicho año consiguiendo un valor de producción aproximado de 7.5 millones de pesos, mientras que en el mismo año se cosecho 30 mil toneladas de uva consiguiendo un valor de producción de casi los 10 millones de pesos, concluyendo con la explicación de este gráfico podemos decir que la uva con menos cosecha tiene mayor valor de producción que el trigo que la supera poco mas de 3 veces en cosecha y aun así la uva le gana al trigo en su valor de venta.
+
+Si bien el trigo pareceria buena opcion al inicio, este no tiene una gran cantidad de nutrientes y minerales, y su demanda ya no es como lo era antes, ya que actualmente la uva tiene mas demanda ya sea para vinos
 
 ***
 
@@ -296,7 +327,7 @@ produccionTotalNacional <- data.frame(produccionTotalNacional)
 
 filtroNacional <- produccionTotalNacional
 
-plot_ly(data = filtroNacional, x = ~TemperaturaAnual, y = ~VALORPRODUCCION, color = ~ENTIDAD, colors = rainbow(30), size = ~COSECHADA, type = "scatter") %>%
+plot_ly(data = filtroNacional, x = ~TemperaturaAnual, y = ~VALORPRODUCCION, color = ~ENTIDAD, colors = rainbow(30), size = ~COSECHADA, type = "scatter", mode = 'markers') %>%
   layout(
     xaxis = list(title = "X"), 
     yaxis = list(title = "Miles de pesos"),
@@ -441,44 +472,33 @@ $$P(Y=1|X)=\dfrac{e^{15.0429-0.2322x}}{1+e^{15.0429-0.2322x}}$$
 #  )
 ```
 
-***
+# **Conclusiones** 
 
-## **Conclusión** {.tabset}
+## Conclusion {.tabset}
 
-### **Conclusión General**
+### **General**
 
 Sonora como todos los estados tiene sus partes en la agricultura que cumplen con las condiciones perfectas para la siembra, cosecha y venta de muchos cultivos, sin embargo, como en todos los estados este siembra u obliga a sembrar cultivos que no son capaces de dar frutos en este ambiente ya que no se dedican a eso, a dar frutos, sino que se dedican a sobrevivir, ergo no crean biomasa y no generan ninguna ganancia para los agricultores que se enfocan en este tipo de cultivos, además de que podemos dejar en claro que las lluvias y temperaturas si tienen su efecto en los cultivos apropiados pero que si por alguna casualidad cambian de niveles pueden hasta provocar que las cosechas se arruinen y que los ciclos que llevan se estropeen dificultando la siguiente cosecha.
 
 Suponemos que en el ambiente agrícola se está teniendo un poco de des estimación o menosprecio en cuanto a avances científicos ya que mayoría de los agricultores son muy obstinado o simplemente se rehúsan a un cambio además de los propietarios/inversionistas que se aferran a lo que quieren, aunque no les dé una ganancia real, pero ya es tiempo de aplicar la ciencia en esta área ya que es un gran recurso económico del país.
 
-### **Conclusión individual**
-
-***
+### **Individual**
 
 **Santana Celaya Alec Demian**
 
-En lo que a mi respecta Sonora y México en general es muy bueno para el área agrícola sin embargo no veo ni siento que se usen de la forma correcta, ya que muchos climas de diferentes estados afectan a la producción de varios cultivos lo que dificulta el fruto de estos ademas de como sus cuidados afectan al ambiente en distintos niveles ya sea por sus contaminantes en el excesivo uso de pesticida (en el caso del cultivo del trigo) y si tomamos mas en cuenta los datos de las necesidades de los cultivos y con un manejo apropiado, se podría sacar muchas mas ganancias de las que se obtienen actualmente.
-
-
-***
+En lo que a mi respecta, Sonora y México en general es muy bueno para el área agrícola sin embargo no veo ni siento que se usen de la forma correcta, ya que muchos climas de diferentes estados afectan a la producción de varios cultivos lo que dificulta el fruto de estos ademas de como sus cuidados afectan al ambiente en distintos niveles ya sea por sus contaminantes en el excesivo uso de pesticida (en el caso del cultivo del trigo) y si tomamos mas en cuenta los datos de las necesidades de los cultivos y con un manejo apropiado, se podría sacar muchas mas ganancias de las que se obtienen actualmente.*
 
 **Cazarez Cabrera José Luis**
 
 CONCLUSIÓN
 
-***
-
 **Apodaca Urias Jesus David**
 
 En general Sonora y el resto del pais es buen lugar para cultivar pero hay algunos estados en mexico que cultivan cosas que no se les dan tan bien por clima, sueles o X factor. Es por eso que en este caso de estudio se vio cual debe ser el cultivo mas optimo o que mejor se le puede dar a un estado en este caso el esatado de sonora produce cultivos de maiz y trigo en su mayoria, el problema es que estos dos no se dan tan bien es por ello que seria mejor que cultivaran uva y esparrago por lo antes visto y asi obtener mejores ganancias con la agricultura en el estado de Sonora.
 
-***
-
 **Osuna Alcala Anthony**
 
 Conclusión
-
-***
 
 ## **Descarga de datos y código** {.tabset}
 
