@@ -60,16 +60,20 @@ Un aumento en la temperatura acelerará el crecimiento. En el caso de un cultivo
 
 ***
 
-<!-- Teoría -->
+## **Teoría**
 
 Es por este ejemplo en particular que **veremos si en Sonora se pueden cultivar alimentos de este tipo**; ya que al ser un lugar con clima caliente y seco no todas las plantas podrán crecer y dar frutos. Al no tener las condiciones apropiadas para crecer, los agricultores no se centran en producir frutos o alimento, ya que la falta de sus condiciones (ya sean de clima, agua, tierra, etc.) provocan dificultades de supervivencia en su area de cultivo, dificultando que estas puedan formar biomasa, no dando frutos como resultado.
 
 **Veamos un ejemplo ---**
 
 Conocemos que todas las plantas necesitan ciertas cantidades de agua, así que es de suma importancia tener un buen sistema
-de riego y de alimentación, para aprovechar al máximo y eficientizar la necesidad de agua que ocupan las plantas, además de esto ocupan ciertas condiciones climatológicas ya que si sufren daños a causa de esto son más propensos a estropear la planta, encontramos máximas de 40ºC y mínimas de 0ºC. Los efectos de estas altas temperatura podrían empezar a verse a partir de los 35ºC, por ejemplo, con daños en la epidermis en el caso del mango.
+de riego y de alimentación, para aprovechar al máximo y eficientizar la necesidad de agua que ocupan las plantas, además de esto ocupan ciertas condiciones climatológicas ya que si sufren daños a causa de esto son más propensos a estropear la planta.
 
-México tiene una muy buena y rica posición geográfica para la agricultura teniendo grandes cantidades de sol, tierra, agua y viento para los cultivos, debido a esto es necesario que se optimicen los recursos lo mejor posible, pudiendo usar herramientas tecnológicas para automatizar muchos procesos haciéndolos relativamente más efectivos, además también los granjeros de todos los cultivos tienen que cuidarse del cambio climático ya que puede y va a afectar negativamente a muchos que principalmente basan su economía en cultivos.
+La agricultura en México es más que un sector productivo importante. Más allá de su participación en el PIB  nacional, que es de  apenas cerca del   3.7%, las múltiples funciones de la agricultura en el desarrollo económico, social y ambiental determinan que su incidencia en el desarrollo sea mucho mayor de lo que ese indicador implicaría. La agricultura es un sector relativamente pequeño en México, y sigue a la baja con respecto  a la  economía total  con  cerca del  3.7% del  PIB según  cifras preliminares del INEGI del 2014. (Corona Ramírez, 2016)
+
+En Sonora la producción de uva de mesa es llevada a cabo por alrededor de 39 empresas productoras las cuales cultivan este fruto en una superficie aproximada de 19,015 hectáreas, ubicadas principalmente en Hermosillo, Caborca y en la localidad de Pesqueira perteneciente al municipio de San Miguel de Horcasitas. La producción de uva de mesa en el estado de Sonora asciende a aproximadamente 238,478 toneladas; esta producción corresponde a alrededor del 92% de la producción de uva de mesa a nivel nacional. (SIAP, 2013)
+
+México tiene una muy buena y rica posición geográfica para la agricultura teniendo grandes cantidades de sol, tierra, agua y viento para los cultivos, debido a esto es necesario que se optimicen los recursos lo mejor posible, pudiendo usar herramientas tecnológicas para automatizar muchos procesos haciéndolos relativamente más efectivos, además también los granjeros de todos los cultivos tienen que cuidarse del cambio climático ya que puede y va a afectar negativamente a muchos que principalmente basan su economía en cultivos.(FAO 2014)
 
 Es realmente importante saber cómo tomar decisiones en base a los datos que tenemos ya que con estos podremos tomar decisiones sobre los procesos mucho más seguros y así podemos deshacernos de la incertidumbre casi por completo al elegir un proceso en concreto.
 
@@ -281,6 +285,8 @@ grid.arrange(g1,g2,g3,g4,g5,g6,g7)
 
 Se puede ver, que en las fechas o en las zonas en donde las lluvias se mantienen, la producción de valor parece aumentar, aunque no quiere decir que estén estrechamente relacionadas del todo, ya que vimos que con las temperaturas la producción de valor de los cultivos como la uva, mangos, maíz parecen tener un paro y algunos decaen, por ende se podría decir que en efecto se da el caso de la senescencia, esto afecta a la generación de valor de los cultivos, lo cual es lógico, ya que sino hay una temperatura adecuada y/o agua necesaria, provocaría que la planta no enfocara sus fuerzas en dar frutos sino en sobrevivir los climas y en general el ambiente en el que esta, haciendo que se coseche menos y por ende se venda menos, esto por supuesto bajaría el valor de producción de los cultivos, incluso se podría sembrar menos porque no se contaran con los parámetros adecuados para los cultivos.
 
+Ademas de esto en la parte de las lluvias se puede observar que cada vez llueve mas, lo cual es bastante bueno, sin embargo, esto no es del todo perfecto ya que si bien esta lloviendo mas, las temporadas son mas cortar actualmente la temporada más mojada dura 4.6 meses, de 28 de mayo a 15 de octubre, con una probabilidad de más del 46 % de que cierto día será un día mojado. El mes con más días mojados en Sonora es agosto, con un promedio de 24.0 días con por lo menos 1 milímetro de precipitación, esto quiere decir que lo que antes duraba una temporada de lluvia en un promedio de 5.2 meses, ahora te llueve en un promedio de 4.6 lo cual es preocupante ya que las plantas se ahogan de golpe o se marchitan en la espera alterando los ciclos de los cultivos.
+
 ***
 
 ```{r, scatter-production, warning = FALSE}
@@ -486,6 +492,8 @@ National Department of Agriculture. (s. f.). mango. Recuperado 23 de noviembre d
 Sonora Climate, Weather By Month, Average Temperature (Mexico) - Weather Spark. (s. f.). Weather Spark. Recuperado 23 de noviembre de 2021, de https://weatherspark.com/y/8716/Average-Weather-in-Sonora-Mexico-Year-Round
 
 Luis Israel Chávez Guzmán. (Septiembre 2016). REINGENIERÍA DE PROCESOS EN EL USO DE MANO DE OBRA EN LA PRODUCCIÓN DE UVA DE MESA. Hermosillo Sonora: COORDINACIÓN DE DESARROLLO REGIONAL. Recuperado 23 de noviembre de 2021, de https://ciad.repositorioinstitucional.mx/jspui/bitstream/1006/782/1/Ch%C3%A1vez-Guzm%C3%A1n%20L%20I_MDR_2016.pdf
+
+Corona Ramírez, I. (2016, 24 enero). El desarrollo de la agricultura y el impacto que tendría en las finanzas públicas de México. vLex. Recuperado 5 de diciembre de 2021, de https://vlex.com.mx/vid/desarrollo-agricultura-impacto-finanzas-679171833
 
 * Fuente de datos
 
