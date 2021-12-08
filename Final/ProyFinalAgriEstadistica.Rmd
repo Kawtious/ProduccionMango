@@ -63,11 +63,13 @@ La disminución no se ha producido a causa de la escasez de tierra o agua, sino 
 
 ## Metodología (métodos estadísticos que usan y también incluir los métodos de los datos)
 
-* Estadística descriptiva: Para mostrar los datos de las cosechas que se están desperdiciando
+* Estadística descriptiva: La disciplina en cual se recogen, almacenan, ordenan, y se realizar tablas o gráficos para poder calcular parámetros básicos sobre un conjunto de datos.
 
-* Análisis de series de tiempo (TSA): para saber cómo evoluciona la economía agrícola en Sonora, una serie temporal se define como una colección de observaciones de una variable recogidas secuencialmente en el tiempo.
+* Análisis de series de tiempo (TSA): conjunto de observaciones sobre los valores que toma una variable (cuantitativa) a través del tiempo.
 
 * Correlación de Pearson: para la covarianza estandarizada de la muestra aplicada.
+
+Como variables a trabajar son, datos de lluvias por estado y en sonora, datos varios de producción de papas por estados y en sonora, datos de sequías en sonora.
 
 ## Operaciones
 
@@ -202,7 +204,11 @@ fig <- fig %>% layout(
 fig
 ```
 
-En el gráfico anterior se observa como en 2015 el trigo en sonora se producía de una buena manera con un valor de producción de más de 6 millones de pesos, para el 2016 el trigo se veía que va que por buen camino ya que aumento su valor de producción unos cientos de miles, para el 2017 este se quedó donde mismo mientras que la uva y el esparrago dieron un gran paso en su producción y su valor de producción, de 5 a más de 6 millones y de un poco más de 4 millones a casi 6 millones respectivamente. Para el 2018 el precio de producción de uva y de esparrago seguía creciendo mientras que el del trigo tenía una caída, para el 2019 y el 2020 el trigo y el esparrago subieron muy poco en su valor de producción la uva se ha mantenido en el tope y su valor de producción solamente a crecido bastante en los últimos 5 años.
+En el gráfico anterior se observa como aumenta o disminuye el valor de producción de los últimos 5 años donde se puede observar que en 2015 el trigo en sonora se producía de una buena manera con un valor de producción de más de 6 millones de pesos, para el 2016 el trigo se veía que iba  por buen camino ya que aumento su valor de producción unos cientos de miles en ese año, para el 2017 este se quedó donde mismo mientras que la uva y el esparrago dieron un gran paso en su producción y su valor de producción, de 5millones del año anterior a más de 6 millones y de un poco más de 4 millones del año anterior a casi 6 millones respectivamente. 
+
+Para el 2018 el precio de producción de uva y de esparrago seguía creciendo mientras que el del trigo tenía una caída en su valor de producción lo cual le puede pasar a cualquier fruto en el mercado debido a la oferta y demanda, para el 2019 y el 2020 el trigo y el esparrago subieron muy poco en su valor de producción mientras que la uva se ha mantenido en el tope y su valor de producción solamente ha crecido bastante en los últimos 5 años. También se puede observar que para el año pasado ósea 2020 mas de 100 mil toneladas fueron cosechadas de trigo esto fue porque se cultivo bastante de este grano en dicho año consiguiendo un valor de producción aproximado de 7.5 millones de pesos, mientras que en el mismo año se cosecho 30 mil toneladas de uva consiguiendo un valor de producción de casi los 10 millones de pesos, concluyendo con la explicación de este gráfico podemos decir que la uva con menos cosecha tiene mayor valor de producción que el trigo que la supera poco mas de 3 veces en cosecha y aun así la uva le gana al trigo en su valor de venta.
+
+Si bien el trigo pareceria buena opcion al inicio, este no tiene una gran cantidad de nutrientes y minerales, y su demanda ya no es como lo era antes, ya que actualmente la uva tiene mas demanda ya sea para vinos
 
 ```{r}
 prodTotSonUva <- prodTotSon[25:30, 2:13]
@@ -290,6 +296,8 @@ SAGARPA. (2017). Planeación Agrícola Nacional: Mango Mexicano 2017-2050. Méxi
 National Department of Agriculture. (s. f.). mango. Recuperado 23 de noviembre de 2021, de https://www.nda.agric.za/docs/infopaks/mango.htm
 
 Sonora Climate, Weather By Month, Average Temperature (Mexico) - Weather Spark. (s. f.). Weather Spark. Recuperado 23 de noviembre de 2021, de https://weatherspark.com/y/8716/Average-Weather-in-Sonora-Mexico-Year-Round
+
+Luis Israel Chávez Guzmán. (Septiembre 2016). REINGENIERÍA DE PROCESOS EN EL USO DE MANO DE OBRA EN LA PRODUCCIÓN DE UVA DE MESA. Hermosillo Sonora: COORDINACIÓN DE DESARROLLO REGIONAL. Recuperado 23 de noviembre de 2021, de https://ciad.repositorioinstitucional.mx/jspui/bitstream/1006/782/1/Ch%C3%A1vez-Guzm%C3%A1n%20L%20I_MDR_2016.pdf
 
 * Lugar de donde se sacaron datos
 
