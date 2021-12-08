@@ -490,15 +490,17 @@ En lo que a mi respecta, Sonora y México en general es muy bueno para el área 
 
 **Cazarez Cabrera José Luis**
 
-CONCLUSIÓN
+México, como muchos otros países, tiene el potencial de ser una potencia agrícola increíble. México es conocido por la gran biodiversidad que ofrece. Su agricultura se destaca especialmente por la producción de hortalizas, maíz, trigo, frijoles, tomates, entre otros.
+
+Sin duda, la agricultura es un factor fundamental para la economía mexicana, ya que el desarrollo de los mercados locales ayuda a incentivar la producción y comercialización de nuestros productos. Sin embargo, para que florezca el talento de nuestro país en la agricultura, es necesario actuar y aplicar estudios como este en la producción de cultivos; dividir la agricultura de cultivos específicos en áreas donde las condiciones sean óptimas para que crezcan y produzcan el mejor producto posible.
 
 **Apodaca Urias Jesus David**
 
-En general Sonora y el resto del pais es buen lugar para cultivar pero hay algunos estados en mexico que cultivan cosas que no se les dan tan bien por clima, sueles o X factor. Es por eso que en este caso de estudio se vio cual debe ser el cultivo mas optimo o que mejor se le puede dar a un estado en este caso el esatado de sonora produce cultivos de maiz y trigo en su mayoria, el problema es que estos dos no se dan tan bien es por ello que seria mejor que cultivaran uva y esparrago por lo antes visto y asi obtener mejores ganancias con la agricultura en el estado de Sonora.
+En general Sonora y el resto del pais es buen lugar para cultivar pero hay algunos estados en mexico que cultivan cosas que no se les dan tan bien por clima, suelos o X factor. Es por eso que en este caso de estudio se vio cual debe ser el cultivo mas optimo o que mejor se le puede dar a un estado en este caso el estado de sonora produce cultivos de maiz y trigo en su mayoria, el problema es que estos dos no se dan tan bien es por ello que seria mejor que cultivaran uva y esparrago por lo antes visto y asi obtener mejores ganancias con la agricultura en el estado de Sonora.
 
 **Osuna Alcala Anthony**
 
-Conclusión
+Es evidente que en Mexico se practica bastante la Agricultura, y cada estado tiene su cultivo mas fructífero. Pero cuando entramos en detalle y medimos los factores como el cambio climático y su efecto en los cultivos podemos mejorar las opciones que hay, y últimamente aumentar el valor monetario por producción. Con la comparación de lo mas cultivado (maíz, trigo) en Sonora, a otros cultivos como la uva y el espárrago podemos ver una diferencia significativa la cual nos podría dar paso a un mercado oportuno.
 
 ## **Descarga de datos y código** {.tabset}
 
