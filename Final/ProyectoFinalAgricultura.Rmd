@@ -95,7 +95,7 @@ La estadistica descritiva se uso para ordenar todos los datos para realizar tabl
 
 * Análisis de series de tiempo (TSA): Es una secuencia de datos u observaciones, medidos en determinados momentos y ordenados cronológicamente. Visualmente, es una curva que evoluciona en el tiempo. (Pricing, 2016)
 
-Se uso para saber como evolucionavan todas las variables para observar como se comportaban atraves del tiempo de manera individual y dar una explicacion sobre su comportamiento y poder sacar conclusiones de la economia agricola en el esatdo de Sonora.
+Se uso para saber como evolucionavan todas las variables para observar como se comportaban atraves del tiempo de manera individual y dar una explicacion sobre su comportamiento y poder sacar conclusiones de la economia agricola en el estado de Sonora.
 
 * Correlación de Pearson: Es una prueba que mide la relación estadística entre dos variables continuas, el coeficiente de correlación de Pearson indica que tan asociadas se encuentran dos variables entre sí por lo que:
 
